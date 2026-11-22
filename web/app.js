@@ -89,7 +89,26 @@ const ICONS = {
   mente: '<path d="M9 3a4 4 0 0 0-4 4 4 4 0 0 0-1 7 4 4 0 0 0 5 6V3zM15 3a4 4 0 0 1 4 4 4 4 0 0 1 1 7 4 4 0 0 1-5 6V3z"/>',
   tecnologia: '<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',
   cultura: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5"/>',
+  go: '<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/>',
 };
+// Bloque de código: se escapa y se respeta tal cual (espacios y saltos de línea).
+const codeBlock = (code) => `<pre class="code"><code>${esc(code)}</code></pre>`;
+
+// «Copiar código» del ejercicio. Se escucha en todo el documento porque las
+// vistas se pintan con innerHTML y el botón aún no existe al cargar la página.
+document.addEventListener("click", async (e) => {
+  const btn = e.target.closest("[data-copy]");
+  if (!btn) return;
+  const code = btn.closest(".practice")?.querySelector("pre code")?.textContent ?? "";
+  try {
+    await navigator.clipboard.writeText(code);
+    btn.textContent = "Copiado ✓";
+  } catch {
+    btn.textContent = "No se pudo copiar";
+  }
+  setTimeout(() => { btn.textContent = "Copiar código"; }, 2000);
+});
+
 const icon = (id) => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[id] || ""}</svg>`;
 
 // ---------- pantallas ----------
@@ -223,7 +242,7 @@ views.lesson = async (id) => {
       </header>
       ${l.illustration ? `<figure><img src="/media/${esc(l.category)}/${esc(l.illustration.file)}" alt="${esc(l.illustration.alt)}" loading="lazy"><figcaption>${esc(l.illustration.caption)}</figcaption></figure>` : ""}
       ${l.sections.map((s) => `
-        <section><h2>${esc(s.heading)}</h2>${para(s.body)}${s.example ? `<p class="example">${esc(s.example)}</p>` : ""}</section>`).join("")}
+        <section><h2>${esc(s.heading)}</h2>${para(s.body)}${s.example ? `<p class="example">${esc(s.example)}</p>` : ""}${s.code ? codeBlock(s.code) : ""}</section>`).join("")}
       <aside class="curious"><h2>Curiosidades</h2><ul>${l.curiosities.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></aside>
       <section><h2>Conceptos clave</h2>
         <dl class="concepts">${l.keyConcepts.map((k) => `<div><dt>${esc(k.term)}</dt><dd>${esc(k.definition)}</dd></div>`).join("")}</dl></section>
@@ -231,6 +250,10 @@ views.lesson = async (id) => {
       <section><h2>Fuentes</h2>
         <ul class="sources">${l.sources.map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title)}</a> · ${esc(s.publisher)}</li>`).join("")}</ul>
         <p class="small muted ui">Texto original de Franc Academy, redactado a partir de estas fuentes.</p></section>
+      ${l.practice ? `<section class="card practice"><h2>Practica</h2>${para([l.practice.task])}${codeBlock(l.practice.code)}
+        <div class="row ui"><button class="btn" type="button" data-copy>Copiar código</button>
+        <a class="btn ghost" href="https://go.dev/play/" target="_blank" rel="noopener noreferrer">Abrir Go Playground</a></div>
+        <p class="small muted ui">Copia el código, pégalo en el Playground y pulsa Run.</p></section>` : ""}
       <div class="card ui">
         <h2>¿Lo has entendido?</h2>
         <p class="muted">10 preguntas para comprobarlo. Con 7 aciertos la lección queda completada.</p>
