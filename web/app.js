@@ -11,6 +11,9 @@
 // ---------- utilidades ----------
 const $ = (sel, root = document) => root.querySelector(sel);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+// Las explicaciones de la opción buena empiezan por «Correcto.» (ver CONTENIDO.md).
+// En la lista de fallos eso confunde, así que se quita.
+const withoutVerdict = (s) => String(s ?? "").replace(/^Correct[oa]\.\s*/, "");
 const norm = (s) => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0);
 const shuffle = (arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -425,8 +428,9 @@ function quiz({ title, intro, back, questions, onFinish, finishText }) {
           ${q.lessonTitle ? `<p class="eyebrow">${esc(q.lessonTitle)}</p>` : ""}
           <p><strong>${esc(q.q)}</strong></p>
           <p class="feedback ko">Respondiste: ${esc(q.options[chosen].text)}</p>
+          <p>${esc(q.options[chosen].why)}</p>
           <p class="feedback ok">Correcta: ${esc(q.options[q.answer].text)}</p>
-          <p>${esc(q.options[q.answer].why)}</p>
+          <p>${esc(withoutVerdict(q.options[q.answer].why))}</p>
           ${q.lessonId ? `<p><a href="#/l/${esc(q.lessonId)}">Repasar la lección</a></p>` : ""}
         </div>`).join("")}</section>` : ""}
       <div class="row"><a class="btn" href="${esc(back.href)}">${esc(back.label)}</a><a class="btn ghost" href="#/">Inicio</a></div>`;
