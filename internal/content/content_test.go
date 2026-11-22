@@ -17,8 +17,8 @@ func TestRealContent(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(cat.Categories) != 6 {
-		t.Errorf("esperaba 6 categorías, hay %d", len(cat.Categories))
+	if len(cat.Categories) != 7 {
+		t.Errorf("esperaba 7 categorías, hay %d", len(cat.Categories))
 	}
 	if len(cat.Lessons) == 0 {
 		t.Error("no hay ninguna lección")

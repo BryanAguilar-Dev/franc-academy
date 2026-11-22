@@ -40,7 +40,15 @@ type Lesson struct {
 	KeyConcepts  []Concept     `json:"keyConcepts"`
 	Summary      []string      `json:"summary"`
 	Sources      []Source      `json:"sources"`
+	Practice     *Practice     `json:"practice,omitempty"`
 	Questions    []Question    `json:"questions"`
+}
+
+// Practice es un ejercicio para hacer en el Go Playground: un enunciado y el
+// código de partida. Es opcional; lo usan sobre todo las lecciones de Go.
+type Practice struct {
+	Task string `json:"task"`
+	Code string `json:"code"`
 }
 
 // Illustration apunta a un SVG guardado junto a la lección.
@@ -55,6 +63,7 @@ type Section struct {
 	Heading string   `json:"heading"`
 	Body    []string `json:"body"`
 	Example string   `json:"example,omitempty"`
+	Code    string   `json:"code,omitempty"` // código que se muestra tal cual, con letra monoespaciada
 }
 
 // Concept es un término clave con su definición.
@@ -249,12 +258,15 @@ func Validate(l Lesson, categories map[string]bool) []string {
 		if strings.TrimSpace(s.Heading) == "" || len(s.Body) == 0 {
 			add("apartado %d sin título o sin texto", i+1)
 		}
-		if s.Example != "" {
+		if s.Example != "" || s.Code != "" { // en programación, el ejemplo es el código
 			examples++
 		}
 	}
 	if examples < 2 {
 		add("necesita al menos 2 ejemplos (tiene %d)", examples)
+	}
+	if p := l.Practice; p != nil && (strings.TrimSpace(p.Task) == "" || strings.TrimSpace(p.Code) == "") {
+		add("el ejercicio necesita enunciado y código")
 	}
 	if len(l.Curiosities) < 2 {
 		add("necesita al menos 2 curiosidades")

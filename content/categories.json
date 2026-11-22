@@ -4,5 +4,6 @@
   {"id": "historia", "order": 3, "icon": "historia", "title": "Historia y civilizaciones", "description": "Cómo hemos llegado hasta aquí."},
   {"id": "mente", "order": 4, "icon": "mente", "title": "Cerebro y psicología", "description": "Cómo pensamos, recordamos y decidimos."},
   {"id": "tecnologia", "order": 5, "icon": "tecnologia", "title": "Tecnología e inteligencia artificial", "description": "Las máquinas que usamos y cómo funcionan."},
-  {"id": "cultura", "order": 6, "icon": "cultura", "title": "Cultura general", "description": "Arte, lenguas, ideas y el mundo que compartimos."}
+  {"id": "cultura", "order": 6, "icon": "cultura", "title": "Cultura general", "description": "Arte, lenguas, ideas y el mundo que compartimos."},
+  {"id": "go", "order": 7, "icon": "go", "title": "Programación en Go", "description": "Aprende a programar desde cero, paso a paso, con Go."}
 ]

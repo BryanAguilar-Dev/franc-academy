@@ -18,8 +18,10 @@ el test te dice qué.
     "file": "04-sol.svg", "alt": "descripción para lectores de pantalla", "caption": "…"
   },
   "sections": [                     // mínimo 3, con al menos 2 ejemplos
-    { "heading": "…", "body": ["párrafo", "párrafo"], "example": "opcional" }
+    { "heading": "…", "body": ["párrafo", "párrafo"], "example": "opcional",
+      "code": "opcional: código que se muestra tal cual" }
   ],
+  "practice": { "task": "…", "code": "…" },  // opcional: ejercicio para el Go Playground
   "curiosities": ["…", "…"],        // mínimo 2
   "keyConcepts": [{ "term": "…", "definition": "…" }],   // mínimo 3
   "summary": ["…", "…", "…"],       // mínimo 3
@@ -78,3 +80,13 @@ Diseño pensado primero para el móvil:
 ningún `<text>` tenga menos de 13. El tamaño se pone con `font-size` en el
 `<text>` o en su `<g>` (no en clases CSS: el test no las lee). Lo del borde
 y la disposición vertical no se comprueban solos: revísalo con `rsvg-convert`.
+
+## Lecciones de Go
+
+- Cada apartado con `code` cuenta como ejemplo. En `code` los saltos de línea
+  son `\n` y las tabulaciones `\t` (como escribe `gofmt`).
+- Todo el código debe compilar y dar la salida que dice el texto: se prueba en
+  el Go Playground antes de publicarlo.
+- Cada lección termina con un `practice`: un enunciado corto y un programa
+  completo de partida (con `package main` y `func main`).
+- Fuentes oficiales: go.dev (Tour of Go, Effective Go, la especificación).
