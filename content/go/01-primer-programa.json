@@ -1,0 +1,329 @@
+{
+  "id": "go-01-primer-programa",
+  "category": "go",
+  "order": 1,
+  "title": "Tu primer programa en Go",
+  "minutes": 8,
+  "intro": "Un programa es una lista de instrucciones que el ordenador sigue al pie de la letra, sin adivinar nada. En esta lección vas a entender, línea a línea, el programa más pequeño que se puede escribir en Go, y qué hacer cuando el ordenador se queja.",
+  "sections": [
+    {
+      "heading": "Qué es programar y qué hace el compilador",
+      "body": [
+        "Programar es escribir instrucciones en un idioma que el ordenador pueda entender. Ese idioma tiene reglas muy estrictas: una coma o una llave fuera de sitio y el programa no funciona.",
+        "Go es un lenguaje compilado. Antes de ejecutar tu programa, una herramienta llamada compilador lo lee entero, comprueba que cumple las reglas y lo traduce a algo que el ordenador puede ejecutar. Si encuentra un fallo, se para y te dice dónde está."
+      ],
+      "example": "Es como entregar una receta a un cocinero muy estricto: antes de encender el fuego la lee entera, y si falta un paso o un ingrediente no aparece en la lista, te la devuelve sin cocinar nada."
+    },
+    {
+      "heading": "Las tres piezas de todo programa",
+      "body": [
+        "`package main` dice que este archivo forma parte del paquete principal. Un paquete es una forma de agrupar código; el paquete `main` es el que se convierte en un programa que se puede ejecutar.",
+        "`import \"fmt\"` trae el paquete `fmt`, que viene con Go y sirve para escribir texto en pantalla, entre otras cosas.",
+        "`func main() { ... }` es la función principal. El programa empieza a ejecutarse aquí y termina cuando llega a la llave de cierre. Todo lo que quieras que pase va entre esas llaves."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hola, Franc\")\n}"
+    },
+    {
+      "heading": "Escribir en pantalla con fmt.Println",
+      "body": [
+        "`fmt.Println` escribe en pantalla lo que le pongas entre paréntesis y después salta de línea. Se lee «del paquete fmt, usa Println».",
+        "Puedes darle varias cosas separadas por comas: Go pone un espacio entre ellas. Lo que va entre comillas es texto y se escribe tal cual; lo que va sin comillas, como `2 + 3`, Go lo calcula primero.",
+        "En el código de abajo, el comentario de encima de cada línea dice lo que sale en pantalla."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\t// Sale: Tengo 25 años\n\tfmt.Println(\"Tengo\", 25, \"años\")\n\n\t// Sale: 5\n\tfmt.Println(2 + 3)\n\n\t// Sale: 2 + 3\n\tfmt.Println(\"2 + 3\")\n}"
+    },
+    {
+      "heading": "Comentarios: notas para personas",
+      "body": [
+        "Un comentario es texto que el compilador ignora. Sirve para explicar qué hace el código y por qué.",
+        "Hay dos formas: `//` comenta hasta el final de la línea, y `/* ... */` comenta todo lo que haya entre las dos marcas, aunque ocupe varias líneas."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\n// Este programa saluda.\n// El ordenador ignora\n// estas líneas.\nfunc main() {\n\tfmt.Println(\"Hola\") // y aquí\n\t/*\n\t   Y esto es un comentario\n\t   de varias líneas.\n\t*/\n}"
+    },
+    {
+      "heading": "Cuando el compilador se queja",
+      "body": [
+        "Equivocarse es parte de programar, y en Go los errores aparecen antes de ejecutar nada. El mensaje indica el archivo, la línea y la columna del fallo, y luego qué pasa.",
+        "Go es especialmente estricto con una cosa: si importas un paquete y no lo usas, el programa no compila. Lo hace a propósito: los imports que sobran hacen más lenta la compilación y ensucian el código.",
+        "Consejo: lee siempre el error de arriba abajo, ve a la línea que indica y corrige solo eso. Muchas veces un único fallo provoca varios mensajes."
+      ],
+      "example": "Si añades import \"os\" y no lo usas, verás algo como: ./prog.go:4:8: \"os\" imported and not used. Es decir: en la línea 4, columna 8, importaste \"os\" y no lo has usado."
+    }
+  ],
+  "curiosities": [
+    "Go nació en Google: Robert Griesemer, Rob Pike y Ken Thompson empezaron a dibujar sus ideas en una pizarra el 21 de septiembre de 2007. Se publicó como proyecto de código abierto el 10 de noviembre de 2009.",
+    "El compilador de Go no da avisos (warnings), solo errores. O el programa está bien, o no compila.",
+    "Println empieza por mayúscula por una razón: en Go, solo se puede usar desde fuera de un paquete lo que empieza por mayúscula. Por eso fmt.println, en minúscula, da error."
+  ],
+  "keyConcepts": [
+    {
+      "term": "Programa",
+      "definition": "Lista de instrucciones que el ordenador sigue en orden y al pie de la letra."
+    },
+    {
+      "term": "Compilador",
+      "definition": "Herramienta que comprueba que el código cumple las reglas del lenguaje y lo traduce a algo que el ordenador puede ejecutar."
+    },
+    {
+      "term": "Paquete",
+      "definition": "Forma de agrupar código. Tu programa es el paquete main; fmt es un paquete que viene con Go."
+    },
+    {
+      "term": "Función main",
+      "definition": "El punto de partida: el programa empieza en func main y termina cuando acaba."
+    },
+    {
+      "term": "Comentario",
+      "definition": "Texto para personas que el compilador ignora. Se escribe con // o entre /* y */."
+    }
+  ],
+  "summary": [
+    "Todo programa de Go tiene package main y una función main, que es donde empieza.",
+    "Para usar un paquete hay que importarlo, y si lo importas tienes que usarlo.",
+    "fmt.Println escribe en pantalla, separa con espacios lo que le das y salta de línea.",
+    "Los errores del compilador dicen archivo, línea y columna: léelos con calma, son tu mejor ayuda."
+  ],
+  "sources": [
+    {
+      "title": "Tutorial: Get started with Go",
+      "publisher": "go.dev (documentación oficial de Go)",
+      "url": "https://go.dev/doc/tutorial/getting-started"
+    },
+    {
+      "title": "The Go Programming Language Specification",
+      "publisher": "go.dev (especificación oficial)",
+      "url": "https://go.dev/ref/spec"
+    },
+    {
+      "title": "Frequently Asked Questions (FAQ)",
+      "publisher": "go.dev (documentación oficial de Go)",
+      "url": "https://go.dev/doc/faq"
+    }
+  ],
+  "practice": {
+    "task": "Haz que el programa diga tu nombre y, en otra línea, tu edad (por ejemplo: Tengo 30 años). Cuando funcione, añade import \"os\" debajo del otro import, pulsa Run y lee el error. Después quítalo.",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Hola, Franc\")\n\t// 1. Pon aquí tu nombre.\n\t// 2. Añade tu edad debajo.\n}"
+  },
+  "questions": [
+    {
+      "q": "Cuando ejecutas un programa en Go, ¿dónde empieza?",
+      "answer": 0,
+      "options": [
+        {
+          "text": "En la función main del paquete main",
+          "why": "Correcto. main es el punto de partida, esté donde esté dentro del archivo."
+        },
+        {
+          "text": "En la primera línea de código que haya en el archivo",
+          "why": "No. El orden del archivo no decide dónde empieza: Go busca la función main."
+        },
+        {
+          "text": "En fmt.Println",
+          "why": "No. Println es una función que usamos desde main, no el punto de partida."
+        },
+        {
+          "text": "En la última función del archivo",
+          "why": "No. La posición no importa: siempre empieza en main."
+        }
+      ]
+    },
+    {
+      "q": "¿Para qué sirve escribir import \"fmt\"?",
+      "answer": 2,
+      "options": [
+        {
+          "text": "Para dar nombre al programa",
+          "why": "No. El nombre del paquete lo da package main; import trae código de otro paquete."
+        },
+        {
+          "text": "Es obligatorio en todos los programas, aunque no se use",
+          "why": "No. De hecho, si lo importas y no lo usas, el programa no compila."
+        },
+        {
+          "text": "Para poder usar las funciones del paquete fmt, como Println",
+          "why": "Correcto. Sin importar fmt, Go no sabe qué es fmt.Println."
+        },
+        {
+          "text": "Para guardar lo que escribe el programa en un archivo llamado fmt",
+          "why": "No. fmt escribe en pantalla, no crea archivos con ese nombre."
+        }
+      ]
+    },
+    {
+      "q": "¿Qué sale en pantalla con fmt.Println(\"Tengo\", 25, \"años\")?",
+      "answer": 1,
+      "options": [
+        {
+          "text": "Tengo25años",
+          "why": "No. Println añade un espacio entre cada cosa que le das."
+        },
+        {
+          "text": "Tengo 25 años",
+          "why": "Correcto. Escribe cada valor separado por un espacio y salta de línea."
+        },
+        {
+          "text": "Tengo, 25, años",
+          "why": "No. Las comas separan los valores en el código, pero no se escriben."
+        },
+        {
+          "text": "\"Tengo\" 25 \"años\"",
+          "why": "No. Las comillas marcan dónde empieza y acaba el texto, pero no se escriben."
+        }
+      ]
+    },
+    {
+      "q": "¿Qué sale en pantalla con fmt.Println(2 + 3)?",
+      "answer": 3,
+      "options": [
+        {
+          "text": "2 + 3",
+          "why": "No. Sin comillas no es texto: Go hace la suma antes de escribir."
+        },
+        {
+          "text": "23",
+          "why": "No. Son números, no textos pegados: Go los suma."
+        },
+        {
+          "text": "Un error, porque Println solo acepta texto",
+          "why": "No. Println acepta números, textos y más cosas."
+        },
+        {
+          "text": "5",
+          "why": "Correcto. Sin comillas, Go calcula 2 + 3 y escribe el resultado."
+        }
+      ]
+    },
+    {
+      "q": "¿Y con fmt.Println(\"2 + 3\")?",
+      "answer": 1,
+      "options": [
+        {
+          "text": "5",
+          "why": "No. Entre comillas es texto, y el texto no se calcula."
+        },
+        {
+          "text": "2 + 3",
+          "why": "Correcto. Lo que va entre comillas se escribe tal cual."
+        },
+        {
+          "text": "Un error, porque no se puede sumar dentro de unas comillas",
+          "why": "No. No hay error: simplemente se escribe el texto."
+        },
+        {
+          "text": "\"2 + 3\"",
+          "why": "No. Las comillas no aparecen en pantalla."
+        }
+      ]
+    },
+    {
+      "q": "Añades import \"os\" a tu programa pero no lo usas. ¿Qué pasa al ejecutarlo?",
+      "answer": 0,
+      "options": [
+        {
+          "text": "No compila: el compilador da un error",
+          "why": "Correcto. En Go, un import sin usar es un error, no un aviso."
+        },
+        {
+          "text": "Se ejecuta, pero sale un aviso en amarillo",
+          "why": "No. El compilador de Go no da avisos: o compila, o da error."
+        },
+        {
+          "text": "Se ejecuta con normalidad, porque no molesta",
+          "why": "No. Go se niega a compilar con imports que sobran."
+        },
+        {
+          "text": "El compilador lo borra por ti y sigue",
+          "why": "No. El compilador no cambia tu código: te dice dónde está el fallo y tú lo corriges."
+        }
+      ]
+    },
+    {
+      "q": "¿Por qué Go no deja compilar con imports que no se usan?",
+      "answer": 2,
+      "options": [
+        {
+          "text": "Porque gastan memoria mientras el programa se ejecuta",
+          "why": "No. El motivo que da Go es la velocidad al compilar y la claridad del código."
+        },
+        {
+          "text": "Porque son un fallo de seguridad",
+          "why": "No. No tiene que ver con la seguridad."
+        },
+        {
+          "text": "Porque hacen más lenta la compilación y ensucian el código",
+          "why": "Correcto. Go prefiere una pequeña molestia ahora a programas lentos de compilar y confusos más adelante."
+        },
+        {
+          "text": "Porque el Playground no lo permite, pero en tu ordenador sí funciona",
+          "why": "No. Es una regla del lenguaje: pasa igual en cualquier ordenador."
+        }
+      ]
+    },
+    {
+      "q": "¿Qué hace el ordenador con una línea que empieza por //?",
+      "answer": 3,
+      "options": [
+        {
+          "text": "La escribe en pantalla",
+          "why": "No. Para escribir en pantalla se usa fmt.Println."
+        },
+        {
+          "text": "La ejecuta como una instrucción más",
+          "why": "No. Lo que va detrás de // no es código."
+        },
+        {
+          "text": "Da error, porque no es código de Go",
+          "why": "No. Los comentarios forman parte del lenguaje y son totalmente válidos."
+        },
+        {
+          "text": "Nada: es un comentario y el compilador lo ignora",
+          "why": "Correcto. Los comentarios son notas para las personas que leen el código."
+        }
+      ]
+    },
+    {
+      "q": "Escribes fmt.println (con p minúscula). ¿Qué pasa?",
+      "answer": 1,
+      "options": [
+        {
+          "text": "Funciona igual, Go no distingue mayúsculas",
+          "why": "No. Go sí distingue mayúsculas de minúsculas."
+        },
+        {
+          "text": "Da error: desde fuera de un paquete solo se puede usar lo que empieza por mayúscula",
+          "why": "Correcto. Por eso la función se llama Println, con P mayúscula."
+        },
+        {
+          "text": "Escribe el texto en minúsculas",
+          "why": "No. Println no cambia el texto; y con p minúscula ni siquiera compila."
+        },
+        {
+          "text": "Compila, pero no escribe nada",
+          "why": "No. No llega a compilar: el compilador da error antes."
+        }
+      ]
+    },
+    {
+      "q": "Un error dice: ./prog.go:7:1: syntax error. ¿Qué significa 7:1?",
+      "answer": 0,
+      "options": [
+        {
+          "text": "Línea 7, columna 1 del archivo prog.go",
+          "why": "Correcto. Así sabes exactamente dónde mirar."
+        },
+        {
+          "text": "Que es el error número 7 de la versión 1",
+          "why": "No. Los números indican la posición del fallo en el archivo."
+        },
+        {
+          "text": "Que hay 7 errores y 1 aviso",
+          "why": "No. Go no da avisos, y los números indican la posición del fallo."
+        },
+        {
+          "text": "Que el programa tardó 7,1 segundos",
+          "why": "No. Es la posición del fallo: línea y columna."
+        }
+      ]
+    }
+  ]
+}

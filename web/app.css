@@ -153,3 +153,4 @@ mark { background: var(--warm-soft); color: inherit; border-radius: 3px; }
 pre.code { margin: 0; padding: 14px 16px; border-radius: 10px; background: var(--accent-soft); overflow-x: auto; }
 pre.code code { font: 0.9rem/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre; tab-size: 4; }
 .practice { display: flex; flex-direction: column; gap: 12px; }
+:not(pre) > code { font: 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
