@@ -1,0 +1,219 @@
+{
+  "id": "go-03-tipos-y-operaciones",
+  "category": "go",
+  "order": 3,
+  "title": "Tipos y operaciones: números, texto y constantes",
+  "minutes": 9,
+  "intro": "Ya sabes guardar datos. Ahora toca trabajar con ellos: sumar, dividir, unir textos y pasar de un tipo a otro. Verás también por qué Go se niega a mezclar tipos sin que se lo pidas, y cómo guardar valores que no deben cambiar nunca.",
+  "sections": [
+    {
+      "heading": "Los cuatro tipos del día a día",
+      "body": [
+        "Go tiene muchos tipos, pero al principio te bastan cuatro: `int` para números enteros (3, -10, 8081), `float64` para números con decimales (3.5, 0.21), `string` para texto y `bool` para verdadero (`true`) o falso (`false`).",
+        "Ojo: en el código los decimales se escriben con punto, no con coma: `3.5`. La coma ya sirve para separar cosas.",
+        "Cuando usas `:=`, Go elige el tipo mirando el valor: `42` es `int`, `3.5` es `float64`, `\"hola\"` es `string` y `true` es `bool`."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tlecciones := 42    // int\n\tnota := 7.5        // float64\n\ttema := \"Go\"       // string\n\tterminado := false // bool\n\n\t// Sale: 42 7.5\n\tfmt.Println(lecciones, nota)\n\n\t// Sale: Go false\n\tfmt.Println(tema, terminado)\n}"
+    },
+    {
+      "heading": "Operaciones con números",
+      "body": [
+        "Go usa los símbolos de siempre: `+` suma, `-` resta, `*` multiplica y `/` divide. Además está `%`, que da el resto de una división.",
+        "Cuidado con la división entre enteros: `7 / 2` da `3`, no `3.5`. Si los dos números son `int`, el resultado también es `int` y se pierden los decimales. Si quieres decimales, al menos uno debe ser decimal: `7.0 / 2` da `3.5`.",
+        "El resto `%` es más útil de lo que parece: `n % 2` vale 0 si n es par. Lo usarás mucho."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(7 + 2)   // 9\n\tfmt.Println(7 - 2)   // 5\n\tfmt.Println(7 * 2)   // 14\n\tfmt.Println(7 / 2)   // 3\n\tfmt.Println(7 % 2)   // 1\n\tfmt.Println(7.0 / 2) // 3.5\n}"
+    },
+    {
+      "heading": "Operaciones con texto",
+      "body": [
+        "Con texto, `+` no suma: une. `\"Hola, \" + \"Franc\"` da `Hola, Franc`. Fíjate en el espacio: `+` no lo pone por ti, a diferencia de Println con comas.",
+        "`len` dice cuánto ocupa un texto. Con letras normales coincide con el número de letras, pero la ñ y las tildes ocupan más: `len(\"año\")` da 4. Lo entenderás bien más adelante, cuando veamos cómo se guarda el texto."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tsaludo := \"Hola, \" + \"Franc\"\n\t// Sale: Hola, Franc\n\tfmt.Println(saludo)\n\n\t// Sale: 5\n\tfmt.Println(len(\"Franc\"))\n\n\t// Sale: 4\n\tfmt.Println(len(\"año\"))\n}"
+    },
+    {
+      "heading": "Go no mezcla tipos: convertir con T(v)",
+      "body": [
+        "Si multiplicas un `int` por un `float64`, Go no compila: invalid operation: mismatched types int and float64. Otros lenguajes convierten solos, pero a veces se equivocan sin avisar. Go prefiere que lo digas tú.",
+        "Para convertir se escribe el tipo y, entre paréntesis, el valor: `float64(horas)` convierte horas a decimal, e `int(nota)` convierte a entero.",
+        "Al pasar de decimal a entero, Go corta los decimales, no redondea: `int(2.9)` da 2.",
+        "Con texto y números pasa igual: `\"2\" + 3` es un error. Convertir entre texto y número se hace de otra forma, con el paquete `strconv`, que verás más adelante."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\thoras := 7\n\tprecio := 9.5\n\n\t// horas * precio da error\n\ttotal := float64(horas) * precio\n\tfmt.Println(total) // 66.5\n\n\tnota := 2.9\n\tfmt.Println(int(nota)) // 2\n}"
+    },
+    {
+      "heading": "Constantes: valores que no cambian",
+      "body": [
+        "Algunos valores no deben cambiar nunca: el IVA de una factura, los minutos de una hora, el puerto de una app. Para eso existe `const`.",
+        "Se escribe como una variable, pero con `const` y sin `:=`: `const minutosHora = 60`. Si después intentas cambiarla, el programa no compila: cannot assign to minutosHora.",
+        "¿Por qué no usar una variable? Porque `const` deja claro a quien lee que ese valor es fijo, y el compilador impide que alguien lo cambie por error."
+      ],
+      "example": "Si en tu código aparece 60 en diez sitios, no sabes si es «minutos de una hora» o «edad máxima». Con const minutosHora = 60 el número tiene nombre, y si algún día cambia, lo cambias en un solo sitio.",
+      "code": "package main\n\nimport \"fmt\"\n\nconst minutosHora = 60\n\nfunc main() {\n\thoras := 3\n\tminutos := horas * minutosHora\n\n\t// Sale: 180 minutos\n\tfmt.Println(minutos, \"minutos\")\n}"
+    }
+  ],
+  "curiosities": [
+    "int no tiene un tamaño fijo: en ordenadores de 64 bits, que son casi todos hoy, ocupa 64 bits y llega a más de 9 trillones. Si necesitas un tamaño concreto existen int8, int16, int32 e int64.",
+    "Las constantes numéricas de Go se calculan con muchísima precisión mientras no tienen tipo. Puedes escribir const grande = 1 << 100, un número de 31 cifras, siempre que al usarlo quepa en el tipo que toque.",
+    "Los decimales del ordenador no son exactos: 1.40 se guarda como un número binario que se le acerca muchísimo, pero no es exactamente 1,40. Por eso 3 cafés con IVA dan 4.619999999999999. Para dinero de verdad se trabaja en céntimos, con int.",
+    "byte es otro nombre de uint8, un entero de 0 a 255. Lo verás mucho al trabajar con archivos y redes."
+  ],
+  "keyConcepts": [
+    {
+      "term": "int y float64",
+      "definition": "Números enteros y números con decimales. Los decimales se escriben con punto: 3.5."
+    },
+    {
+      "term": "División entera",
+      "definition": "Si los dos números son int, / descarta los decimales: 7 / 2 da 3."
+    },
+    {
+      "term": "Resto (%)",
+      "definition": "Lo que sobra al dividir: 7 % 2 da 1. Sirve, por ejemplo, para saber si un número es par."
+    },
+    {
+      "term": "Conversión T(v)",
+      "definition": "Convierte el valor v al tipo T, como float64(horas). Go nunca mezcla tipos sin que se lo pidas."
+    },
+    {
+      "term": "Constante",
+      "definition": "Un valor con nombre que no puede cambiar. Se crea con const."
+    }
+  ],
+  "summary": [
+    "Los cuatro tipos básicos son int, float64, string y bool.",
+    "Entre enteros, / da un entero: para tener decimales, usa float64.",
+    "Con texto, + une; len dice cuánto ocupa.",
+    "Go no mezcla tipos: conviertes tú con float64(x) o int(x), e int corta los decimales.",
+    "const guarda valores fijos con nombre, y el compilador impide cambiarlos."
+  ],
+  "sources": [
+    {
+      "title": "A Tour of Go: Basic types",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/11"
+    },
+    {
+      "title": "A Tour of Go: Type conversions",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/13"
+    },
+    {
+      "title": "A Tour of Go: Constants",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/15"
+    },
+    {
+      "title": "Go by Example: Constants",
+      "publisher": "Go by Example",
+      "url": "https://gobyexample.com/constants"
+    }
+  ],
+  "practice": {
+    "task": "Calcula cuánto pagas por 3 cafés a 1.40 € cada uno. 1) Multiplica cafes por precio: lee el error. 2) Arréglalo con float64(cafes). 3) Usa la constante iva para calcular el total con IVA: total * (1 + iva). Saldrá 4.619999999999999 en vez de 4.62: lee la curiosidad sobre los decimales para entender por qué.",
+    "code": "package main\n\nimport \"fmt\"\n\nconst iva = 0.10\n\nfunc main() {\n\tcafes := 3\n\tprecio := 1.40\n\tfmt.Println(cafes, precio)\n\n\t// 1. total := cafes * precio\n\t// 2. Arréglalo con float64\n\t// 3. Aplica el iva\n}"
+  },
+  "questions": [
+    {
+      "q": "¿Qué tipo elige Go para nota := 7.5?",
+      "answer": 2,
+      "options": [
+        { "text": "int", "why": "No. int solo guarda enteros; 7.5 tiene decimales." },
+        { "text": "string", "why": "No. No va entre comillas, así que no es texto." },
+        { "text": "float64", "why": "Correcto. Un número con punto decimal es float64." },
+        { "text": "bool", "why": "No. bool solo puede ser true o false." }
+      ]
+    },
+    {
+      "q": "¿Qué escribe fmt.Println(7 / 2)?",
+      "answer": 0,
+      "options": [
+        { "text": "3", "why": "Correcto. Los dos son int, así que el resultado es int y los decimales se pierden." },
+        { "text": "3.5", "why": "No. Para eso al menos uno tendría que ser decimal, como 7.0 / 2." },
+        { "text": "4", "why": "No. Go no redondea: corta los decimales." },
+        { "text": "1", "why": "No. 1 es el resto, y eso se calcula con %." }
+      ]
+    },
+    {
+      "q": "¿Para qué sirve n % 2 == 0?",
+      "answer": 3,
+      "options": [
+        { "text": "Para calcular el 2 % de n", "why": "No. En Go % no es porcentaje: es el resto de la división." },
+        { "text": "Para dividir n entre 2", "why": "No. Para dividir se usa /." },
+        { "text": "Para saber si n es mayor que 2", "why": "No. Para eso se compara con >." },
+        { "text": "Para saber si n es par", "why": "Correcto. Si al dividir entre 2 no sobra nada, el número es par." }
+      ]
+    },
+    {
+      "q": "¿Qué da \"Hola,\" + \"Franc\"?",
+      "answer": 1,
+      "options": [
+        { "text": "Hola, Franc", "why": "No. + no añade espacios: tendrías que ponerlo tú." },
+        { "text": "Hola,Franc", "why": "Correcto. + une los textos tal cual, sin espacio." },
+        { "text": "Un error, porque no se puede sumar texto", "why": "No. Con texto, + une." },
+        { "text": "Hola, + Franc", "why": "No. El + está fuera de las comillas: es una operación, no texto." }
+      ]
+    },
+    {
+      "q": "horas := 7 y precio := 9.5. ¿Qué pasa con horas * precio?",
+      "answer": 2,
+      "options": [
+        { "text": "Da 66.5", "why": "No. Go no mezcla int y float64 sin conversión." },
+        { "text": "Da 66, porque gana el int", "why": "No. Go no elige por ti: da error." },
+        { "text": "No compila: mismatched types int and float64", "why": "Correcto. Hay que convertir: float64(horas) * precio." },
+        { "text": "Da 63, porque convierte 9.5 a 9", "why": "No. Go nunca convierte solo." }
+      ]
+    },
+    {
+      "q": "nota := 2.9. ¿Qué escribe fmt.Println(int(nota))?",
+      "answer": 0,
+      "options": [
+        { "text": "2", "why": "Correcto. int corta los decimales, no redondea." },
+        { "text": "3", "why": "No. Sería redondear, y la conversión a int no redondea." },
+        { "text": "2.9", "why": "No. Al convertir a int desaparecen los decimales." },
+        { "text": "Un error", "why": "No. Convertir de float64 a int está permitido." }
+      ]
+    },
+    {
+      "q": "¿Por qué Go obliga a convertir tú los tipos?",
+      "answer": 1,
+      "options": [
+        { "text": "Porque no sabe hacerlo solo", "why": "No. Sabría, pero elige no hacerlo." },
+        { "text": "Para evitar conversiones escondidas que causan fallos difíciles de ver", "why": "Correcto. Si conviertes tú, queda escrito en el código y nadie se lleva sorpresas." },
+        { "text": "Porque así el programa ocupa menos", "why": "No. El motivo es evitar errores, no el tamaño." },
+        { "text": "Solo pasa en el Playground", "why": "No. Es una regla del lenguaje." }
+      ]
+    },
+    {
+      "q": "¿Qué pasa si escribes const iva = 21 y luego iva = 10?",
+      "answer": 3,
+      "options": [
+        { "text": "iva pasa a valer 10", "why": "No. Una constante no puede cambiar." },
+        { "text": "iva vale 31", "why": "No. = no suma: asigna. Y con constantes ni siquiera se puede." },
+        { "text": "Compila, pero iva sigue valiendo 21", "why": "No. Go no lo ignora: da error." },
+        { "text": "No compila: cannot assign to iva", "why": "Correcto. El compilador protege las constantes." }
+      ]
+    },
+    {
+      "q": "¿Cuánto da len(\"año\")?",
+      "answer": 2,
+      "options": [
+        { "text": "3", "why": "No. len cuenta lo que ocupa, y la ñ ocupa más que una letra normal." },
+        { "text": "2", "why": "No. Ocupa más, no menos." },
+        { "text": "4", "why": "Correcto. a y o ocupan 1 cada una, y la ñ ocupa 2." },
+        { "text": "Un error, por la ñ", "why": "No. Go trabaja sin problema con ñ y tildes." }
+      ]
+    },
+    {
+      "q": "En tu código aparece 21 en diez sitios distintos, y es el IVA. ¿Qué es mejor?",
+      "answer": 1,
+      "options": [
+        { "text": "Dejarlo así: es más rápido de escribir", "why": "No. Si el IVA cambia, tendrás que buscar los diez sitios, y quizá olvides alguno." },
+        { "text": "Crear const iva = 21 y usar iva en los diez sitios", "why": "Correcto. El número tiene nombre y, si cambia, lo cambias en un solo sitio." },
+        { "text": "Escribirlo como texto: \"21\"", "why": "No. Entonces no podrías hacer cuentas con él." },
+        { "text": "Usar una variable con :=", "why": "No es lo ideal. Funcionaría, pero alguien podría cambiarla por error; const lo impide." }
+      ]
+    }
+  ]
+}
