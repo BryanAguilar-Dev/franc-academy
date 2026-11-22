@@ -72,3 +72,9 @@ Diseño pensado primero para el móvil:
 - Texto principal de 15-16 y notas de 13 como mínimo.
 - Disposición vertical: una cosa debajo de otra, sin filas largas.
 - Ningún texto a menos de 20 del borde. Comprueba que nada se sale.
+
+`go test ./...` comprueba automáticamente: `viewBox="0 0 360 <alto>"`,
+`<title>` con texto, `alt` en el JSON, modo oscuro en el `<style>` y que
+ningún `<text>` tenga menos de 13. El tamaño se pone con `font-size` en el
+`<text>` o en su `<g>` (no en clases CSS: el test no las lee). Lo del borde
+y la disposición vertical no se comprueban solos: revísalo con `rsvg-convert`.

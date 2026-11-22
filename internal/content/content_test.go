@@ -109,3 +109,41 @@ func TestLoadRejectsUnknownFields(t *testing.T) {
 		t.Fatalf("un campo mal escrito debe dar error, obtuve %v", err)
 	}
 }
+
+// goodSVG cumple todas las reglas. Cada caso de TestValidateSVG rompe una.
+const goodSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200">
+  <title>Ejemplo</title>
+  <style>.a{fill:#000} @media (prefers-color-scheme: dark){.a{fill:#fff}}</style>
+  <g font-size="15"><text>hereda 15</text><text font-size="13">nota</text></g>
+  <text style="font-size:16px">grande</text>
+</svg>`
+
+func TestValidateSVG(t *testing.T) {
+	if p := content.ValidateSVG([]byte(goodSVG)); len(p) != 0 {
+		t.Fatalf("un SVG correcto no debería tener problemas: %v", p)
+	}
+
+	tests := []struct {
+		name, old, new, want string
+	}{
+		{"ancho", `0 0 360 200`, `0 0 400 200`, "viewBox"},
+		{"sin viewBox", ` viewBox="0 0 360 200"`, ``, "viewBox"},
+		{"sin title", `<title>Ejemplo</title>`, ``, "<title>"},
+		{"title vacío", `<title>Ejemplo</title>`, `<title> </title>`, "<title>"},
+		{"letra pequeña", `font-size="13"`, `font-size="12"`, "mínimo es 13"},
+		{"hereda pequeña", `<g font-size="15">`, `<g font-size="11">`, "mínimo es 13"},
+		{"style pequeña", `font-size:16px`, `font-size:10px`, "mínimo es 13"},
+		{"sin tamaño", `<g font-size="15">`, `<g>`, "sin font-size"},
+		{"sin modo oscuro", `@media (prefers-color-scheme: dark){.a{fill:#fff}}`, ``, "modo oscuro"},
+		{"XML roto", `</svg>`, ``, "XML inválido"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			bad := strings.Replace(goodSVG, tt.old, tt.new, 1)
+			p := strings.Join(content.ValidateSVG([]byte(bad)), " | ")
+			if !strings.Contains(p, tt.want) {
+				t.Errorf("esperaba un problema con %q, obtuve: %q", tt.want, p)
+			}
+		})
+	}
+}

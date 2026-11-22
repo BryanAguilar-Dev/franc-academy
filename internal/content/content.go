@@ -141,8 +141,17 @@ func Load(fsys fs.FS) (*Catalog, error) {
 				problems = append(problems, fmt.Sprintf("%s: category %q no coincide con la carpeta %q", f, l.Category, c.ID))
 			}
 			if l.Illustration != nil {
-				if _, err := fs.Stat(fsys, path.Join(c.ID, l.Illustration.File)); err != nil {
+				if strings.TrimSpace(l.Illustration.Alt) == "" {
+					problems = append(problems, fmt.Sprintf("%s: la ilustración no tiene alt", f))
+				}
+				svg, err := fs.ReadFile(fsys, path.Join(c.ID, l.Illustration.File))
+				if err != nil {
 					problems = append(problems, fmt.Sprintf("%s: no existe la ilustración %s", f, l.Illustration.File))
+				}
+				if err == nil {
+					for _, p := range ValidateSVG(svg) {
+						problems = append(problems, fmt.Sprintf("%s: %s", path.Join(c.ID, l.Illustration.File), p))
+					}
 				}
 			}
 			if _, dup := cat.byID[l.ID]; dup {
