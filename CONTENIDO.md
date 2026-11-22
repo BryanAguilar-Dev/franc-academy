@@ -87,6 +87,8 @@ y la disposición vertical no se comprueban solos: revísalo con `rsvg-convert`.
   son `\n` y las tabulaciones `\t` (como escribe `gofmt`).
 - Todo el código debe compilar y dar la salida que dice el texto: se prueba en
   el Go Playground antes de publicarlo.
+- Dentro de `body`, el texto entre comillas invertidas (`` `así` ``) se
+  muestra como código.
 - Cada lección termina con un `practice`: un enunciado corto y un programa
   completo de partida (con `package main` y `func main`).
 - Fuentes oficiales: go.dev (Tour of Go, Effective Go, la especificación).

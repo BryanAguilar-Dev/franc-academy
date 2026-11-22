@@ -228,7 +228,8 @@ views.lesson = async (id) => {
   const idx = ls.findIndex((x) => x.id === id);
   const next = ls[idx + 1];
   if (!lstate(id)?.readAt) api.event("read", id).catch(() => {});
-  const para = (ps) => ps.map((p) => `<p>${esc(p)}</p>`).join("");
+  // `así` dentro de un párrafo se muestra como código (se usa en las lecciones de Go).
+  const para = (ps) => ps.map((p) => `<p>${esc(p).replace(/`([^`]+)`/g, "<code>$1</code>")}</p>`).join("");
   return `
     <article class="narrow lesson">
       <p class="ui"><a href="#/c/${esc(c.id)}">← ${esc(c.title)}</a></p>
