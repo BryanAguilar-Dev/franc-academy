@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"sync"
 	"time"
 )
@@ -21,6 +22,21 @@ const PassRatio = 0.7
 // maxHistory limita el historial para que el archivo no crezca sin fin.
 const maxHistory = 2000
 
+// maxResults limita las respuestas que puede traer un evento (un examen tiene 20).
+const maxResults = 50
+
+// Repaso espaciado (sistema de cajas de Leitner). Una pregunta fallada entra
+// en la caja 1. Cada acierto el día que toca la sube de caja, y cuanto más
+// alta la caja, más se espera para volver a preguntarla. Un fallo la devuelve
+// a la caja 1. Acertarla en la última caja la da por aprendida.
+//
+//	caja:  1        2         3         4
+//	espera 1 día    3 días    7 días    21 días
+var reviewDays = []int{1: 1, 2: 3, 3: 7, 4: 21}
+
+// LastBox es la última caja: acertar aquí saca la pregunta del repaso.
+const LastBox = 4
+
 // Data es todo el progreso guardado.
 type Data struct {
 	Lessons    map[string]*LessonState `json:"lessons"`
@@ -28,6 +44,13 @@ type Data struct {
 	Daily      map[string]*Score       `json:"daily"` // clave: fecha AAAA-MM-DD
 	History    []Event                 `json:"history"`
 	LastLesson string                  `json:"lastLesson,omitempty"`
+	Review     map[string]*ReviewItem  `json:"review"` // clave: content.QuestionKey
+}
+
+// ReviewItem es una pregunta pendiente de repaso.
+type ReviewItem struct {
+	Box int    `json:"box"`
+	Due string `json:"due"` // fecha AAAA-MM-DD desde la que toca repasarla
 }
 
 // LessonState es lo que sabemos de una lección.
@@ -46,13 +69,25 @@ type Score struct {
 	At    time.Time `json:"at"`
 }
 
-// Event es una acción del usuario. Type: "read", "quiz", "exam" o "daily".
+// Event es una acción del usuario. Type: "read", "quiz", "exam", "daily" o "review".
 type Event struct {
-	Type  string    `json:"type"`
-	Ref   string    `json:"ref"` // id de lección, id de categoría o fecha
-	Score int       `json:"score"`
-	Total int       `json:"total"`
-	At    time.Time `json:"at"`
+	Type    string    `json:"type"`
+	Ref     string    `json:"ref"` // id de lección, id de categoría o fecha
+	Score   int       `json:"score"`
+	Total   int       `json:"total"`
+	At      time.Time `json:"at"`
+	Results []Result  `json:"results,omitempty"` // qué preguntas acertó o falló
+
+	// Day es la fecha AAAA-MM-DD de "hoy" para el repaso. La pone el
+	// servidor (con la hora de Madrid), nunca el navegador. Si está vacía, se
+	// usa la fecha UTC.
+	Day string `json:"-"`
+}
+
+// Result es la respuesta a una pregunta concreta.
+type Result struct {
+	Key     string `json:"key"`
+	Correct bool   `json:"correct"`
 }
 
 // Store guarda Data en un archivo. Es seguro usarlo desde varias peticiones a la vez.
@@ -89,6 +124,9 @@ func (d *Data) init() {
 	}
 	if d.Daily == nil {
 		d.Daily = map[string]*Score{}
+	}
+	if d.Review == nil {
+		d.Review = map[string]*ReviewItem{}
 	}
 }
 
@@ -138,6 +176,12 @@ func (s *Store) Apply(e Event) (Data, error) {
 			d.Daily[e.Ref] = &Score{Score: e.Score, Total: e.Total, At: e.At}
 		}
 	}
+	today := e.Day
+	if today == "" {
+		today = e.At.Format(time.DateOnly)
+	}
+	d.review(e.Results, today)
+	e.Results = nil // el historial guarda la nota, no cada respuesta
 	d.History = append(d.History, e)
 	if len(d.History) > maxHistory {
 		d.History = d.History[len(d.History)-maxHistory:]
@@ -150,9 +194,51 @@ func (s *Store) Apply(e Event) (Data, error) {
 	return s.Snapshot(), nil
 }
 
+// review mueve cada pregunta de caja según la respuesta.
+func (d *Data) review(results []Result, today string) {
+	for _, r := range results {
+		it, pending := d.Review[r.Key]
+		switch {
+		case !r.Correct:
+			d.Review[r.Key] = &ReviewItem{Box: 1, Due: addDays(today, reviewDays[1])}
+		case !pending || it.Due > today:
+			// Acertar una pregunta que no está pendiente, o antes de que toque,
+			// no cambia nada: el repaso premia recordarla con el tiempo.
+		case it.Box >= LastBox:
+			delete(d.Review, r.Key) // aprendida
+		default:
+			it.Box++
+			it.Due = addDays(today, reviewDays[it.Box])
+		}
+	}
+}
+
+func addDays(day string, n int) string {
+	t, _ := time.Parse(time.DateOnly, day)
+	return t.AddDate(0, 0, n).Format(time.DateOnly)
+}
+
+// Due devuelve las claves que toca repasar hoy (o antes), las más atrasadas primero.
+func (d Data) Due(today string) []string {
+	var keys []string
+	for k, it := range d.Review {
+		if it.Due <= today {
+			keys = append(keys, k)
+		}
+	}
+	sort.Slice(keys, func(i, j int) bool {
+		a, b := d.Review[keys[i]], d.Review[keys[j]]
+		if a.Due != b.Due {
+			return a.Due < b.Due
+		}
+		return keys[i] < keys[j]
+	})
+	return keys
+}
+
 func (e Event) check() error {
 	switch e.Type {
-	case "read", "quiz", "exam", "daily":
+	case "read", "quiz", "exam", "daily", "review":
 	default:
 		return fmt.Errorf("tipo de evento desconocido %q", e.Type)
 	}
@@ -161,6 +247,12 @@ func (e Event) check() error {
 	}
 	if e.Type != "read" && (e.Total <= 0 || e.Score < 0 || e.Score > e.Total) {
 		return errors.New("nota fuera de rango")
+	}
+	if len(e.Results) > maxResults {
+		return errors.New("demasiadas respuestas")
+	}
+	if e.Type == "read" && len(e.Results) > 0 {
+		return errors.New("leer una lección no trae respuestas")
 	}
 	return nil
 }
