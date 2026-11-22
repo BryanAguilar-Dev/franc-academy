@@ -1,33 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 260" role="img" aria-labelledby="t">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 440" role="img" aria-labelledby="t">
   <title id="t">Línea del tiempo del universo</title>
   <style>
     .bg{fill:#f6f8fc}.ink{fill:#16202e}.mut{fill:#586374}.acc{fill:#2652d4}.lin{stroke:#2652d4}.hot{fill:#b86e08}
     text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
     @media (prefers-color-scheme:dark){.bg{fill:#161d28}.ink{fill:#e5eaf1}.mut{fill:#98a3b4}.acc{fill:#85a2ff}.lin{stroke:#85a2ff}.hot{fill:#f1b24e}}
   </style>
-  <rect class="bg" width="640" height="260" rx="14"/>
-  <line class="lin" x1="40" y1="120" x2="600" y2="120" stroke-width="4" stroke-linecap="round"/>
-  <polygon class="acc" points="600,112 616,120 600,128"/>
-  <g font-size="13" text-anchor="middle">
-    <circle class="hot" cx="40" cy="120" r="10"/>
-    <text class="ink" x="52" y="92" font-weight="700">Big Bang</text>
-    <text class="mut" x="52" y="152">caliente</text><text class="mut" x="52" y="168">y denso</text>
+  <rect class="bg" width="360" height="440" rx="14"/>
+  <text class="mut" x="20" y="34" font-size="15">El tiempo avanza hacia abajo ↓</text>
 
-    <circle class="acc" cx="150" cy="120" r="7"/>
-    <text class="ink" x="150" y="92" font-weight="700">Minutos</text>
-    <text class="mut" x="150" y="152">núcleos de</text><text class="mut" x="150" y="168">H y He</text>
+  <line class="lin" x1="36" y1="70" x2="36" y2="358" stroke-width="4" stroke-linecap="round"/>
 
-    <circle class="acc" cx="270" cy="120" r="7"/>
-    <text class="ink" x="270" y="92" font-weight="700">380.000 años</text>
-    <text class="mut" x="270" y="152">átomos; la luz</text><text class="mut" x="270" y="168">viaja libre</text>
+  <g>
+    <circle class="hot" cx="36" cy="70" r="11"/>
+    <text class="ink" x="62" y="75" font-size="16" font-weight="700">Big Bang</text>
+    <text class="mut" x="62" y="97" font-size="15">Todo muy caliente y denso</text>
 
-    <circle class="acc" cx="410" cy="120" r="7"/>
-    <text class="ink" x="410" y="92" font-weight="700">~400 millones</text>
-    <text class="mut" x="410" y="152">primeras</text><text class="mut" x="410" y="168">estrellas</text>
+    <circle class="acc" cx="36" cy="142" r="8"/>
+    <text class="ink" x="62" y="147" font-size="16" font-weight="700">Primeros minutos</text>
+    <text class="mut" x="62" y="169" font-size="15">Núcleos de hidrógeno y helio</text>
 
-    <circle class="acc" cx="560" cy="120" r="7"/>
-    <text class="ink" x="560" y="92" font-weight="700">Hoy</text>
-    <text class="mut" x="560" y="152">13.800 millones</text><text class="mut" x="560" y="168">de años</text>
+    <circle class="acc" cx="36" cy="214" r="8"/>
+    <text class="ink" x="62" y="219" font-size="16" font-weight="700">380.000 años</text>
+    <text class="mut" x="62" y="241" font-size="15">Primeros átomos; la luz viaja libre</text>
+
+    <circle class="acc" cx="36" cy="286" r="8"/>
+    <text class="ink" x="62" y="291" font-size="16" font-weight="700">~400 millones de años</text>
+    <text class="mut" x="62" y="313" font-size="15">Primeras estrellas</text>
+
+    <circle class="acc" cx="36" cy="358" r="11"/>
+    <text class="ink" x="62" y="363" font-size="16" font-weight="700">Hoy</text>
+    <text class="mut" x="62" y="385" font-size="15">13.800 millones de años</text>
   </g>
-  <text class="mut" x="320" y="230" font-size="11" text-anchor="middle">Escala no proporcional: casi toda la historia ocurre en el último tramo.</text>
+
+  <text class="mut" x="20" y="414" font-size="13">Escala no proporcional: casi toda la historia</text>
+  <text class="mut" x="20" y="431" font-size="13">ocurre en el último tramo.</text>
 </svg>

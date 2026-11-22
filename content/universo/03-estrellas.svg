@@ -1,40 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-labelledby="t">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 600" role="img" aria-labelledby="t">
   <title id="t">Ciclo de vida de las estrellas según su masa</title>
   <style>
-    .bg{fill:#f6f8fc}.ink{fill:#16202e}.mut{fill:#586374}.box{fill:#ffffff;stroke:#dbe1ea}.lin{stroke:#586374;fill:none}
+    .bg{fill:#f6f8fc}.ink{fill:#16202e}.mut{fill:#586374}.box{fill:#ffffff;stroke:#dbe1ea}.lin{stroke:#586374;fill:none}.sep{stroke:#dbe1ea}
     .sun{fill:#f2b84b}.red{fill:#d9573b}.blu{fill:#4a74e0}.wd{fill:#cfd8e6;stroke:#586374}
     text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
-    @media (prefers-color-scheme:dark){.bg{fill:#161d28}.ink{fill:#e5eaf1}.mut{fill:#98a3b4}.box{fill:#1d2633;stroke:#273244}.lin{stroke:#98a3b4}.wd{fill:#e5eaf1;stroke:#98a3b4}}
+    @media (prefers-color-scheme:dark){.bg{fill:#161d28}.ink{fill:#e5eaf1}.mut{fill:#98a3b4}.box{fill:#1d2633;stroke:#273244}.lin{stroke:#98a3b4}.sep{stroke:#273244}.wd{fill:#e5eaf1;stroke:#98a3b4}}
   </style>
   <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" class="mut"/></marker></defs>
-  <rect class="bg" width="640" height="320" rx="14"/>
-  <g font-size="12" text-anchor="middle">
-    <ellipse cx="70" cy="160" rx="46" ry="30" class="box"/>
-    <text class="ink" x="70" y="157" font-weight="600">Nube de</text><text class="ink" x="70" y="172" font-weight="600">gas y polvo</text>
+  <rect class="bg" width="360" height="600" rx="14"/>
 
-    <path class="lin" d="M116 150 C150 110 160 90 190 90" marker-end="url(#a)"/>
-    <path class="lin" d="M116 170 C150 210 160 230 190 230" marker-end="url(#a)"/>
+  <g text-anchor="middle">
+    <!-- Origen común -->
+    <ellipse class="box" cx="180" cy="54" rx="78" ry="32"/>
+    <text class="ink" x="180" y="50" font-size="15" font-weight="600">Nube de</text>
+    <text class="ink" x="180" y="68" font-size="15" font-weight="600">gas y polvo</text>
+    <path class="lin" d="M140 82 C110 100 95 110 95 128" marker-end="url(#a)"/>
+    <path class="lin" d="M220 82 C250 100 265 110 265 128" marker-end="url(#a)"/>
 
-    <text class="mut" x="250" y="56">Masa como el Sol</text>
-    <circle class="sun" cx="220" cy="90" r="14"/><text class="ink" x="220" y="124">Estrella</text>
-    <path class="lin" d="M240 90 H290" marker-end="url(#a)"/>
-    <circle class="red" cx="330" cy="90" r="28"/><text class="ink" x="330" y="136">Gigante roja</text>
-    <path class="lin" d="M364 90 H414" marker-end="url(#a)"/>
-    <circle cx="450" cy="90" r="22" fill="none" class="lin" stroke-dasharray="4 3"/><circle class="wd" cx="450" cy="90" r="5"/>
-    <text class="ink" x="450" y="130">Nebulosa</text><text class="ink" x="450" y="145">planetaria</text>
-    <path class="lin" d="M478 90 H528" marker-end="url(#a)"/>
-    <circle class="wd" cx="560" cy="90" r="7"/><text class="ink" x="560" y="124">Enana blanca</text>
+    <line class="sep" x1="180" y1="140" x2="180" y2="580" stroke-dasharray="4 4"/>
 
-    <text class="mut" x="270" y="196">Más de ~8 masas solares</text>
-    <circle class="blu" cx="220" cy="230" r="18"/><text class="ink" x="220" y="268">Estrella</text><text class="ink" x="220" y="283">masiva</text>
-    <path class="lin" d="M244 230 H286" marker-end="url(#a)"/>
-    <circle class="red" cx="330" cy="230" r="36"/><text class="ink" x="330" y="284">Supergigante</text>
-    <path class="lin" d="M372 230 H414" marker-end="url(#a)"/>
-    <polygon class="sun" points="450,204 457,222 476,222 461,234 467,252 450,241 433,252 439,234 424,222 443,222"/>
-    <text class="ink" x="450" y="276">Supernova</text>
-    <path class="lin" d="M478 222 L528 206" marker-end="url(#a)"/>
-    <path class="lin" d="M478 240 L528 256" marker-end="url(#a)"/>
-    <circle class="wd" cx="560" cy="204" r="4"/><text class="ink" x="580" y="190" text-anchor="middle">Estrella de neutrones</text>
-    <circle cx="560" cy="258" r="9" fill="#0b0f16" stroke="#d9573b"/><text class="ink" x="560" y="288">Agujero negro</text>
+    <!-- Cabeceras de columna -->
+    <text class="mut" x="95" y="152" font-size="14">Masa como</text>
+    <text class="mut" x="95" y="169" font-size="14">el Sol</text>
+    <text class="mut" x="265" y="152" font-size="14">Más de ~8</text>
+    <text class="mut" x="265" y="169" font-size="14">masas solares</text>
+
+    <!-- 1. Estrella -->
+    <circle class="sun" cx="95" cy="204" r="14"/>
+    <text class="ink" x="95" y="240" font-size="15">Estrella</text>
+    <circle class="blu" cx="265" cy="204" r="18"/>
+    <text class="ink" x="265" y="240" font-size="15">Estrella masiva</text>
+    <path class="lin" d="M95 250 V272" marker-end="url(#a)"/>
+    <path class="lin" d="M265 250 V272" marker-end="url(#a)"/>
+
+    <!-- 2. Gigante -->
+    <circle class="red" cx="95" cy="306" r="26"/>
+    <text class="ink" x="95" y="356" font-size="15">Gigante roja</text>
+    <circle class="red" cx="265" cy="306" r="32"/>
+    <text class="ink" x="265" y="356" font-size="15">Supergigante</text>
+    <path class="lin" d="M95 366 V388" marker-end="url(#a)"/>
+    <path class="lin" d="M265 366 V388" marker-end="url(#a)"/>
+
+    <!-- 3. Final violento o suave -->
+    <circle class="lin" cx="95" cy="416" r="20" stroke-dasharray="4 3"/>
+    <circle class="wd" cx="95" cy="416" r="5"/>
+    <text class="ink" x="95" y="456" font-size="15">Nebulosa</text>
+    <text class="ink" x="95" y="474" font-size="15">planetaria</text>
+    <polygon class="sun" points="265,392 272,410 291,410 276,422 282,440 265,429 248,440 254,422 239,410 258,410"/>
+    <text class="ink" x="265" y="466" font-size="15">Supernova</text>
+    <path class="lin" d="M95 484 V506" marker-end="url(#a)"/>
+    <path class="lin" d="M250 476 L232 504" marker-end="url(#a)"/>
+    <path class="lin" d="M280 476 L298 504" marker-end="url(#a)"/>
+
+    <!-- 4. Restos -->
+    <circle class="wd" cx="95" cy="526" r="7"/>
+    <text class="ink" x="95" y="558" font-size="15">Enana blanca</text>
+    <circle class="wd" cx="225" cy="526" r="5"/>
+    <text class="ink" x="225" y="558" font-size="14">Estrella de</text>
+    <text class="ink" x="225" y="575" font-size="14">neutrones</text>
+    <text class="mut" x="265" y="531" font-size="14">o</text>
+    <circle cx="305" cy="526" r="10" fill="#0b0f16" stroke="#d9573b" stroke-width="2"/>
+    <text class="ink" x="305" y="558" font-size="14">Agujero</text>
+    <text class="ink" x="305" y="575" font-size="14">negro</text>
   </g>
 </svg>

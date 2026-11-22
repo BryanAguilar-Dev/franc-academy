@@ -207,7 +207,7 @@ views.lesson = async (id) => {
         <h1>${esc(l.title)}</h1>
         <p class="intro">${esc(l.intro)}</p>
       </header>
-      ${l.illustration ? `<figure><img src="/media/${esc(l.category)}/${esc(l.illustration.file)}" alt="${esc(l.illustration.alt)}" width="640" height="320" loading="lazy"><figcaption>${esc(l.illustration.caption)}</figcaption></figure>` : ""}
+      ${l.illustration ? `<figure><img src="/media/${esc(l.category)}/${esc(l.illustration.file)}" alt="${esc(l.illustration.alt)}" loading="lazy"><figcaption>${esc(l.illustration.caption)}</figcaption></figure>` : ""}
       ${l.sections.map((s) => `
         <section><h2>${esc(s.heading)}</h2>${para(s.body)}${s.example ? `<p class="example">${esc(s.example)}</p>` : ""}</section>`).join("")}
       <aside class="curious"><h2>Curiosidades</h2><ul>${l.curiosities.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></aside>

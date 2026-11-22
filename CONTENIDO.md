@@ -66,3 +66,9 @@ el test te dice qué.
 SVG simples hechos a mano, con `<title>`, un `alt` descriptivo y colores que
 funcionen en modo claro y oscuro (con `@media (prefers-color-scheme: dark)`
 dentro del propio SVG). Nada de imágenes copiadas sin licencia.
+
+Diseño pensado primero para el móvil:
+- Lienzo de 360 de ancho (`viewBox="0 0 360 …"`); el alto, el que haga falta.
+- Texto principal de 15-16 y notas de 13 como mínimo.
+- Disposición vertical: una cosa debajo de otra, sin filas largas.
+- Ningún texto a menos de 20 del borde. Comprueba que nada se sale.
