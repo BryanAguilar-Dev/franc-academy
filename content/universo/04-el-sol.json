@@ -1,0 +1,181 @@
+{
+  "id": "universo-04-sol",
+  "category": "universo",
+  "order": 4,
+  "title": "El Sol, nuestra estrella",
+  "minutes": 8,
+  "intro": "El Sol es una estrella bastante corriente, pero es la nuestra: casi toda la luz y el calor que llegan a la Tierra salen de él. Por dentro funciona como un horno nuclear, y su energía hace un viaje larguísimo antes de llegar a tu piel. También nos envía algo más que luz, y eso explica fenómenos como las auroras.",
+  "illustration": {
+    "file": "04-sol.svg",
+    "alt": "Corte del Sol en capas concéntricas. Del centro hacia fuera: núcleo a 15 millones de grados, zona radiativa, zona convectiva, fotosfera a unos 5.500 grados, cromosfera y corona, que llega a 2 millones de grados.",
+    "caption": "Del núcleo a la corona. La temperatura baja hacia fuera… hasta que en la corona vuelve a dispararse."
+  },
+  "sections": [
+    {
+      "heading": "Una estrella corriente, pero enorme para nosotros",
+      "body": [
+        "El Sol es una enana amarilla: una bola de hidrógeno y helio que se mantiene unida por su propia gravedad. Tiene unos 4.600 millones de años y está más o menos a mitad de su vida. Entre las estrellas no destaca ni por grande ni por pequeño.",
+        "Para nosotros, en cambio, es gigantesco. Es unas 100 veces más ancho que la Tierra, harían falta más de 330.000 Tierras para igualar su masa y cabrían unos 1,3 millones de Tierras en su interior. Está a unos 150 millones de kilómetros."
+      ],
+      "example": "Si el Sol fuera una puerta de 2 metros de alto, la Tierra sería una moneda pequeña de unos 2 centímetros."
+    },
+    {
+      "heading": "El horno del núcleo",
+      "body": [
+        "En el centro del Sol, el núcleo, la temperatura supera los 15 millones de grados. Con ese calor y esa presión, los núcleos de hidrógeno chocan con tanta fuerza que se unen y forman helio. Es la fusión nuclear, y en ese proceso se libera muchísima energía.",
+        "Esa energía empuja hacia fuera y compensa la gravedad, que tira de todo hacia dentro. Gracias a ese equilibrio el Sol no se desploma sobre sí mismo ni sale despedido en pedazos."
+      ]
+    },
+    {
+      "heading": "El largo viaje de la energía",
+      "body": [
+        "La energía del núcleo no sale directamente. Primero atraviesa la zona radiativa, donde la materia está tan apretada que la radiación choca una y otra vez y cambia de dirección sin parar. Por eso puede tardar hasta unos 170.000 años en cruzarla.",
+        "Más arriba está la zona convectiva. Allí el gas caliente sube, se enfría al llegar arriba y vuelve a bajar. Así la energía llega a la superficie. Una vez fuera, la luz solo tarda unos 8 minutos en recorrer los 150 millones de kilómetros que nos separan."
+      ],
+      "example": "La zona convectiva funciona como una olla de agua hirviendo: el agua del fondo se calienta, sube, se enfría arriba y vuelve a bajar."
+    },
+    {
+      "heading": "La superficie y la atmósfera del Sol",
+      "body": [
+        "El Sol no tiene superficie sólida. Lo que vemos es la fotosfera, una capa de gas a unos 5.500 °C. En ella aparecen manchas solares: zonas algo más frías que su entorno, por eso se ven oscuras. Pueden durar de días a meses.",
+        "Por encima están la cromosfera, una capa fina de tono rojizo, y la corona, que se extiende millones de kilómetros. Aquí llega una sorpresa: la corona alcanza unos 2 millones de grados, cientos de veces más que la superficie. Por qué está tan caliente sigue siendo uno de los grandes enigmas del Sol."
+      ]
+    },
+    {
+      "heading": "El Sol también nos envía partículas",
+      "body": [
+        "Además de luz, el Sol expulsa sin parar un chorro de gas con carga eléctrica: el viento solar. Viaja más allá de todos los planetas y forma a su alrededor una enorme burbuja magnética, la heliosfera.",
+        "El campo magnético de la Tierra nos protege de la mayor parte de esas partículas. Pero algunas son conducidas hacia los polos y chocan con los gases de la atmósfera: así se forman las auroras. Su actividad no es constante: sigue un ciclo de unos 11 años, y en los momentos de más actividad hay tormentas solares capaces de afectar a las comunicaciones, la navegación y las redes eléctricas."
+      ],
+      "example": "En septiembre de 1859, una gran erupción solar provocó auroras que se vieron tan al sur como en Cuba."
+    }
+  ],
+  "curiosities": [
+    "El Sol no gira como un objeto sólido: en el ecuador da una vuelta en unos 25 días y cerca de los polos tarda unos 36. Puede hacerlo porque es gas.",
+    "La Tierra recibe menos de una milmillonésima parte de toda la energía que emite el Sol. El resto se pierde en el espacio.",
+    "Si el Sol desapareciera de repente, seguiríamos viéndolo y sintiendo su calor unos 8 minutos más: es lo que tarda su última luz en llegar.",
+    "Cada unos 11 años, los polos magnéticos del Sol se intercambian: el norte pasa a ser sur y al revés."
+  ],
+  "keyConcepts": [
+    {"term": "Núcleo", "definition": "Centro del Sol, a más de 15 millones de grados. Es el único lugar donde se produce la fusión nuclear."},
+    {"term": "Zona radiativa", "definition": "Capa que rodea el núcleo. La energía avanza muy despacio porque choca y cambia de dirección constantemente."},
+    {"term": "Zona convectiva", "definition": "Capa exterior del interior solar, donde el gas caliente sube y el frío baja, transportando la energía hacia la superficie."},
+    {"term": "Fotosfera", "definition": "La «superficie» visible del Sol, a unos 5.500 °C. No es sólida."},
+    {"term": "Corona", "definition": "Capa más externa de la atmósfera solar. Alcanza unos 2 millones de grados."},
+    {"term": "Viento solar", "definition": "Flujo continuo de gas con carga eléctrica que sale del Sol y recorre todo el sistema solar."}
+  ],
+  "summary": [
+    "El Sol es una enana amarilla de hidrógeno y helio, a mitad de su vida.",
+    "En el núcleo, la fusión del hidrógeno produce la energía que equilibra la gravedad.",
+    "La energía tarda muchísimo en salir del interior, pero solo unos 8 minutos en llegar a la Tierra.",
+    "Lo que vemos es la fotosfera; por encima, la corona está mucho más caliente y aún no se sabe bien por qué.",
+    "El viento solar y las tormentas solares producen auroras y pueden afectar a nuestra tecnología."
+  ],
+  "sources": [
+    {"title": "Sun: Facts", "publisher": "NASA Science", "url": "https://science.nasa.gov/sun/facts/"},
+    {"title": "Meet the Sun", "publisher": "UCAR Center for Science Education", "url": "https://scied.ucar.edu/learning-zone/sun-space-weather/sun"},
+    {"title": "What Is an Aurora?", "publisher": "NASA Space Place", "url": "https://spaceplace.nasa.gov/aurora/"}
+  ],
+  "questions": [
+    {
+      "q": "¿Por qué el Sol no se desploma sobre sí mismo por su propia gravedad?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque es sólido por dentro", "why": "El Sol no tiene partes sólidas: es gas muy caliente (plasma)."},
+        {"text": "Porque la energía de la fusión empuja hacia fuera y compensa la gravedad", "why": "Correcto. Ese equilibrio mantiene al Sol estable durante miles de millones de años."},
+        {"text": "Porque gira tan deprisa que se sostiene solo", "why": "Gira muy despacio (unos 25 días por vuelta); su giro no es lo que lo sostiene."},
+        {"text": "Porque los planetas tiran de él hacia fuera", "why": "La gravedad de los planetas es diminuta comparada con la del Sol."}
+      ]
+    },
+    {
+      "q": "Si el Sol se apagara de golpe, ¿cuándo lo notaríamos en la Tierra?",
+      "answer": 3,
+      "options": [
+        {"text": "En el mismo instante", "why": "La luz no llega al instante: tarda un tiempo en recorrer la distancia que nos separa."},
+        {"text": "Al día siguiente", "why": "Es muchísimo menos tiempo: la luz es rapidísima."},
+        {"text": "Dentro de unos 170.000 años", "why": "Ese es el tiempo que puede tardar la energía en cruzar el interior del Sol, no el viaje hasta la Tierra."},
+        {"text": "Unos 8 minutos después", "why": "Correcto. Es lo que tarda la luz en recorrer unos 150 millones de kilómetros."}
+      ]
+    },
+    {
+      "q": "¿Por qué la energía tarda tanto en salir del interior del Sol?",
+      "answer": 0,
+      "options": [
+        {"text": "Porque en la zona radiativa choca una y otra vez con la materia y cambia de dirección sin parar", "why": "Correcto. Avanza en zigzag por un interior muy denso, y eso la retrasa enormemente."},
+        {"text": "Porque el núcleo está cubierto por una capa sólida", "why": "En el Sol no hay capas sólidas."},
+        {"text": "Porque la gravedad la detiene por completo durante un tiempo", "why": "La gravedad no detiene la energía; el retraso se debe a los choques continuos."},
+        {"text": "Porque la fusión solo ocurre una vez cada miles de años", "why": "La fusión ocurre continuamente; lo lento es el viaje de la energía hacia fuera."}
+      ]
+    },
+    {
+      "q": "¿Qué ocurre en la zona convectiva del Sol?",
+      "answer": 2,
+      "options": [
+        {"text": "El gas está completamente quieto", "why": "Es justo lo contrario: allí el gas está en movimiento constante."},
+        {"text": "Se produce la mayor parte de la fusión nuclear", "why": "La fusión ocurre en el núcleo, no en la zona convectiva."},
+        {"text": "El gas caliente sube, se enfría y vuelve a bajar, como el agua en una olla", "why": "Correcto. Ese movimiento lleva la energía hasta la superficie."},
+        {"text": "Se forman las manchas solares a partir de polvo", "why": "Las manchas no son polvo: son zonas algo más frías de la fotosfera."}
+      ]
+    },
+    {
+      "q": "¿Por qué las manchas solares se ven oscuras?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque son agujeros que atraviesan el Sol", "why": "No son agujeros: son zonas de la propia fotosfera."},
+        {"text": "Porque están algo más frías que el gas que las rodea", "why": "Correcto. Siguen brillando, pero menos que su entorno, y por contraste parecen oscuras."},
+        {"text": "Porque son planetas pasando por delante del Sol", "why": "Las manchas son del propio Sol y pueden durar meses; un planeta pasa por delante en pocas horas."},
+        {"text": "Porque son nubes de humo", "why": "En el Sol no hay combustión ni humo: es fusión nuclear."}
+      ]
+    },
+    {
+      "q": "¿Qué tiene de sorprendente la corona solar?",
+      "answer": 0,
+      "options": [
+        {"text": "Que está mucho más caliente que la superficie, y aún no se sabe bien por qué", "why": "Correcto. La fotosfera está a unos 5.500 °C y la corona llega a unos 2 millones de grados."},
+        {"text": "Que es más fría que el espacio vacío", "why": "Es al revés: está muchísimo más caliente que la superficie del Sol."},
+        {"text": "Que es la única parte sólida del Sol", "why": "El Sol no tiene partes sólidas, tampoco la corona."},
+        {"text": "Que es donde se produce la fusión nuclear", "why": "La fusión ocurre en el núcleo, en el centro del Sol."}
+      ]
+    },
+    {
+      "q": "¿Qué provoca las auroras?",
+      "answer": 3,
+      "options": [
+        {"text": "La luz del Sol reflejada en el hielo de los polos", "why": "No es un reflejo: es luz que emiten los propios gases de la atmósfera."},
+        {"text": "La luz de la Luna llena", "why": "La Luna no tiene nada que ver: las auroras dependen de la actividad del Sol."},
+        {"text": "Relámpagos muy altos en la atmósfera", "why": "Los relámpagos son fenómenos meteorológicos; las auroras vienen de partículas solares."},
+        {"text": "Partículas del Sol que el campo magnético terrestre lleva hacia los polos y que chocan con la atmósfera", "why": "Correcto. Al chocar, los gases de la atmósfera emiten luz de colores."}
+      ]
+    },
+    {
+      "q": "El Sol tarda unos 25 días en girar en el ecuador y unos 36 cerca de los polos. ¿Qué nos dice eso?",
+      "answer": 2,
+      "options": [
+        {"text": "Que el Sol se está frenando", "why": "La diferencia no es un frenado: ocurre a la vez en distintas zonas."},
+        {"text": "Que tiene dos núcleos que giran por separado", "why": "El Sol tiene un solo núcleo."},
+        {"text": "Que no es sólido: es gas, y cada zona puede girar a su propio ritmo", "why": "Correcto. Un objeto sólido giraría entero a la misma velocidad."},
+        {"text": "Que los polos están más lejos de nosotros", "why": "La distancia no cambia la velocidad a la que gira cada zona."}
+      ]
+    },
+    {
+      "q": "¿Por qué interesa vigilar las tormentas solares?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque pueden apagar el Sol durante días", "why": "Las tormentas son explosiones de actividad; no apagan el Sol."},
+        {"text": "Porque pueden afectar a las comunicaciones, la navegación y las redes eléctricas", "why": "Correcto. Cuanto más dependemos de la tecnología, más importa prever estas tormentas."},
+        {"text": "Porque cambian la órbita de la Tierra", "why": "No tienen fuerza suficiente para alterar la órbita terrestre."},
+        {"text": "Porque las auroras son peligrosas para quien las mira", "why": "Ver una aurora no es peligroso; el problema está en sus efectos sobre la tecnología."}
+      ]
+    },
+    {
+      "q": "¿Qué tipo de estrella es el Sol?",
+      "answer": 3,
+      "options": [
+        {"text": "Una gigante roja", "why": "Lo será al final de su vida, pero ahora no lo es."},
+        {"text": "Una enana blanca", "why": "Es el resto que quedará cuando muera, no lo que es ahora."},
+        {"text": "Una estrella muy masiva que acabará en supernova", "why": "Para eso hacen falta unas 8 masas solares o más."},
+        {"text": "Una enana amarilla corriente, a mitad de su vida", "why": "Correcto. Lleva unos 4.600 millones de años fusionando hidrógeno."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 620" role="img" aria-labelledby="t">
+  <title id="t">Capas del Sol, del núcleo a la corona</title>
+  <style>
+    .bg{fill:#f6f8fc}.ink{fill:#16202e}.mut{fill:#586374}
+    .cor{fill:#f2b84b;fill-opacity:.18;stroke:#f2b84b;stroke-dasharray:5 4}
+    .chr{fill:none;stroke:#d9573b;stroke-width:3}.fot{fill:none;stroke:#ffd25e;stroke-width:3}
+    .cnv{fill:#e8893a}.rad{fill:#f2b84b}.nuc{fill:#fff1b8;stroke:#e8893a}
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    @media (prefers-color-scheme:dark){.bg{fill:#161d28}.ink{fill:#e5eaf1}.mut{fill:#98a3b4}}
+  </style>
+  <rect class="bg" width="360" height="620" rx="14"/>
+
+  <!-- Corte del Sol (proporciones aproximadas) -->
+  <circle class="cor" cx="180" cy="160" r="140"/>
+  <circle class="cnv" cx="180" cy="160" r="110"/>
+  <circle class="chr" cx="180" cy="160" r="113"/>
+  <circle class="fot" cx="180" cy="160" r="110"/>
+  <circle class="rad" cx="180" cy="160" r="77"/>
+  <circle class="nuc" cx="180" cy="160" r="27"/>
+
+  <!-- Leyenda -->
+  <g font-size="15">
+    <circle class="nuc" cx="34" cy="335" r="9"/>
+    <text class="ink" x="56" y="340" font-weight="600">Núcleo · 15 millones °C</text>
+    <text class="mut" x="56" y="358" font-size="13">Aquí el hidrógeno se fusiona en helio</text>
+
+    <circle class="rad" cx="34" cy="383" r="9"/>
+    <text class="ink" x="56" y="388" font-weight="600">Zona radiativa</text>
+    <text class="mut" x="56" y="406" font-size="13">La energía tarda hasta 170.000 años</text>
+
+    <circle class="cnv" cx="34" cy="431" r="9"/>
+    <text class="ink" x="56" y="436" font-weight="600">Zona convectiva</text>
+    <text class="mut" x="56" y="454" font-size="13">El gas sube y baja, como en una olla</text>
+
+    <circle class="fot" cx="34" cy="479" r="8"/>
+    <text class="ink" x="56" y="484" font-weight="600">Fotosfera · 5.500 °C</text>
+    <text class="mut" x="56" y="502" font-size="13">La «superficie» que vemos (no es sólida)</text>
+
+    <circle class="chr" cx="34" cy="527" r="8"/>
+    <text class="ink" x="56" y="532" font-weight="600">Cromosfera</text>
+    <text class="mut" x="56" y="550" font-size="13">Capa fina y rojiza</text>
+
+    <circle class="cor" cx="34" cy="575" r="9"/>
+    <text class="ink" x="56" y="580" font-weight="600">Corona · 2 millones °C</text>
+    <text class="mut" x="56" y="598" font-size="13">Más caliente que la superficie: un enigma</text>
+  </g>
+</svg>
