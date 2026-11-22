@@ -1,0 +1,21 @@
+# Comprueba cada semana que las fuentes de las lecciones siguen funcionando.
+# Si hay algún enlace roto, el workflow sale en rojo y GitHub avisa por correo.
+name: Enlaces de las fuentes
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"   # lunes 07:17 UTC (08:17 en invierno en España)
+  workflow_dispatch:        # botón "Run workflow" para lanzarlo a mano
+
+permissions:
+  contents: read            # solo necesita leer el repo
+
+jobs:
+  enlaces:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - run: go run ./cmd/checklinks
