@@ -6,6 +6,8 @@
 package content
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -69,10 +71,21 @@ type Source struct {
 }
 
 // Question es una pregunta tipo test. Answer es el índice de la opción correcta.
+// Key la calcula Load (ver QuestionKey): no se escribe en los JSON.
 type Question struct {
+	Key     string   `json:"key,omitempty"`
 	Q       string   `json:"q"`
 	Options []Option `json:"options"`
 	Answer  int      `json:"answer"`
+}
+
+// QuestionKey identifica una pregunta para el repaso: id de la lección + una
+// huella corta del enunciado. No usamos su posición porque, si se reordenan
+// las preguntas, el repaso apuntaría a otra sin que nadie se diera cuenta.
+// Si se corrige el enunciado, la pregunta cuenta como nueva.
+func QuestionKey(lessonID, q string) string {
+	sum := sha256.Sum256([]byte(strings.TrimSpace(q)))
+	return lessonID + "#" + hex.EncodeToString(sum[:4])
 }
 
 // Option es una respuesta posible y la explicación de por qué es (o no) correcta.
@@ -86,6 +99,22 @@ type Catalog struct {
 	Categories []Category
 	Lessons    []Lesson // ordenadas por categoría y número
 	byID       map[string]int
+	byKey      map[string]questionRef
+}
+
+type questionRef struct {
+	lesson string
+	index  int
+}
+
+// Question devuelve una pregunta por su Key, junto con su lección.
+func (c *Catalog) Question(key string) (Lesson, Question, bool) {
+	ref, ok := c.byKey[key]
+	if !ok {
+		return Lesson{}, Question{}, false
+	}
+	l, _ := c.Lesson(ref.lesson)
+	return l, l.Questions[ref.index], true
 }
 
 // Lesson devuelve una lección por su id.
@@ -115,7 +144,7 @@ func Load(fsys fs.FS) (*Catalog, error) {
 		known[c.ID] = true
 	}
 
-	cat := &Catalog{Categories: cats, byID: map[string]int{}}
+	cat := &Catalog{Categories: cats, byID: map[string]int{}, byKey: map[string]questionRef{}}
 	var problems []string
 	for _, c := range cats {
 		files, err := fs.Glob(fsys, path.Join(c.ID, "*.json"))
@@ -157,6 +186,17 @@ func Load(fsys fs.FS) (*Catalog, error) {
 			if _, dup := cat.byID[l.ID]; dup {
 				problems = append(problems, fmt.Sprintf("%s: id repetido %q", f, l.ID))
 				continue
+			}
+			for i := range l.Questions {
+				q := &l.Questions[i]
+				if q.Key != "" {
+					problems = append(problems, fmt.Sprintf("%s: pregunta %d: \"key\" se calcula solo, no lo escribas", f, i+1))
+				}
+				q.Key = QuestionKey(l.ID, q.Q)
+				if _, dup := cat.byKey[q.Key]; dup {
+					problems = append(problems, fmt.Sprintf("%s: pregunta %d repetida", f, i+1))
+				}
+				cat.byKey[q.Key] = questionRef{lesson: l.ID, index: i}
 			}
 			cat.byID[l.ID] = len(cat.Lessons)
 			cat.Lessons = append(cat.Lessons, l)

@@ -17,8 +17,9 @@ import (
 )
 
 const (
-	dailySize = 5
-	examSize  = 20
+	dailySize  = 5
+	examSize   = 20
+	reviewSize = 10 // preguntas como mucho por sesión de repaso
 )
 
 // Server agrupa lo que necesitan los manejadores HTTP.
@@ -40,6 +41,7 @@ func (s *Server) Handler() http.Handler {
 	mux.HandleFunc("POST /api/events", s.postEvent)
 	mux.HandleFunc("GET /api/daily", s.daily)
 	mux.HandleFunc("GET /api/exam/{category}", s.exam)
+	mux.HandleFunc("GET /api/review", s.review)
 	mux.HandleFunc("GET /media/{category}/{file}", s.media)
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, _ *http.Request) { w.Write([]byte("ok")) })
 	mux.Handle("GET /", http.FileServerFS(s.Web))
@@ -87,7 +89,7 @@ func (s *Server) getProgress(w http.ResponseWriter, _ *http.Request) {
 
 func (s *Server) postEvent(w http.ResponseWriter, r *http.Request) {
 	var e progress.Event
-	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 4096)).Decode(&e); err != nil {
+	if err := json.NewDecoder(http.MaxBytesReader(w, r.Body, 16<<10)).Decode(&e); err != nil {
 		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "JSON inválido"})
 		return
 	}
@@ -96,6 +98,7 @@ func (s *Server) postEvent(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, http.StatusBadRequest, map[string]string{"error": "referencia desconocida"})
 		return
 	}
+	e.Day = s.today() // el servidor decide qué día es, como en el reto diario
 	d, err := s.Progress.Apply(e)
 	if err != nil {
 		writeJSON(w, http.StatusBadRequest, map[string]string{"error": err.Error()})
@@ -105,6 +108,11 @@ func (s *Server) postEvent(w http.ResponseWriter, r *http.Request) {
 }
 
 func (s *Server) validRef(e progress.Event) bool {
+	for _, r := range e.Results {
+		if _, _, ok := s.Catalog.Question(r.Key); !ok {
+			return false
+		}
+	}
 	switch e.Type {
 	case "read", "quiz":
 		_, ok := s.Catalog.Lesson(e.Ref)
@@ -116,7 +124,7 @@ func (s *Server) validRef(e progress.Event) bool {
 			}
 		}
 		return false
-	case "daily":
+	case "daily", "review":
 		return e.Ref == s.today()
 	}
 	return false
@@ -223,4 +231,23 @@ func securityHeaders(next http.Handler) http.Handler {
 		h.Set("Content-Security-Policy", "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-ancestors 'none'")
 		next.ServeHTTP(w, r)
 	})
+}
+
+// review devuelve las preguntas que toca repasar hoy, las más atrasadas
+// primero. Si una pregunta ya no existe (se corrigió o se borró), se salta.
+func (s *Server) review(w http.ResponseWriter, _ *http.Request) {
+	date := s.today()
+	items := []QuizItem{}
+	pending := 0
+	for _, key := range s.Progress.Snapshot().Due(date) {
+		l, q, ok := s.Catalog.Question(key)
+		if !ok {
+			continue
+		}
+		pending++
+		if len(items) < reviewSize {
+			items = append(items, QuizItem{LessonID: l.ID, LessonTitle: l.Title, Question: q})
+		}
+	}
+	writeJSON(w, http.StatusOK, map[string]any{"date": date, "questions": items, "pending": pending})
 }

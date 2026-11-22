@@ -140,3 +140,51 @@ func TestExam(t *testing.T) {
 		t.Fatal("una categoría sin lecciones debe dar 404")
 	}
 }
+
+func TestReviewFlow(t *testing.T) {
+	ts, s := newTestServer(t)
+	l := s.Catalog.Lessons[0]
+	fallada, acertada := l.Questions[0].Key, l.Questions[1].Key
+	body := `{"type":"quiz","ref":"` + l.ID + `","score":9,"total":10,"results":[` +
+		`{"key":"` + fallada + `","correct":false},{"key":"` + acertada + `","correct":true}]}`
+	if code := post(t, ts.URL+"/api/events", body); code != 200 {
+		t.Fatalf("evento con respuestas: %d", code)
+	}
+
+	type repaso struct {
+		Date      string     `json:"date"`
+		Questions []QuizItem `json:"questions"`
+		Pending   int        `json:"pending"`
+	}
+	var hoy repaso
+	get(t, ts.URL+"/api/review", &hoy)
+	if hoy.Pending != 0 {
+		t.Fatal("una pregunta fallada hoy se repasa mañana, no hoy")
+	}
+
+	// Mañana (día 24 en Madrid) ya toca.
+	s.Now = func() time.Time { return time.Date(2026, 11, 24, 9, 0, 0, 0, time.UTC) }
+	var manana repaso
+	get(t, ts.URL+"/api/review", &manana)
+	if manana.Pending != 1 || len(manana.Questions) != 1 || manana.Questions[0].Key != fallada {
+		t.Fatalf("esperaba repasar solo la fallada, obtuve %+v", manana)
+	}
+
+	if code := post(t, ts.URL+"/api/events", `{"type":"review","ref":"2026-11-24","score":1,"total":1,"results":[{"key":"`+fallada+`","correct":true}]}`); code != 200 {
+		t.Fatalf("evento de repaso: %d", code)
+	}
+	var p progress.Data
+	get(t, ts.URL+"/api/progress", &p)
+	if it := p.Review[fallada]; it == nil || it.Box != 2 || it.Due != "2026-11-27" {
+		t.Fatalf("tras acertarla debía pasar a la caja 2 para dentro de 3 días: %+v", it)
+	}
+}
+
+func TestReviewRejectsUnknownQuestions(t *testing.T) {
+	ts, s := newTestServer(t)
+	id := s.Catalog.Lessons[0].ID
+	body := `{"type":"quiz","ref":"` + id + `","score":8,"total":10,"results":[{"key":"` + id + `#inventada","correct":false}]}`
+	if code := post(t, ts.URL+"/api/events", body); code != 400 {
+		t.Fatalf("una pregunta que no existe debe dar 400, obtuve %d", code)
+	}
+}
