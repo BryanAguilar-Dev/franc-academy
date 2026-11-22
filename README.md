@@ -48,6 +48,7 @@ iPhone / PC ──Tailscale──► Franc 127.0.0.1:8081
 | Carpeta | Qué hay |
 |---------|---------|
 | `cmd/academy/` | `main.go`: arranca el servidor |
+| `cmd/checklinks/` | Comprueba que las URLs de las fuentes siguen vivas (lo lanza cada lunes `.github/workflows/enlaces.yml`) |
 | `internal/content/` | Carga y valida las lecciones |
 | `internal/progress/` | Guarda el progreso en JSON (escritura atómica) |
 | `internal/server/` | Rutas HTTP y API |
