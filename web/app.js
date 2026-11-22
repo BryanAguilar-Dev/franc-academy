@@ -4,7 +4,7 @@
 //   api      → habla con el servidor Go (/api/...)
 //   state    → catálogo y progreso cargados en memoria
 //   views    → una función por pantalla; cada una devuelve HTML
-//   quiz     → el motor de preguntas que usan el test, el examen y el reto
+//   quiz     → el motor de preguntas que usan el test, el examen, el reto y el repaso
 //   router   → lee la parte "#/..." de la URL y elige la pantalla
 "use strict";
 
@@ -25,10 +25,11 @@ const api = {
     if (!r.ok) throw new Error((await r.json().catch(() => ({}))).error || `Error ${r.status}`);
     return r.json();
   },
-  async event(type, ref, score = 0, total = 0) {
+  // results: [{ key, correct }] de cada pregunta, para el repaso espaciado.
+  async event(type, ref, score = 0, total = 0, results = []) {
     const r = await fetch("/api/events", {
       method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ type, ref, score, total }),
+      body: JSON.stringify({ type, ref, score, total, results }),
     });
     if (!r.ok) throw new Error("No se pudo guardar el progreso");
     state.progress = await r.json();
@@ -91,13 +92,14 @@ const icon = (id) => `<svg width="22" height="22" viewBox="0 0 24 24" fill="none
 // ---------- pantallas ----------
 const views = {};
 
-views.home = () => {
+views.home = async () => {
   const all = state.catalog.lessons;
   const done = all.filter((l) => isDone(l.id)).length;
   const rec = recommendation();
   const cont = continuing();
   const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
   const dailyDone = state.progress.daily[today];
+  const review = await api.get("/api/review").catch(() => ({ pending: 0 })); // si falla, el inicio sigue funcionando
 
   const recCard = rec ? `
     <article class="card highlight">
@@ -117,6 +119,15 @@ views.home = () => {
         <a class="btn ghost" href="#/l/${esc(cont.id)}">Volver a la lección</a>
         <a class="btn" href="#/t/${esc(cont.id)}">Hacer el test</a>
       </div>
+    </article>` : "";
+
+  // Solo aparece si hoy toca repasar algo.
+  const reviewCard = review.pending ? `
+    <article class="card">
+      <p class="eyebrow">Repaso</p>
+      <h3>${review.pending === 1 ? "1 pregunta para repasar hoy" : `${review.pending} preguntas para repasar hoy`}</h3>
+      <p class="muted small">Preguntas que fallaste. Cuantas más veces las aciertes, más tardarán en volver.</p>
+      <div class="row"><a class="btn" href="#/repaso">Repasar</a></div>
     </article>` : "";
 
   const dailyCard = `
@@ -142,7 +153,7 @@ views.home = () => {
 
   return `
     <h1>Hola, ¿qué aprendemos hoy?</h1>
-    <div class="grid">${recCard}${contCard}${dailyCard}</div>
+    <div class="grid">${recCard}${reviewCard}${contCard}${dailyCard}</div>
     <section class="card" aria-labelledby="prog-h">
       <h2 id="prog-h">Tu progreso</h2>
       <div class="stats">
@@ -232,7 +243,7 @@ views.test = async (id) => {
     title: `Test: ${l.title}`,
     back: { href: `#/l/${id}`, label: "Volver a la lección" },
     questions: l.questions,
-    onFinish: (score, total) => api.event("quiz", id, score, total),
+    onFinish: (score, total, results) => api.event("quiz", id, score, total, results),
     finishText: (score, total) => {
       const passed = score >= PASS * total;
       return passed ? "Lección completada. Bien hecho." : `Necesitas ${Math.ceil(PASS * total)} aciertos para completarla. Repasa los fallos y vuelve a intentarlo cuando quieras.`;
@@ -248,7 +259,7 @@ views.exam = async (cat) => {
     title: `Examen: ${c.title}`,
     back: { href: `#/c/${cat}`, label: `Volver a ${c.title}` },
     questions: data.questions,
-    onFinish: (score, total) => api.event("exam", cat, score, total),
+    onFinish: (score, total, results) => api.event("exam", cat, score, total, results),
     finishText: (score, total) => (score >= PASS * total ? "Dominas esta categoría." : "Repasa las lecciones de las preguntas falladas."),
   });
 };
@@ -267,13 +278,32 @@ views.daily = async () => {
     intro: "Cinco preguntas, preferiblemente de lecciones que ya has leído. Cuenta el primer intento del día.",
     back: { href: "#/", label: "Inicio" },
     questions: data.questions,
-    onFinish: (score, total) => api.event("daily", data.date, score, total),
+    onFinish: (score, total, results) => api.event("daily", data.date, score, total, results),
     finishText: () => "Reto completado. Vuelve mañana.",
   });
 };
 
+views.review = async () => {
+  const data = await api.get("/api/review");
+  if (!data.questions.length) {
+    return `<div class="narrow"><h1>Repaso</h1>
+      <div class="card"><p>Hoy no tienes nada que repasar.</p>
+      <p class="muted small">Cuando falles una pregunta en un test, un examen o el reto, aparecerá aquí al día siguiente.</p>
+      <div class="row"><a class="btn" href="#/">Volver al inicio</a></div></div></div>`;
+  }
+  const left = data.pending - data.questions.length;
+  return quiz({
+    title: "Repaso",
+    intro: "Preguntas que fallaste. Si la aciertas, volverá dentro de más días; si la fallas, mañana otra vez.",
+    back: { href: "#/", label: "Inicio" },
+    questions: data.questions,
+    onFinish: (score, total, results) => api.event("review", data.date, score, total, results),
+    finishText: () => (left > 0 ? `Quedan ${left} más para hoy. Puedes seguir desde el inicio.` : "Repaso de hoy hecho."),
+  });
+};
+
 views.history = () => {
-  const label = { read: "Leíste", quiz: "Test", exam: "Examen", daily: "Reto diario" };
+  const label = { read: "Leíste", quiz: "Test", exam: "Examen", daily: "Reto diario", review: "Repaso" };
   const name = (e) => {
     if (e.type === "read" || e.type === "quiz") return state.catalog.lessons.find((l) => l.id === e.ref)?.title || e.ref;
     if (e.type === "exam") return categoryOf(e.ref)?.title || e.ref;
@@ -332,6 +362,7 @@ function quiz({ title, intro, back, questions, onFinish, finishText }) {
   });
   let i = 0, score = 0;
   const wrong = [];
+  const results = []; // { key, correct } por pregunta: lo usa el repaso espaciado
 
   mount = show;
   return `<div class="narrow" id="quiz"></div>`;
@@ -362,6 +393,7 @@ function quiz({ title, intro, back, questions, onFinish, finishText }) {
     const q = qs[i];
     const ok = chosen === q.answer;
     if (ok) score++; else wrong.push({ q, chosen });
+    if (q.key) results.push({ key: q.key, correct: ok });
     document.querySelectorAll(".option").forEach((b) => {
       const oi = Number(b.dataset.i);
       b.disabled = true;
@@ -381,7 +413,7 @@ function quiz({ title, intro, back, questions, onFinish, finishText }) {
 
   async function finish(root) {
     let saved = "";
-    try { await onFinish(score, qs.length); } catch (e) { saved = `<p class="feedback ko">${esc(e.message)}. Tu resultado no se ha guardado.</p>`; }
+    try { await onFinish(score, qs.length, results); } catch (e) { saved = `<p class="feedback ko">${esc(e.message)}. Tu resultado no se ha guardado.</p>`; }
     root.innerHTML = `
       <h1>${esc(title)}</h1>
       <div class="card">
@@ -411,6 +443,7 @@ const routes = [
   [/^#\/t\/([\w-]+)$/, (m) => views.test(m[1])],
   [/^#\/e\/([\w-]+)$/, (m) => views.exam(m[1])],
   [/^#\/reto$/, () => views.daily(), "#/reto"],
+  [/^#\/repaso$/, () => views.review()],
   [/^#\/historial$/, () => views.history(), "#/historial"],
   [/^#\/buscar(?:\?q=(.*))?$/, (m) => views.search(decodeURIComponent(m[1] || "")), "#/buscar"],
 ];
