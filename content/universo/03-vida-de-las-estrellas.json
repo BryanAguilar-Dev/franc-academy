@@ -1,0 +1,189 @@
+{
+  "id": "universo-03-estrellas",
+  "category": "universo",
+  "order": 3,
+  "title": "Vida y muerte de las estrellas",
+  "minutes": 9,
+  "intro": "Las estrellas parecen eternas, pero nacen, viven durante millones o miles de millones de años y mueren. Entender su ciclo de vida explica por qué el Sol brilla, qué le pasará en el futuro y algo sorprendente: de dónde salen los átomos de tu propio cuerpo.",
+  "illustration": {
+    "file": "03-estrellas.svg",
+    "alt": "Diagrama del ciclo de vida estelar. Una nube de gas forma una estrella. Si es como el Sol: gigante roja, nebulosa planetaria y enana blanca. Si tiene más de unas 8 masas solares: supergigante, supernova y estrella de neutrones o agujero negro.",
+    "caption": "La masa inicial decide el camino. El material expulsado vuelve a formar nuevas nubes."
+  },
+  "sections": [
+    {
+      "heading": "Nacer en una nube",
+      "body": [
+        "Las estrellas nacen en enormes nubes de gas (sobre todo hidrógeno) y polvo, de muchos años luz de tamaño. Cuando una zona de la nube se vuelve algo más densa, su propia gravedad empieza a atraer más material y la zona se contrae.",
+        "Al comprimirse, el gas se calienta. Se forma una protoestrella: una bola caliente que todavía no brilla por sí misma. Cuando el centro alcanza millones de grados, empieza la fusión nuclear y nace una estrella."
+      ]
+    },
+    {
+      "heading": "Una vida en equilibrio",
+      "body": [
+        "Durante la mayor parte de su vida, una estrella fusiona hidrógeno en helio en su núcleo. Esa reacción libera muchísima energía, que sale hacia fuera como presión y calor. La gravedad, en cambio, tira de todo hacia dentro.",
+        "Mientras las dos fuerzas se compensan, la estrella es estable. Esta etapa se llama secuencia principal y es la más larga de su vida. El Sol tiene unos 4.600 millones de años y pasará en total unos 10.000 millones en esta fase: está, más o menos, a mitad de su vida."
+      ],
+      "example": "Es como un globo aerostático en reposo: el aire caliente empuja hacia fuera y el peso tira hacia abajo. Si se apaga el quemador, se rompe el equilibrio."
+    },
+    {
+      "heading": "La masa lo decide todo",
+      "body": [
+        "Lo más importante para saber cómo vivirá y morirá una estrella es su masa inicial. Parece contradictorio, pero las estrellas más grandes viven menos: tienen más combustible, pero lo queman muchísimo más deprisa.",
+        "Una estrella muy masiva puede agotarse en unos pocos millones de años. Una estrella con la mitad de masa que el Sol consume su combustible tan despacio que puede durar más de 20.000 millones de años: más que la edad actual del universo."
+      ],
+      "example": "Un deportivo tiene un depósito más grande que un utilitario, pero si va siempre a fondo se queda sin gasolina antes. Las estrellas grandes son deportivos a fondo."
+    },
+    {
+      "heading": "El final de una estrella como el Sol",
+      "body": [
+        "Cuando se agota el hidrógeno del núcleo, el equilibrio se rompe. El núcleo se contrae y se calienta, y las capas exteriores se hinchan: la estrella se convierte en una gigante roja, de varias a unas cien veces su tamaño anterior.",
+        "Después expulsa suavemente sus capas externas, que forman una nube brillante llamada nebulosa planetaria. Lo que queda es el núcleo: una enana blanca, del tamaño aproximado de la Tierra pero tan densa que una cucharadita de su material pesaría más que una furgoneta.",
+        "La enana blanca ya no produce energía: se va enfriando muy despacio durante miles de millones de años. Ese será el destino del Sol."
+      ]
+    },
+    {
+      "heading": "El final de las estrellas gigantes",
+      "body": [
+        "Las estrellas de más de unas 8 veces la masa del Sol tienen un final mucho más violento. En su núcleo siguen fusionando elementos cada vez más pesados (carbono, oxígeno, silicio…) hasta llegar al hierro. Fusionar hierro ya no libera energía, así que el núcleo pierde su sostén y se desploma en una fracción de segundo.",
+        "El resultado es una supernova: una explosión que durante semanas puede brillar más que una galaxia entera. Del núcleo queda una estrella de neutrones (con más masa que el Sol comprimida en una esfera del tamaño de una ciudad) o, si es lo bastante masivo, un agujero negro."
+      ],
+      "example": "La nebulosa del Cangrejo es el resto de una supernova que astrónomos chinos registraron en el año 1054: durante semanas se pudo ver incluso de día."
+    },
+    {
+      "heading": "Somos polvo de estrellas",
+      "body": [
+        "El Big Bang solo produjo elementos ligeros, sobre todo hidrógeno y helio. El carbono de tus células, el oxígeno que respiras o el hierro de tu sangre se fabricaron después, en el interior de las estrellas.",
+        "Cuando las estrellas mueren, ya sea expulsando sus capas o explotando como supernovas, devuelven esos elementos al espacio. Allí se mezclan con nuevas nubes que formarán nuevas estrellas y planetas. El Sol, la Tierra y nosotros estamos hechos de ese material reciclado."
+      ]
+    }
+  ],
+  "curiosities": [
+    "Las nebulosas planetarias no tienen nada que ver con los planetas. Se llamaron así porque en los telescopios del siglo XVIII se veían como discos redondeados, parecidos a un planeta.",
+    "Una enana blanca que se enfriara del todo dejaría de brillar y sería una «enana negra». Se cree que todavía no existe ninguna: el universo no es lo bastante viejo para que una enana blanca haya tenido tiempo de enfriarse por completo.",
+    "Subrahmanyan Chandrasekhar calculó que un resto estelar de más de unas 1,4 masas solares no puede ser una enana blanca: su propia gravedad lo aplasta aún más. Ese límite lleva su nombre y le valió el Nobel de Física de 1983."
+  ],
+  "keyConcepts": [
+    {"term": "Fusión nuclear", "definition": "Unión de núcleos ligeros para formar otros más pesados, liberando energía. Es lo que hace brillar a las estrellas."},
+    {"term": "Secuencia principal", "definition": "Etapa larga y estable en la que la estrella fusiona hidrógeno en helio en su núcleo."},
+    {"term": "Gigante roja", "definition": "Fase en la que una estrella, tras agotar el hidrógeno del núcleo, se hincha y se enfría en su superficie."},
+    {"term": "Enana blanca", "definition": "Núcleo que queda de una estrella como el Sol: del tamaño de la Tierra, muy denso y sin producir energía."},
+    {"term": "Supernova", "definition": "Explosión de una estrella masiva al colapsar su núcleo. Dispersa elementos pesados por el espacio."},
+    {"term": "Estrella de neutrones", "definition": "Resto extremadamente denso de una supernova: más masa que el Sol en una esfera del tamaño de una ciudad."}
+  ],
+  "summary": [
+    "Las estrellas nacen cuando la gravedad contrae zonas densas de nubes de gas y polvo.",
+    "Durante la secuencia principal, la fusión del hidrógeno equilibra la gravedad.",
+    "La masa inicial determina la duración de la vida y el tipo de final.",
+    "Las estrellas como el Sol acaban como enanas blancas; las muy masivas, en supernovas que dejan estrellas de neutrones o agujeros negros.",
+    "Los elementos más pesados que el helio se fabricaron en las estrellas y se reciclan en nuevas generaciones de estrellas y planetas."
+  ],
+  "sources": [
+    {"title": "The Lives, Times, and Deaths of Stars", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/the-lives-times-and-deaths-of-stars/"},
+    {"title": "Stars", "publisher": "NASA Imagine the Universe", "url": "https://imagine.gsfc.nasa.gov/science/objects/stars1.html"},
+    {"title": "Supernovae", "publisher": "NASA Imagine the Universe", "url": "https://imagine.gsfc.nasa.gov/science/objects/supernovae1.html"},
+    {"title": "The Life and Death of Stars", "publisher": "NASA WMAP", "url": "https://map.gsfc.nasa.gov/universe/rel_stars.html"}
+  ],
+  "questions": [
+    {
+      "q": "¿Qué mantiene estable a una estrella durante la secuencia principal?",
+      "answer": 2,
+      "options": [
+        {"text": "Que no tiene gravedad", "why": "Las estrellas tienen una gravedad enorme; lo importante es lo que la compensa."},
+        {"text": "Que está hecha de materiales sólidos", "why": "Las estrellas son de gas muy caliente (plasma), no de materiales sólidos."},
+        {"text": "El equilibrio entre la gravedad, que tira hacia dentro, y la presión de la energía de la fusión, que empuja hacia fuera", "why": "Correcto. Mientras ambas se compensan, la estrella mantiene su tamaño y su brillo."},
+        {"text": "El campo magnético de la galaxia", "why": "El campo magnético galáctico no sostiene a las estrellas individualmente."}
+      ]
+    },
+    {
+      "q": "Una estrella de 20 masas solares y otra de 0,5 masas solares nacen a la vez. ¿Cuál se apagará antes?",
+      "answer": 0,
+      "options": [
+        {"text": "La de 20 masas solares, porque quema su combustible mucho más deprisa", "why": "Correcto. Tiene más combustible, pero lo consume a un ritmo enormemente mayor."},
+        {"text": "La de 0,5 masas solares, porque tiene menos combustible", "why": "Tiene menos combustible, pero lo gasta tan despacio que dura muchísimo más."},
+        {"text": "Las dos a la vez, porque nacieron juntas", "why": "La duración depende de la masa, no del momento de nacer."},
+        {"text": "Ninguna, las estrellas no se apagan", "why": "Todas las estrellas acaban agotando el combustible de su núcleo."}
+      ]
+    },
+    {
+      "q": "¿Qué le ocurrirá al Sol al final de su vida?",
+      "answer": 3,
+      "options": [
+        {"text": "Explotará como supernova", "why": "Para eso hacen falta unas 8 masas solares o más. El Sol no tiene suficiente masa."},
+        {"text": "Se convertirá en un agujero negro", "why": "Un agujero negro solo puede surgir del colapso de estrellas mucho más masivas."},
+        {"text": "Seguirá igual para siempre", "why": "Su hidrógeno se agotará: dentro de unos 5.000 millones de años saldrá de la secuencia principal."},
+        {"text": "Se hinchará como gigante roja y acabará como enana blanca", "why": "Correcto. Expulsará sus capas externas (nebulosa planetaria) y quedará su núcleo, que se enfriará lentamente."}
+      ]
+    },
+    {
+      "q": "¿Por qué la fusión se detiene al llegar al hierro en el núcleo de una estrella masiva?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque el hierro es sólido y no puede fusionarse", "why": "En el núcleo de una estrella todo está como plasma; el problema es energético."},
+        {"text": "Porque fusionar hierro ya no libera energía, y la estrella pierde lo que la sostenía", "why": "Correcto. Sin energía que empuje hacia fuera, la gravedad hace colapsar el núcleo: se desencadena la supernova."},
+        {"text": "Porque el hierro se escapa al espacio", "why": "El hierro se acumula en el núcleo; no se escapa hasta la explosión."},
+        {"text": "Porque se acaba el oxígeno necesario para quemarlo", "why": "La fusión nuclear no es una combustión: no necesita oxígeno."}
+      ]
+    },
+    {
+      "q": "¿De dónde procede la mayor parte del carbono y el oxígeno de tu cuerpo?",
+      "answer": 2,
+      "options": [
+        {"text": "Se formó directamente en el Big Bang", "why": "El Big Bang produjo sobre todo hidrógeno y helio, no carbono ni oxígeno."},
+        {"text": "Lo produjeron las plantas de la Tierra", "why": "Las plantas reorganizan átomos que ya existían, pero no crean elementos nuevos."},
+        {"text": "Se fabricó en el interior de estrellas que murieron antes de que se formara el Sol", "why": "Correcto. Las estrellas lo devolvieron al espacio al morir, y ese material formó el sistema solar."},
+        {"text": "Llegó desde otra galaxia en un meteorito", "why": "Los elementos se fabricaron en estrellas de nuestra propia galaxia y se mezclaron en la nube que formó el Sol."}
+      ]
+    },
+    {
+      "q": "¿Qué es una enana blanca?",
+      "answer": 0,
+      "options": [
+        {"text": "El núcleo que queda de una estrella como el Sol: del tamaño de la Tierra y muy denso", "why": "Correcto. Ya no produce energía y se enfría lentamente."},
+        {"text": "Una estrella recién nacida que aún no brilla", "why": "Eso es una protoestrella, al comienzo de la vida, no al final."},
+        {"text": "Un planeta helado muy brillante", "why": "No es un planeta: es el resto de una estrella."},
+        {"text": "Una estrella pequeña que acaba de empezar a fusionar hidrógeno", "why": "Una estrella pequeña en la secuencia principal es una enana roja, no una enana blanca."}
+      ]
+    },
+    {
+      "q": "¿Por qué se cree que todavía no existen enanas negras?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque son invisibles y nunca las podremos detectar", "why": "Aunque fueran difíciles de ver, el motivo de que no existan es otro."},
+        {"text": "Porque las enanas blancas siempre explotan antes", "why": "La mayoría de las enanas blancas no explotan: simplemente se enfrían."},
+        {"text": "Porque solo se forman en otras galaxias", "why": "No hay ninguna razón para que se formen solo fuera de la Vía Láctea."},
+        {"text": "Porque enfriarse por completo lleva más tiempo que la edad actual del universo", "why": "Correcto. Las enanas blancas se enfrían tan despacio que ninguna ha tenido tiempo aún."}
+      ]
+    },
+    {
+      "q": "¿Por qué una nebulosa planetaria se llama así?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque en ella se están formando planetas", "why": "Es la idea más tentadora, pero errónea: es material expulsado por una estrella moribunda."},
+        {"text": "Por su aspecto redondeado en los telescopios antiguos, parecido a un planeta", "why": "Correcto. El nombre es un error histórico que se ha mantenido."},
+        {"text": "Porque está formada por restos de planetas destruidos", "why": "Está formada por las capas externas de la estrella, no por planetas."},
+        {"text": "Porque solo aparece en estrellas con planetas", "why": "No depende de que la estrella tenga planetas."}
+      ]
+    },
+    {
+      "q": "Si una supernova estalla en una galaxia lejana, ¿por qué podemos verla aunque sea una sola estrella?",
+      "answer": 0,
+      "options": [
+        {"text": "Porque durante semanas puede brillar tanto como una galaxia entera", "why": "Correcto. Esa enorme luminosidad permite detectarlas a distancias gigantescas."},
+        {"text": "Porque las supernovas solo ocurren cerca de la Tierra", "why": "Se observan supernovas en galaxias a miles de millones de años luz."},
+        {"text": "Porque su luz viaja más rápido que la de las estrellas normales", "why": "Toda la luz viaja a la misma velocidad; la diferencia es la cantidad de luz."},
+        {"text": "Porque la explosión empuja la estrella hacia nosotros", "why": "La estrella no se acerca; lo que cambia es cuánta luz emite."}
+      ]
+    },
+    {
+      "q": "Ordena correctamente la vida de una estrella como el Sol:",
+      "answer": 2,
+      "options": [
+        {"text": "Enana blanca → secuencia principal → gigante roja → nube de gas", "why": "La enana blanca es el final, no el principio."},
+        {"text": "Nube de gas → supernova → enana blanca → gigante roja", "why": "Una estrella como el Sol no acaba en supernova."},
+        {"text": "Nube de gas → protoestrella → secuencia principal → gigante roja → enana blanca", "why": "Correcto. Ese es el camino de las estrellas de masa parecida a la del Sol."},
+        {"text": "Protoestrella → gigante roja → secuencia principal → estrella de neutrones", "why": "La gigante roja llega después de la secuencia principal, y el Sol no dejará una estrella de neutrones."}
+      ]
+    }
+  ]
+}

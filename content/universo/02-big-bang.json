@@ -1,0 +1,188 @@
+{
+  "id": "universo-02-big-bang",
+  "category": "universo",
+  "order": 2,
+  "title": "El Big Bang: cómo sabemos que el universo tuvo un principio",
+  "minutes": 9,
+  "intro": "Casi todo el mundo ha oído hablar del Big Bang, pero muy poca gente sabe qué dice exactamente esta teoría y, sobre todo, cómo llegaron los científicos a ella. En esta lección vas a ver las pistas que llevaron a la conclusión de que el universo tiene unos 13.800 millones de años, y a deshacer la idea equivocada más común: que fue una explosión.",
+  "illustration": {
+    "file": "02-big-bang.svg",
+    "alt": "Línea del tiempo del universo: Big Bang, primeros núcleos en los primeros minutos, luz liberada a los 380.000 años, primeras estrellas hacia los 400 millones de años y hoy, 13.800 millones de años.",
+    "caption": "Las etapas principales de la historia del universo (escala no proporcional)."
+  },
+  "sections": [
+    {
+      "heading": "Primera pista: las galaxias se alejan",
+      "body": [
+        "A principios del siglo XX, el astrónomo Vesto Slipher estudió la luz de unas manchas difusas del cielo, que luego resultaron ser galaxias. Descubrió que la mayoría tenían la luz desplazada hacia el rojo. Igual que la sirena de una ambulancia suena más grave cuando se aleja, ese «enrojecimiento» indica que la fuente se aleja de nosotros.",
+        "En 1927 el sacerdote y astrónomo belga Georges Lemaître propuso que el universo se está expandiendo. En 1929 Edwin Hubble publicó medidas que lo confirmaban: cuanto más lejos está una galaxia, más rápido se aleja. Es lo que hoy se llama ley de Hubble-Lemaître."
+      ],
+      "example": "Piensa en un bizcocho con pasas creciendo en el horno. Desde cualquier pasa, todas las demás se alejan, y las que están más lejos se alejan más rápido, porque hay más masa creciendo entre ellas. Ninguna pasa es el centro."
+    },
+    {
+      "heading": "Rebobinar la película",
+      "body": [
+        "Si hoy las galaxias se separan, en el pasado estaban más juntas. Si rebobinamos lo suficiente, todo lo que vemos estaba concentrado en un estado extremadamente denso y caliente. Eso es el Big Bang: no el momento de una explosión, sino ese estado inicial caliente y denso a partir del cual el universo se expande y se enfría.",
+        "Con la velocidad de expansión y otras medidas se puede calcular cuánto tiempo hace de ese estado. Las misiones WMAP (NASA) y Planck (ESA) lo fijaron en unos 13.800 millones de años, con un margen de error muy pequeño."
+      ]
+    },
+    {
+      "heading": "No fue una explosión en el espacio",
+      "body": [
+        "La imagen de una bomba que estalla en un punto y lanza materia hacia fuera es engañosa. En una explosión hay un centro y un espacio vacío alrededor. En el Big Bang no hay centro: es el propio espacio el que se estira, en todas partes a la vez.",
+        "Por eso, miremos hacia donde miremos, vemos las galaxias lejanas alejándose. No estamos en un lugar especial: cualquier observador, en cualquier galaxia, vería lo mismo."
+      ],
+      "example": "Dibuja puntos en un globo y ínflalo. Cada punto ve a los demás alejarse, pero los puntos no se mueven por la goma: es la goma la que se estira. Así se expande el espacio."
+    },
+    {
+      "heading": "Segunda pista: el eco luminoso del principio",
+      "body": [
+        "Al principio el universo era tan caliente que los átomos no podían existir: había un «caldo» de partículas en el que la luz rebotaba sin parar, como en una niebla espesa. Unos 380.000 años después del Big Bang se enfrió lo suficiente para que se formaran los primeros átomos. La niebla se disipó y la luz pudo viajar libremente por primera vez.",
+        "Esa luz sigue llegándonos hoy desde todas las direcciones. La expansión la ha estirado hasta convertirla en microondas, a una temperatura de solo 2,7 grados por encima del cero absoluto. Se llama fondo cósmico de microondas.",
+        "La descubrieron por casualidad Arno Penzias y Robert Wilson a mediados de los años sesenta: detectaban un ruido en su antena que no desaparecía hicieran lo que hicieran. Era el resplandor del universo joven, y les valió el Premio Nobel de Física de 1978."
+      ],
+      "example": "Es como mirar una nube desde abajo: no puedes ver a través de ella, solo su superficie. El fondo de microondas es la «superficie» más lejana que podemos ver con luz: el momento en que el universo se volvió transparente."
+    },
+    {
+      "heading": "Tercera pista: la receta química del universo",
+      "body": [
+        "La teoría predice que en los primeros minutos, cuando todo estaba a temperaturas de miles de millones de grados, se formaron los núcleos de los elementos más ligeros: sobre todo hidrógeno y helio. Los elementos más pesados, como el carbono o el hierro, llegarían mucho después, fabricados en las estrellas.",
+        "Las cantidades de helio que se observan en el universo coinciden con lo que predicen los cálculos. Que una teoría acierte en una predicción concreta y medible es una de las mejores señales de que va por buen camino."
+      ]
+    },
+    {
+      "heading": "Lo que el Big Bang no explica (todavía)",
+      "body": [
+        "La teoría describe muy bien cómo evolucionó el universo desde una fracción de segundo después del inicio. Pero no dice qué lo causó ni si hubo algo «antes»: con la física actual, esas preguntas aún no tienen respuesta comprobada.",
+        "Tampoco sabemos todavía de qué están hechas la materia oscura y la energía oscura, que forman la mayor parte del universo. Que una teoría tenga preguntas abiertas no la invalida: así avanza la ciencia."
+      ]
+    }
+  ],
+  "curiosities": [
+    "El nombre «Big Bang» lo popularizó el astrónomo Fred Hoyle en 1949, en un programa de radio de la BBC. Hoyle defendía una teoría rival y usó la expresión de forma algo burlona. El nombre triunfó; su teoría, no.",
+    "Penzias y Wilson pensaron al principio que el ruido de su antena lo causaban los excrementos de las palomas que anidaban en ella. Las limpiaron y el ruido siguió allí.",
+    "Las pequeñísimas diferencias de temperatura del fondo de microondas, de millonésimas de grado, son las «semillas» de las que crecieron las galaxias. El satélite COBE las detectó por primera vez en 1992."
+  ],
+  "keyConcepts": [
+    {"term": "Big Bang", "definition": "Teoría según la cual el universo evolucionó desde un estado muy caliente y denso, expandiéndose y enfriándose durante unos 13.800 millones de años."},
+    {"term": "Expansión del universo", "definition": "El espacio entre las galaxias lejanas aumenta con el tiempo; no hay un centro de la expansión."},
+    {"term": "Desplazamiento al rojo", "definition": "Estiramiento de la luz de un objeto que se aleja, que la desplaza hacia colores más rojos."},
+    {"term": "Ley de Hubble-Lemaître", "definition": "Cuanto más lejos está una galaxia, más rápido se aleja de nosotros."},
+    {"term": "Fondo cósmico de microondas", "definition": "Luz liberada unos 380.000 años después del Big Bang, que hoy nos llega de todas direcciones a unos 2,7 K."}
+  ],
+  "summary": [
+    "Las galaxias lejanas se alejan, y más rápido cuanto más lejos están: el universo se expande.",
+    "Al rebobinar la expansión se llega a un estado inicial muy caliente y denso, hace unos 13.800 millones de años.",
+    "El Big Bang no fue una explosión en un punto: es el propio espacio el que se expande, en todas partes.",
+    "El fondo cósmico de microondas y la cantidad de helio del universo son pruebas clave de la teoría.",
+    "La teoría no explica qué hubo «antes» ni la naturaleza de la materia y la energía oscuras."
+  ],
+  "sources": [
+    {"title": "Astronomy 2e, 26.5 The Expanding Universe", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/26-5-the-expanding-universe"},
+    {"title": "Astronomy 2e, 29.4 The Cosmic Microwave Background", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/29-4-the-cosmic-microwave-background"},
+    {"title": "Planck reveals an almost perfect Universe", "publisher": "Agencia Espacial Europea (ESA)", "url": "https://www.esa.int/Science_Exploration/Space_Science/Planck/Planck_reveals_an_almost_perfect_Universe"},
+    {"title": "WMAP Mission Overview", "publisher": "NASA Science", "url": "https://science.nasa.gov/mission/wmap/wmap-overview/"}
+  ],
+  "questions": [
+    {
+      "q": "¿Qué observación llevó a pensar que el universo se está expandiendo?",
+      "answer": 1,
+      "options": [
+        {"text": "Que las estrellas cercanas se mueven en círculos", "why": "El movimiento de las estrellas dentro de la galaxia no indica expansión del universo."},
+        {"text": "Que las galaxias lejanas se alejan, y más rápido cuanto más lejos están", "why": "Correcto. Es la ley de Hubble-Lemaître, la primera gran pista de la expansión."},
+        {"text": "Que el Sol se está alejando de la Tierra", "why": "La distancia Tierra-Sol es estable a escala humana y no tiene relación con la expansión cósmica."},
+        {"text": "Que la Vía Láctea se hace más grande cada año", "why": "Las galaxias se mantienen unidas por su gravedad; lo que crece es el espacio entre galaxias lejanas."}
+      ]
+    },
+    {
+      "q": "¿Por qué es incorrecto imaginar el Big Bang como una bomba que estalla en un punto del espacio?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque no hizo ruido", "why": "Es cierto que en el espacio no se propaga el sonido como en el aire, pero no es el error de fondo."},
+        {"text": "Porque fue demasiado pequeño para llamarlo explosión", "why": "El tamaño no es el problema; el problema es la idea de un centro y un espacio preexistente."},
+        {"text": "Porque ocurrió hace demasiado tiempo", "why": "La antigüedad no cambia la naturaleza del fenómeno."},
+        {"text": "Porque no tiene centro: es el propio espacio el que se expande en todas partes", "why": "Correcto. Una explosión lanza materia por un espacio que ya existe; en el Big Bang se estira el espacio mismo."}
+      ]
+    },
+    {
+      "q": "En el modelo del bizcocho con pasas, ¿qué representan las pasas y qué la masa?",
+      "answer": 0,
+      "options": [
+        {"text": "Las pasas son galaxias y la masa es el espacio que crece entre ellas", "why": "Correcto. Las pasas no se mueven por la masa; se separan porque la masa crece."},
+        {"text": "Las pasas son estrellas y la masa es la Vía Láctea", "why": "Dentro de una galaxia la gravedad mantiene unidas las estrellas; la analogía habla de galaxias."},
+        {"text": "Las pasas son átomos y la masa es la luz", "why": "La analogía no trata de átomos ni de luz."},
+        {"text": "Las pasas son planetas y la masa es el Sol", "why": "El sistema solar no se expande; está unido por la gravedad del Sol."}
+      ]
+    },
+    {
+      "q": "¿Qué es el fondo cósmico de microondas?",
+      "answer": 2,
+      "options": [
+        {"text": "La radiación que emiten los hornos microondas acumulada en la atmósfera", "why": "Comparte la palabra «microondas», pero no tiene nada que ver con aparatos humanos."},
+        {"text": "La luz del Sol reflejada por los planetas", "why": "Viene de todas direcciones por igual y es muchísimo más antigua que el Sol."},
+        {"text": "La luz liberada cuando el universo se volvió transparente, unos 380.000 años tras el Big Bang", "why": "Correcto. La expansión la ha estirado hasta las microondas y la ha enfriado a unos 2,7 K."},
+        {"text": "El calor que sale del centro de la Vía Láctea", "why": "No procede de nuestra galaxia: llega uniformemente desde todo el cielo."}
+      ]
+    },
+    {
+      "q": "¿Por qué el universo no era transparente durante sus primeros 380.000 años?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque aún no existía la luz", "why": "Había muchísima luz; el problema es que no podía viajar libremente."},
+        {"text": "Porque la luz chocaba constantemente con las partículas sueltas, como en una niebla", "why": "Correcto. Hasta que se formaron los átomos, la luz rebotaba sin parar y no podía avanzar."},
+        {"text": "Porque estaba lleno de polvo de estrellas muertas", "why": "Aún no se habían formado estrellas; esas llegaron cientos de millones de años después."},
+        {"text": "Porque era demasiado pequeño para que la luz cupiera", "why": "No es una cuestión de espacio, sino de interacción entre la luz y la materia."}
+      ]
+    },
+    {
+      "q": "Penzias y Wilson detectaron un ruido en su antena que no desaparecía. ¿Por qué fue tan importante?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque demostró que la antena estaba mal construida", "why": "Eso pensaron al principio, pero revisaron la antena y el ruido seguía allí."},
+        {"text": "Porque era la primera señal de una civilización extraterrestre", "why": "No era una señal artificial: era una radiación natural uniforme de todo el cielo."},
+        {"text": "Porque venía del Sol y permitió estudiarlo", "why": "Llegaba desde todas las direcciones por igual, no desde el Sol."},
+        {"text": "Porque era el resplandor del universo joven predicho por la teoría del Big Bang", "why": "Correcto. Fue una de las pruebas más fuertes de la teoría y les valió el Nobel de 1978."}
+      ]
+    },
+    {
+      "q": "¿Qué elementos se formaron principalmente en los primeros minutos del universo?",
+      "answer": 0,
+      "options": [
+        {"text": "Hidrógeno y helio", "why": "Correcto. Los elementos ligeros se formaron al principio; la cantidad de helio observada coincide con la teoría."},
+        {"text": "Carbono y oxígeno", "why": "Estos elementos se fabricaron mucho después, en el interior de las estrellas."},
+        {"text": "Hierro y oro", "why": "Son elementos pesados que requieren estrellas y explosiones estelares."},
+        {"text": "Todos los elementos de la tabla periódica a la vez", "why": "En los primeros minutos solo hubo tiempo y condiciones para formar los más ligeros."}
+      ]
+    },
+    {
+      "q": "Desde cualquier galaxia, las demás galaxias lejanas parecen alejarse. ¿Qué significa esto?",
+      "answer": 2,
+      "options": [
+        {"text": "Que la Vía Láctea es el centro del universo", "why": "Si cualquier galaxia ve lo mismo, ninguna es el centro."},
+        {"text": "Que las demás galaxias huyen de nosotros", "why": "No huyen de nadie en particular: todas se separan de todas."},
+        {"text": "Que la expansión no tiene un centro: ocurre en todas partes a la vez", "why": "Correcto. Como los puntos de un globo que se infla, cada uno ve alejarse a los demás."},
+        {"text": "Que el universo está a punto de contraerse", "why": "Que se alejen indica expansión, no contracción."}
+      ]
+    },
+    {
+      "q": "¿Cuál de estas preguntas NO responde la teoría del Big Bang?",
+      "answer": 1,
+      "options": [
+        {"text": "Cuánta edad tiene el universo", "why": "Sí la responde: unos 13.800 millones de años, según WMAP y Planck."},
+        {"text": "Qué causó el estado inicial o qué hubo antes", "why": "Correcto. La teoría describe la evolución desde un instante muy temprano, pero no su causa."},
+        {"text": "Por qué existe el fondo cósmico de microondas", "why": "Sí lo explica: es la luz liberada cuando se formaron los primeros átomos."},
+        {"text": "Por qué abundan el hidrógeno y el helio", "why": "Sí lo explica: se formaron en los primeros minutos."}
+      ]
+    },
+    {
+      "q": "¿Por qué la coincidencia entre el helio previsto y el observado refuerza la teoría?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque el helio es un gas muy común en la Tierra", "why": "En la Tierra el helio es escaso; además, la prueba se refiere al universo en conjunto."},
+        {"text": "Porque demuestra que el Sol se formó en el Big Bang", "why": "El Sol se formó mucho después, hace unos 4.600 millones de años."},
+        {"text": "Porque así se demuestra que la teoría ya no tiene preguntas abiertas", "why": "Una predicción acertada refuerza la teoría, pero no cierra todas las preguntas."},
+        {"text": "Porque una teoría que acierta una predicción concreta y medible gana credibilidad", "why": "Correcto. La ciencia valora las teorías que hacen predicciones comprobables y aciertan."}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+services:
+  academy:
+    build: .
+    image: franc-academy:latest
+    container_name: franc-academy
+    restart: unless-stopped
+    # Solo escucha dentro de Franc (127.0.0.1). Se publica en la tailnet con
+    # Tailscale, igual que Finanzas. El 8080 lo usa Finanzas.
+    ports:
+      - "127.0.0.1:8081:8081"
+    environment:
+      TZ: Europe/Madrid
+    volumes:
+      - academy-data:/data   # aquí vive progress.json
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  academy-data:

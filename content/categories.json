@@ -1,0 +1,8 @@
+[
+  {"id": "universo", "order": 1, "icon": "universo", "title": "Universo y astronomía", "description": "Estrellas, planetas, galaxias y la historia del cosmos."},
+  {"id": "ciencia", "order": 2, "icon": "ciencia", "title": "Ciencia y naturaleza", "description": "Física, química, biología y el planeta Tierra."},
+  {"id": "historia", "order": 3, "icon": "historia", "title": "Historia y civilizaciones", "description": "Cómo hemos llegado hasta aquí."},
+  {"id": "mente", "order": 4, "icon": "mente", "title": "Cerebro y psicología", "description": "Cómo pensamos, recordamos y decidimos."},
+  {"id": "tecnologia", "order": 5, "icon": "tecnologia", "title": "Tecnología e inteligencia artificial", "description": "Las máquinas que usamos y cómo funcionan."},
+  {"id": "cultura", "order": 6, "icon": "cultura", "title": "Cultura general", "description": "Arte, lenguas, ideas y el mundo que compartimos."}
+]

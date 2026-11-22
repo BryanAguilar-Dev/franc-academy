@@ -1,0 +1,68 @@
+# Cómo escribir una lección
+
+Cada lección es un archivo `content/<categoría>/NN-nombre.json`. El servidor
+lo encuentra solo. Después de añadirlo, ejecuta `go test ./...`: si falta algo,
+el test te dice qué.
+
+## Estructura
+
+```json
+{
+  "id": "universo-04-sol",          // único, sin espacios
+  "category": "universo",           // debe coincidir con la carpeta
+  "order": 4,                       // posición dentro de la categoría
+  "title": "…",
+  "minutes": 8,                     // entre 5 y 10
+  "intro": "…",
+  "illustration": {                 // opcional: SVG en la misma carpeta
+    "file": "04-sol.svg", "alt": "descripción para lectores de pantalla", "caption": "…"
+  },
+  "sections": [                     // mínimo 3, con al menos 2 ejemplos
+    { "heading": "…", "body": ["párrafo", "párrafo"], "example": "opcional" }
+  ],
+  "curiosities": ["…", "…"],        // mínimo 2
+  "keyConcepts": [{ "term": "…", "definition": "…" }],   // mínimo 3
+  "summary": ["…", "…", "…"],       // mínimo 3
+  "sources": [{ "title": "…", "publisher": "…", "url": "https://…" }],  // mínimo 2
+  "questions": [                    // exactamente 10
+    {
+      "q": "…",
+      "answer": 2,                  // índice de la opción correcta (empieza en 0)
+      "options": [                  // 3 o 4, cada una con su explicación
+        { "text": "…", "why": "por qué no es correcta" },
+        { "text": "…", "why": "…" },
+        { "text": "…", "why": "Correcto. …" },
+        { "text": "…", "why": "…" }
+      ]
+    }
+  ]
+}
+```
+
+(Los comentarios `//` son solo para esta guía: en el archivo real no se permiten.)
+
+## Reglas de calidad
+
+1. **Original.** Se investiga en las fuentes y se redacta con palabras propias.
+   Nunca se copian párrafos.
+2. **Nada inventado.** Cada dato, fecha o cifra importante debe estar en alguna
+   de las fuentes citadas o ser conocimiento consolidado. Ante la duda, se quita.
+3. **Fuentes fiables y enlazables:** NASA, ESA, OpenStax, Khan Academy, MIT OCW,
+   universidades, museos, divulgación de calidad.
+4. **Para aprender, no para memorizar datos.** Cada apartado explica un porqué.
+   Los ejemplos conectan con la vida cotidiana.
+5. **Preguntas que comprueban comprensión.** Evita "¿en qué año…?" salvo que la
+   fecha importe. Prefiere "¿por qué…?", "¿qué pasaría si…?", "¿qué significa…?".
+   Una sola respuesta claramente correcta; las incorrectas, plausibles; cada
+   opción explica por qué es o no correcta.
+6. **Varía la posición de la respuesta correcta.** El test falla si más de 5 de
+   10 están en la misma posición (además, la app mezcla las opciones).
+7. **Español de España**, frases cortas, para un adulto sin estudios previos del tema.
+8. **Números en español:** coma decimal, punto de miles, y cuidado con
+   "billion" (inglés, 10⁹) frente a "billón" (español, 10¹²).
+
+## Ilustraciones
+
+SVG simples hechos a mano, con `<title>`, un `alt` descriptivo y colores que
+funcionen en modo claro y oscuro (con `@media (prefers-color-scheme: dark)`
+dentro del propio SVG). Nada de imágenes copiadas sin licencia.

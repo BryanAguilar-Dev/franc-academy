@@ -1,0 +1,189 @@
+{
+  "id": "universo-01-escala",
+  "category": "universo",
+  "order": 1,
+  "title": "Distancias imposibles: la escala del universo",
+  "minutes": 8,
+  "intro": "Decir que el universo es «muy grande» no ayuda mucho: nuestro cerebro no está hecho para imaginar millones de kilómetros. En esta lección vas a aprender las herramientas que usan los astrónomos para medir el cosmos y, sobre todo, a hacerte una idea real de sus tamaños con comparaciones que sí podemos imaginar.",
+  "illustration": {
+    "file": "01-escala.svg",
+    "alt": "Escalera de distancias medidas en tiempo de viaje de la luz: Luna 1,3 segundos, Sol 8 minutos, Próxima Centauri 4,2 años, centro de la Vía Láctea 26.000 años, Andrómeda 2,5 millones de años.",
+    "caption": "Cada peldaño es mucho más grande que el anterior. Por eso los astrónomos miden en «tiempo de luz»."
+  },
+  "sections": [
+    {
+      "heading": "El problema de los kilómetros",
+      "body": [
+        "El kilómetro funciona bien en la Tierra: entre Madrid y Barcelona hay unos 500 km en línea recta. Pero en cuanto salimos del planeta las cifras se disparan. La Luna está a unos 384.000 km y el Sol a unos 150 millones de km.",
+        "Si seguimos hacia las estrellas, los ceros se acumulan tan rápido que los números dejan de significar algo. Por eso la astronomía usa unidades más grandes, igual que no medimos la distancia entre ciudades en milímetros."
+      ],
+      "example": "Escribir la distancia a la estrella más cercana en kilómetros es como dar la distancia Madrid–Barcelona en milímetros: correcto, pero inútil para hacerse una idea."
+    },
+    {
+      "heading": "La unidad astronómica: la regla del sistema solar",
+      "body": [
+        "Dentro del sistema solar se usa la unidad astronómica (UA): la distancia media entre la Tierra y el Sol, unos 150 millones de km. Es cómoda porque compara todo con algo conocido: «a qué distancia está esto, comparado con nosotros y el Sol».",
+        "Con esta regla, Júpiter está a unas 5 UA del Sol y Neptuno a unas 30 UA. De un vistazo ves que Neptuno está seis veces más lejos que Júpiter, algo que con cifras de miles de millones de kilómetros cuesta mucho más ver."
+      ]
+    },
+    {
+      "heading": "El año luz: medir distancias con tiempo",
+      "body": [
+        "Más allá del sistema solar hasta la UA se queda pequeña. Entonces se usa la luz como regla. La luz viaja en el vacío a unos 300.000 km por segundo: es lo más rápido que existe.",
+        "Un año luz es la distancia que recorre la luz en un año: unos 9,46 billones de kilómetros (un 9 seguido de doce cifras). A pesar de la palabra «año», es una distancia, no un tiempo.",
+        "La ventaja es que ahora hablamos de cuánto tarda la luz en llegar: a la Luna, 1,3 segundos; al Sol, unos 8 minutos; a Próxima Centauri, la estrella más cercana después del Sol, unos 4,2 años."
+      ],
+      "example": "Cuando una sonda en Marte envía una foto, la señal (que viaja a la velocidad de la luz) tarda varios minutos en llegar. Por eso los rovers no se pueden conducir en directo con un mando: el retraso lo haría imposible."
+    },
+    {
+      "heading": "Mirar lejos es mirar al pasado",
+      "body": [
+        "Como la luz tarda en llegar, nunca vemos las cosas como son ahora, sino como eran cuando salió esa luz. Al Sol lo vemos como era hace 8 minutos y a Próxima Centauri como era hace algo más de 4 años.",
+        "Esto convierte a los telescopios en máquinas del tiempo. Cuanto más lejos miramos, más antiguo es lo que vemos. Gracias a ello los astrónomos pueden estudiar cómo era el universo cuando era joven, observando objetos muy lejanos."
+      ],
+      "example": "Si el Sol se apagara de golpe, seguiríamos viéndolo brillar durante unos 8 minutos, porque la última luz que emitió aún estaría de camino."
+    },
+    {
+      "heading": "Nuestra dirección cósmica",
+      "body": [
+        "La Tierra gira alrededor del Sol. El Sol es una de entre 100.000 y 400.000 millones de estrellas de la Vía Láctea, una galaxia en forma de disco de unos 100.000 años luz de diámetro. Estamos a unos 26.000 años luz de su centro, en las «afueras», y el Sol tarda unos 240 millones de años en dar una vuelta completa a la galaxia.",
+        "La gran galaxia vecina, Andrómeda, está a unos 2,5 millones de años luz. Y Andrómeda es solo una de los miles de millones de galaxias que hay en el universo observable."
+      ]
+    },
+    {
+      "heading": "Una maqueta para imaginarlo",
+      "body": [
+        "Hagamos un modelo a escala. Si el Sol fuera una bola de 1 metro de diámetro, la Tierra sería un garbanzo de unos 9 milímetros situado a unos 107 metros: más o menos la longitud de un campo de fútbol.",
+        "En esa misma maqueta, Neptuno estaría a unos 3 kilómetros. ¿Y Próxima Centauri? A unos 29.000 kilómetros: casi tres cuartas partes de la vuelta a la Tierra. Lo que más hay en el universo, con diferencia, es espacio vacío."
+      ],
+      "example": "Pon una pelota grande en la portería de un campo de fútbol y un garbanzo en la otra portería: ese es el Sol y la Tierra a escala. La siguiente estrella estaría en otro continente."
+    }
+  ],
+  "curiosities": [
+    "En español, «billón» significa un millón de millones (12 ceros), pero en inglés «billion» son solo mil millones (9 ceros). Por eso los 5,88 trillion miles de los textos en inglés son 5,88 billones de millas en español. Es una fuente clásica de errores en las traducciones.",
+    "El primer astrónomo que midió la distancia a una estrella fue Friedrich Bessel, en 1838. Antes de eso nadie sabía si las estrellas estaban a meses o a milenios de luz.",
+    "Andrómeda es el objeto más lejano que puede verse a simple vista desde un lugar oscuro: la luz que llega a tus ojos salió de allí hace unos 2,5 millones de años, cuando aún no existía nuestra especie."
+  ],
+  "keyConcepts": [
+    {"term": "Unidad astronómica (UA)", "definition": "Distancia media entre la Tierra y el Sol, unos 150 millones de km. Se usa dentro del sistema solar."},
+    {"term": "Velocidad de la luz", "definition": "Unos 300.000 km por segundo en el vacío. Nada viaja más rápido."},
+    {"term": "Año luz", "definition": "Distancia que recorre la luz en un año: unos 9,46 billones de km. Es una medida de distancia, no de tiempo."},
+    {"term": "Tiempo de viaje de la luz", "definition": "Lo que tarda la luz en llegar desde un objeto. Indica cuánto tiempo atrás estamos viendo ese objeto."},
+    {"term": "Vía Láctea", "definition": "Nuestra galaxia: un disco de unos 100.000 años luz con cientos de miles de millones de estrellas."}
+  ],
+  "summary": [
+    "Las distancias espaciales son tan grandes que los kilómetros dejan de ser útiles.",
+    "En el sistema solar se mide en unidades astronómicas; entre estrellas y galaxias, en años luz.",
+    "Un año luz es una distancia: lo que recorre la luz en un año.",
+    "Mirar lejos es mirar al pasado, porque la luz tarda en llegar.",
+    "El universo está formado sobre todo por espacio vacío entre objetos muy separados."
+  ],
+  "sources": [
+    {"title": "What Is a Light-Year?", "publisher": "NASA Space Place", "url": "https://spaceplace.nasa.gov/light-year/"},
+    {"title": "Our Milky Way Galaxy: How Big is Space?", "publisher": "NASA Science", "url": "https://science.nasa.gov/universe/exoplanets/our-milky-way-galaxy-how-big-is-space/"},
+    {"title": "The Milky Way Galaxy", "publisher": "NASA Imagine the Universe", "url": "https://imagine.gsfc.nasa.gov/science/objects/milkyway1.html"},
+    {"title": "Astronomy 2e, 1.6 A Tour of the Universe", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/1-6-a-tour-of-the-universe"}
+  ],
+  "questions": [
+    {
+      "q": "¿Qué mide un año luz?",
+      "answer": 2,
+      "options": [
+        {"text": "El tiempo que tarda la luz del Sol en llegar a la Tierra", "why": "Eso son unos 8 minutos. El año luz no es un tiempo concreto, sino una distancia."},
+        {"text": "Lo que tarda la Tierra en dar una vuelta al Sol", "why": "Eso es un año normal. El año luz usa el año solo para calcular una distancia."},
+        {"text": "La distancia que recorre la luz en un año", "why": "Correcto. Aunque contiene la palabra «año», es una unidad de distancia: unos 9,46 billones de km."},
+        {"text": "La edad de una estrella", "why": "La edad de una estrella se expresa en años normales, no en años luz."}
+      ]
+    },
+    {
+      "q": "Ves Próxima Centauri, a unos 4,2 años luz. ¿Qué estás viendo exactamente?",
+      "answer": 0,
+      "options": [
+        {"text": "La estrella tal como era hace unos 4 años", "why": "Correcto. La luz que llega hoy a tus ojos salió de la estrella hace algo más de 4 años."},
+        {"text": "La estrella tal como es ahora mismo", "why": "La luz no llega al instante: siempre vemos el pasado de lo que observamos."},
+        {"text": "La estrella tal como será dentro de 4 años", "why": "La luz no puede traer información del futuro. Llega con retraso, no con adelanto."},
+        {"text": "Un reflejo de la luz del Sol en la estrella", "why": "Las estrellas producen su propia luz. Lo que vemos es luz emitida por ella hace años."}
+      ]
+    },
+    {
+      "q": "¿Por qué los astrónomos usan la unidad astronómica dentro del sistema solar en lugar del año luz?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque el año luz solo sirve para medir galaxias", "why": "El año luz sirve para cualquier distancia; simplemente es demasiado grande para el sistema solar."},
+        {"text": "Porque dentro del sistema solar la luz no viaja", "why": "La luz viaja igual en todas partes. El motivo es de comodidad, no físico."},
+        {"text": "Porque la unidad astronómica es más precisa", "why": "Ambas unidades pueden ser igual de precisas. La diferencia está en su tamaño."},
+        {"text": "Porque las distancias del sistema solar son pequeñas para el año luz y la UA da cifras manejables", "why": "Correcto. Neptuno está a unas 30 UA, una cifra cómoda; en años luz sería una fracción diminuta."}
+      ]
+    },
+    {
+      "q": "Si el Sol desapareciera de repente, ¿qué pasaría en la Tierra durante los primeros minutos?",
+      "answer": 1,
+      "options": [
+        {"text": "Se haría de noche al instante", "why": "La última luz emitida aún estaría viajando hacia nosotros durante unos 8 minutos."},
+        {"text": "Seguiríamos viendo el Sol unos 8 minutos, porque su última luz aún estaría de camino", "why": "Correcto. La luz tarda unos 8 minutos en recorrer los 150 millones de km que nos separan."},
+        {"text": "Seguiríamos viéndolo unos 4 años", "why": "Esos 4 años corresponden a Próxima Centauri, no al Sol."},
+        {"text": "No lo notaríamos nunca", "why": "Lo notaríamos, solo que con el retraso que tarda la luz en llegar."}
+      ]
+    },
+    {
+      "q": "En una maqueta donde el Sol es una bola de 1 metro, la Tierra está a unos 107 metros. ¿Qué nos enseña esta comparación?",
+      "answer": 0,
+      "options": [
+        {"text": "Que el sistema solar está formado casi todo por espacio vacío", "why": "Correcto. Objetos diminutos separados por distancias enormes: lo que más abunda es el vacío."},
+        {"text": "Que la Tierra es más grande de lo que pensábamos", "why": "En la maqueta la Tierra es un garbanzo de 9 mm: resulta diminuta, no grande."},
+        {"text": "Que el Sol está muy cerca de la Tierra", "why": "107 metros para una bola de 1 metro es mucha separación relativa: más de cien veces su tamaño."},
+        {"text": "Que los planetas están pegados unos a otros", "why": "Neptuno estaría a 3 km en esa maqueta: los planetas están muy separados."}
+      ]
+    },
+    {
+      "q": "¿Por qué se dice que los telescopios son «máquinas del tiempo»?",
+      "answer": 2,
+      "options": [
+        {"text": "Porque aceleran la luz que reciben", "why": "Un telescopio no cambia la velocidad de la luz; solo la recoge y la concentra."},
+        {"text": "Porque permiten predecir el futuro de las estrellas", "why": "Las predicciones vienen de los modelos físicos, no de que el telescopio vea el futuro."},
+        {"text": "Porque cuanto más lejos miran, más antigua es la luz que recogen", "why": "Correcto. Observar objetos lejanos es observar el universo tal como era hace mucho tiempo."},
+        {"text": "Porque guardan imágenes durante años", "why": "Guardar fotos no tiene nada que ver con la idea. Se refiere al tiempo de viaje de la luz."}
+      ]
+    },
+    {
+      "q": "Un texto en inglés dice que un año luz son 5.88 trillion miles. ¿Cómo se expresa correctamente en español?",
+      "answer": 1,
+      "options": [
+        {"text": "5,88 trillones de millas", "why": "Un trillón español tiene 18 ceros: sería una cifra un millón de veces mayor."},
+        {"text": "5,88 billones de millas", "why": "Correcto. El «trillion» inglés (12 ceros) equivale al «billón» español."},
+        {"text": "5,88 mil millones de millas", "why": "Eso sería el «billion» inglés (9 ceros), mil veces menos que la cifra real."},
+        {"text": "5,88 millones de millas", "why": "Se queda corto por un factor de un millón."}
+      ]
+    },
+    {
+      "q": "¿Dónde está el sistema solar dentro de la Vía Láctea?",
+      "answer": 3,
+      "options": [
+        {"text": "Justo en el centro de la galaxia", "why": "El centro está a unos 26.000 años luz de nosotros."},
+        {"text": "Fuera de la galaxia, observándola desde lejos", "why": "Estamos dentro del disco. Por eso vemos la Vía Láctea como una banda que cruza el cielo."},
+        {"text": "En el borde exterior, donde ya no hay estrellas", "why": "Hay muchas estrellas más allá de nuestra posición: no estamos en el límite."},
+        {"text": "En el disco, a unos 26.000 años luz del centro", "why": "Correcto. Vivimos en las «afueras» de un disco de unos 100.000 años luz."}
+      ]
+    },
+    {
+      "q": "Un rover en Marte se controla desde la Tierra. ¿Por qué no se puede conducir en directo, como un coche teledirigido?",
+      "answer": 2,
+      "options": [
+        {"text": "Porque en Marte no funciona la electricidad", "why": "Los rovers funcionan con electricidad sin problema. El obstáculo es la distancia."},
+        {"text": "Porque las señales de radio no pueden atravesar el espacio", "why": "Sí pueden: es precisamente como nos comunicamos con las sondas."},
+        {"text": "Porque las señales tardan varios minutos en ir y volver, incluso a la velocidad de la luz", "why": "Correcto. Con minutos de retraso, cuando vieras un obstáculo ya habrías chocado. Se envían órdenes planificadas."},
+        {"text": "Porque está prohibido por los acuerdos espaciales", "why": "No existe tal prohibición; es una limitación física."}
+      ]
+    },
+    {
+      "q": "Andrómeda está a unos 2,5 millones de años luz. Si allí ocurriera hoy una explosión, ¿cuándo podríamos verla?",
+      "answer": 0,
+      "options": [
+        {"text": "Dentro de unos 2,5 millones de años", "why": "Correcto. Su luz necesitaría ese tiempo para recorrer la distancia hasta nosotros."},
+        {"text": "Esta misma noche", "why": "Eso supondría que la luz llega al instante, y no es así."},
+        {"text": "Dentro de 2,5 años", "why": "Se confunde el millón de años luz con años sueltos: faltan seis ceros."},
+        {"text": "Nunca, porque está demasiado lejos", "why": "La luz de Andrómeda sí nos llega: incluso se puede ver a simple vista. Solo tarda mucho."}
+      ]
+    }
+  ]
+}
