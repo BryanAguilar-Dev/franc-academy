@@ -1,0 +1,221 @@
+{
+  "id": "go-04-decisiones",
+  "category": "go",
+  "order": 4,
+  "title": "Decisiones: if, else y switch",
+  "minutes": 9,
+  "intro": "Hasta ahora tus programas hacían siempre lo mismo. Un programa útil decide: si la nota es un 5 o más, apruebas; si no, suspendes. En esta lección aprenderás a hacer preguntas con comparaciones y a elegir qué camino sigue el programa.",
+  "sections": [
+    {
+      "heading": "Comparar: preguntas de sí o no",
+      "body": [
+        "Una comparación es una pregunta cuya respuesta es `true` (verdadero) o `false` (falso), es decir, un `bool`.",
+        "Los comparadores son: `==` igual, `!=` distinto, `<` menor, `>` mayor, `<=` menor o igual y `>=` mayor o igual.",
+        "No confundas `=` con `==`. Un solo igual guarda un valor; dos iguales preguntan si dos cosas son iguales. Con texto también funciona, y distingue mayúsculas: `\"a\" == \"A\"` es `false`."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tedad := 20\n\n\tfmt.Println(edad > 18)  // true\n\tfmt.Println(edad == 18) // false\n\tfmt.Println(edad != 18) // true\n\tfmt.Println(\"a\" == \"A\") // false\n}"
+    },
+    {
+      "heading": "if y else: elegir un camino",
+      "body": [
+        "`if` ejecuta un bloque solo si la condición es `true`. `else` es el plan B: se ejecuta si la condición es `false`. Nunca se ejecutan los dos.",
+        "En Go la condición no lleva paréntesis, pero las llaves `{ }` son obligatorias, aunque dentro haya una sola línea. Y la llave de apertura va en la misma línea que el `if`.",
+        "La condición tiene que ser un `bool`. En otros lenguajes `if edad` vale para «si edad no es cero»; en Go eso es un error: non-boolean condition in if statement. Tienes que preguntar de forma explícita: `if edad != 0`."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tedad := 17\n\n\tif edad >= 18 {\n\t\tfmt.Println(\"Puedes votar\")\n\t} else {\n\t\tfmt.Println(\"Todavía no\")\n\t}\n\t// Sale: Todavía no\n}"
+    },
+    {
+      "heading": "else if: más de dos caminos",
+      "body": [
+        "Cuando hay más de dos opciones, encadenas `else if`. Go prueba las condiciones de arriba abajo y entra en la primera que sea verdadera. Las demás ni las mira.",
+        "Por eso el orden importa. En el ejemplo, una nota de 9 también cumple `nota >= 5`, pero como la pregunta `nota >= 9` va antes, sale «Sobresaliente». Si pusieras `nota >= 5` la primera, todos los aprobados saldrían como «Aprobado»."
+      ],
+      "example": "Es como la cola de un control de seguridad con varias puertas: entras por la primera que te deja pasar y ya no pruebas las siguientes.",
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tnota := 7\n\n\tif nota >= 9 {\n\t\tfmt.Println(\"Sobresaliente\")\n\t} else if nota >= 7 {\n\t\tfmt.Println(\"Notable\")\n\t} else if nota >= 5 {\n\t\tfmt.Println(\"Aprobado\")\n\t} else {\n\t\tfmt.Println(\"Suspenso\")\n\t}\n\t// Sale: Notable\n}"
+    },
+    {
+      "heading": "Combinar condiciones: &&, || y !",
+      "body": [
+        "`&&` significa «y»: es verdadero solo si las dos partes lo son. `||` significa «o»: basta con que una sea verdadera. `!` significa «no»: le da la vuelta, `!true` es `false`.",
+        "Go evalúa de izquierda a derecha y se para en cuanto sabe la respuesta. Con `&&`, si la primera parte es falsa ya no mira la segunda: el resultado será falso de todas formas."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tedad := 20\n\ttieneEntrada := true\n\tlleno := false\n\n\tif edad >= 18 && tieneEntrada {\n\t\tfmt.Println(\"Puedes entrar\")\n\t}\n\n\tif !lleno {\n\t\tfmt.Println(\"Queda sitio\")\n\t}\n}"
+    },
+    {
+      "heading": "switch: muchas opciones, ordenadas",
+      "body": [
+        "Cuando comparas una misma variable con muchos valores, `switch` es más limpio que una ristra de `else if`. Cada `case` es una opción; puedes poner varios valores separados por comas.",
+        "`default` es el «en cualquier otro caso», como el `else` final. Es opcional.",
+        "A diferencia de C o Java, en Go cada `case` termina solo: no hace falta escribir `break`. Se ejecuta el primer `case` que coincide y se sale del `switch`."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tdia := \"sábado\"\n\n\tswitch dia {\n\tcase \"sábado\", \"domingo\":\n\t\tfmt.Println(\"Fin de semana\")\n\tcase \"viernes\":\n\t\tfmt.Println(\"Casi finde\")\n\tdefault:\n\t\tfmt.Println(\"Día laborable\")\n\t}\n\t// Sale: Fin de semana\n}"
+    }
+  ],
+  "curiosities": [
+    "Un switch sin variable (switch { case nota >= 9: ... }) funciona como una cadena de if-else, pero más ordenada. Lo verás mucho en código Go real.",
+    "Go no tiene el operador ternario de otros lenguajes (condición ? a : b). Sus creadores lo dejaron fuera a propósito: dicen que se usaba para escribir expresiones difíciles de leer, y que un if-else es más claro.",
+    "Que Go deje de evaluar una condición en cuanto sabe la respuesta se llama evaluación en cortocircuito. Sirve para proteger: en x != 0 && 10/x > 2, la división solo se hace si x no es cero."
+  ],
+  "keyConcepts": [
+    {
+      "term": "Comparación",
+      "definition": "Una pregunta con ==, !=, <, >, <= o >= cuya respuesta es true o false."
+    },
+    {
+      "term": "if / else",
+      "definition": "Ejecuta un bloque si la condición es verdadera y, opcionalmente, otro si es falsa."
+    },
+    {
+      "term": "else if",
+      "definition": "Añade más caminos. Go entra en el primero cuya condición sea verdadera."
+    },
+    {
+      "term": "&&, || y !",
+      "definition": "Y, o, no. Sirven para combinar condiciones o darles la vuelta."
+    },
+    {
+      "term": "switch",
+      "definition": "Elige entre muchas opciones. Cada case termina solo, sin break."
+    }
+  ],
+  "summary": [
+    "= guarda un valor; == pregunta si dos cosas son iguales.",
+    "if no lleva paréntesis, pero las llaves son obligatorias, y la condición tiene que ser un bool.",
+    "En una cadena de else if gana la primera condición verdadera: el orden importa.",
+    "&& exige que se cumplan las dos condiciones; || se conforma con una; ! da la vuelta.",
+    "switch ordena muchas opciones y en Go no necesita break."
+  ],
+  "sources": [
+    {
+      "title": "A Tour of Go: If",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/flowcontrol/5"
+    },
+    {
+      "title": "A Tour of Go: Switch with no condition",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/flowcontrol/11"
+    },
+    {
+      "title": "Go by Example: If/Else",
+      "publisher": "Go by Example",
+      "url": "https://gobyexample.com/if-else"
+    },
+    {
+      "title": "Go by Example: Switch",
+      "publisher": "Go by Example",
+      "url": "https://gobyexample.com/switch"
+    },
+    {
+      "title": "Frequently Asked Questions (FAQ)",
+      "publisher": "go.dev (documentación oficial de Go)",
+      "url": "https://go.dev/doc/faq"
+    }
+  ],
+  "practice": {
+    "task": "1) Con if, else if y else, escribe «Hace frío» si temp es menor que 10, «Se está bien» si es menor que 25 y «Hace calor» en otro caso. Cambia temp para probar los tres. 2) Añade un switch con la variable estacion que diga algo distinto en invierno, verano y el resto del año.",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\ttemp := 18\n\testacion := \"invierno\"\n\tfmt.Println(temp, estacion)\n\n\t// 1. if / else if / else\n\t// 2. switch estacion\n}"
+  },
+  "questions": [
+    {
+      "q": "¿Qué diferencia hay entre = y ==?",
+      "answer": 3,
+      "options": [
+        { "text": "Ninguna, son lo mismo", "why": "No. Hacen cosas muy distintas." },
+        { "text": "== guarda un valor y = compara", "why": "No. Es justo al revés." },
+        { "text": "== solo sirve para números", "why": "No. También compara textos y otros tipos." },
+        { "text": "= guarda un valor; == pregunta si dos cosas son iguales", "why": "Correcto. Uno asigna y el otro compara." }
+      ]
+    },
+    {
+      "q": "¿Qué escribe fmt.Println(5 != 3)?",
+      "answer": 0,
+      "options": [
+        { "text": "true", "why": "Correcto. 5 es distinto de 3, así que la respuesta es verdadera." },
+        { "text": "false", "why": "No. != pregunta si son distintos, y lo son." },
+        { "text": "2", "why": "No. != no resta: compara." },
+        { "text": "Un error", "why": "No. Es una comparación válida." }
+      ]
+    },
+    {
+      "q": "edad := 20 y escribes if edad { ... }. ¿Qué pasa?",
+      "answer": 2,
+      "options": [
+        { "text": "Entra, porque edad no es cero", "why": "No. Eso pasa en otros lenguajes, pero no en Go." },
+        { "text": "No entra, porque falta el else", "why": "No. El else es opcional." },
+        { "text": "No compila: la condición tiene que ser un bool", "why": "Correcto. Go exige una pregunta clara, como edad != 0." },
+        { "text": "Entra solo si edad es 20", "why": "No. Ni siquiera compila." }
+      ]
+    },
+    {
+      "q": "nota := 9. El código pregunta primero nota >= 5 (Aprobado) y después nota >= 9 (Sobresaliente). ¿Qué sale?",
+      "answer": 1,
+      "options": [
+        { "text": "Sobresaliente", "why": "No. Go entra en la primera condición verdadera, y 9 >= 5 ya lo es." },
+        { "text": "Aprobado", "why": "Correcto. Por eso las condiciones más exigentes van primero." },
+        { "text": "Aprobado y Sobresaliente", "why": "No. En una cadena de else if solo se ejecuta un camino." },
+        { "text": "Nada", "why": "No. La primera condición se cumple, así que algo sale." }
+      ]
+    },
+    {
+      "q": "¿Cuándo es verdadero edad >= 18 && tieneEntrada?",
+      "answer": 3,
+      "options": [
+        { "text": "Cuando se cumple cualquiera de las dos", "why": "No. Eso sería ||." },
+        { "text": "Siempre que tieneEntrada sea true", "why": "No. También hace falta ser mayor de edad." },
+        { "text": "Cuando no se cumple ninguna", "why": "No. && exige que se cumplan." },
+        { "text": "Solo cuando se cumplen las dos", "why": "Correcto. && significa «y»." }
+      ]
+    },
+    {
+      "q": "lleno := false. ¿Cuánto vale !lleno?",
+      "answer": 0,
+      "options": [
+        { "text": "true", "why": "Correcto. ! le da la vuelta: no lleno es verdadero." },
+        { "text": "false", "why": "No. ! cambia false por true." },
+        { "text": "Un error, porque no se puede negar una variable", "why": "No. Se puede negar cualquier bool." },
+        { "text": "0", "why": "No. ! da un bool, no un número." }
+      ]
+    },
+    {
+      "q": "¿Qué pasa si escribes if edad > 18 sin llaves, con la orden en la línea siguiente?",
+      "answer": 2,
+      "options": [
+        { "text": "Funciona igual", "why": "No. En Go las llaves son obligatorias." },
+        { "text": "Solo se ejecuta la primera línea", "why": "No. Eso pasa en otros lenguajes; Go ni siquiera compila." },
+        { "text": "No compila: Go exige las llaves siempre", "why": "Correcto. Así nunca hay dudas sobre qué está dentro del if." },
+        { "text": "Se ejecuta siempre", "why": "No. Ni siquiera compila." }
+      ]
+    },
+    {
+      "q": "En un switch de Go, ¿qué pasa al terminar el case que coincide?",
+      "answer": 1,
+      "options": [
+        { "text": "Sigue con el siguiente case", "why": "No. Eso pasa en C o Java si no pones break; en Go, no." },
+        { "text": "Sale del switch", "why": "Correcto. En Go cada case termina solo." },
+        { "text": "Ejecuta también default", "why": "No. default solo se ejecuta si no coincide ningún case." },
+        { "text": "Da error si no pones break", "why": "No. En Go no hace falta break." }
+      ]
+    },
+    {
+      "q": "¿Para qué sirve default en un switch?",
+      "answer": 3,
+      "options": [
+        { "text": "Para el primer caso", "why": "No. El orden de los case no depende de default." },
+        { "text": "Se ejecuta siempre, al final", "why": "No. Solo se ejecuta si no ha coincidido ningún case." },
+        { "text": "Es obligatorio en todo switch", "why": "No. Es opcional." },
+        { "text": "Para cuando no coincide ningún case", "why": "Correcto. Es como el else final de una cadena de if." }
+      ]
+    },
+    {
+      "q": "x := 0. ¿Por qué x != 0 && 10/x > 2 no da error de división entre cero?",
+      "answer": 2,
+      "options": [
+        { "text": "Porque Go permite dividir entre cero", "why": "No. Dividir entre cero un entero da error al ejecutarse." },
+        { "text": "Porque && se evalúa de derecha a izquierda", "why": "No. Se evalúa de izquierda a derecha." },
+        { "text": "Porque la primera parte es falsa y Go ya no evalúa la segunda", "why": "Correcto. Con && basta una parte falsa para saber el resultado: es la evaluación en cortocircuito." },
+        { "text": "Porque 10/0 da 0", "why": "No. No llega a calcularse." }
+      ]
+    }
+  ]
+}

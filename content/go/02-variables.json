@@ -1,0 +1,212 @@
+{
+  "id": "go-02-variables",
+  "category": "go",
+  "order": 2,
+  "title": "Variables: guardar datos",
+  "minutes": 8,
+  "intro": "Un programa casi nunca trabaja con datos fijos: un nombre, un puerto, un precio que cambia. Para eso están las variables. En esta lección aprenderás a crearlas, a cambiarlas y a entender los errores que da Go cuando algo no cuadra.",
+  "sections": [
+    {
+      "heading": "Una variable es una caja con nombre",
+      "body": [
+        "Una variable es un hueco en la memoria del ordenador al que le pones un nombre. Dentro guardas un valor, y después lo usas escribiendo solo el nombre.",
+        "En Go toda variable tiene un tipo, que dice qué clase de dato cabe dentro: `string` para texto e `int` para números enteros. Una caja para números no admite texto.",
+        "La forma larga de crear una variable es `var nombre tipo = valor`. Fíjate en que el tipo va detrás del nombre."
+      ],
+      "example": "Es como las cajas de una mudanza: cada una lleva una etiqueta (el nombre) y solo cabe un tipo de cosa (libros en una, platos en otra). Para saber qué hay dentro, lees la etiqueta.",
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar nombre string = \"Bryan\"\n\tvar edad int = 25\n\n\t// Sale: Bryan 25\n\tfmt.Println(nombre, edad)\n}"
+    },
+    {
+      "heading": "La forma corta: :=",
+      "body": [
+        "Escribir siempre el tipo es pesado. Por eso Go tiene `:=`, que crea la variable y le da valor a la vez. El tipo lo deduce Go mirando el valor: si es texto entre comillas, `string`; si es un número entero, `int`.",
+        "`:=` es la forma más usada, pero solo funciona dentro de una función. Fuera de las funciones hay que usar `var`.",
+        "Truco para leerlo: `servidor := \"Franc\"` se lee «servidor es una variable nueva que vale Franc»."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tservidor := \"Franc\"\n\tpuerto := 8081\n\n\t// Sale: Franc 8081\n\tfmt.Println(servidor, puerto)\n}"
+    },
+    {
+      "heading": "Cambiar el valor: = frente a :=",
+      "body": [
+        "Una variable puede cambiar de valor: por eso se llama variable. Para cambiarla se usa `=` a secas, sin los dos puntos.",
+        "La diferencia importa: `:=` crea una variable nueva, y `=` cambia una que ya existe. Si usas `:=` dos veces con el mismo nombre, Go se queja: no new variables on left side of :=, es decir, «no hay variables nuevas a la izquierda de :=».",
+        "Lo que nunca puede cambiar es el tipo. Si `puerto` es un `int` y le intentas meter texto, Go da el error cannot use \"hola\" (untyped string constant) as int value: no puedes usar texto como si fuera un número."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tpuerto := 8080\n\tfmt.Println(puerto) // 8080\n\n\tpuerto = 8081\n\tfmt.Println(puerto) // 8081\n\n\t// Se calcula la derecha\n\t// y se guarda a la izquierda\n\tpuerto = puerto + 1\n\tfmt.Println(puerto) // 8082\n}"
+    },
+    {
+      "heading": "El valor cero: nunca hay basura",
+      "body": [
+        "Si creas una variable con `var` y no le das valor, Go no la deja vacía ni con basura: le pone su valor cero.",
+        "El valor cero depende del tipo: `0` para los números, `\"\"` (texto vacío) para `string` y `false` para `bool`, el tipo de verdadero o falso.",
+        "Esto evita un fallo muy común en otros lenguajes: usar una variable que nadie había rellenado y obtener un valor imposible de predecir."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar visitas int\n\tvar activo bool\n\tvar usuario string\n\n\t// Sale: 0 false\n\tfmt.Println(visitas, activo)\n\n\t// Sale una línea vacía\n\tfmt.Println(usuario)\n}"
+    },
+    {
+      "heading": "Reglas de Go para las variables",
+      "body": [
+        "Si creas una variable dentro de una función y no la usas, el programa no compila: declared and not used: x. Es la misma idea que con los imports: lo que sobra, estorba.",
+        "Go distingue mayúsculas y minúsculas: `edad` y `Edad` son dos variables distintas. El nombre empieza por letra, no lleva espacios ni tildes por costumbre, y si tiene varias palabras se juntan así: `precioTotal`.",
+        "Elige nombres que digan qué guardan. `p` no dice nada; `puerto` lo dice todo. Tú, dentro de seis meses, lo agradecerás."
+      ],
+      "example": "En vez de x := 30, escribe minutosPorLeccion := 30. Quien lea el código, incluido tú, sabrá qué es ese 30 sin pensar."
+    }
+  ],
+  "curiosities": [
+    "En Go el tipo va detrás del nombre (var edad int), al revés que en C o Java (int edad). Los creadores de Go lo hicieron así porque se lee de izquierda a derecha, como se habla: «edad es un int».",
+    "Puedes crear varias variables en una línea: a, b := 1, 2. Incluso intercambiarlas sin una caja extra: a, b = b, a."
+  ],
+  "keyConcepts": [
+    {
+      "term": "Variable",
+      "definition": "Un nombre que guarda un valor que puede cambiar mientras el programa se ejecuta."
+    },
+    {
+      "term": "Tipo",
+      "definition": "La clase de dato que guarda una variable, como int (entero) o string (texto). En Go no cambia nunca."
+    },
+    {
+      "term": ":=",
+      "definition": "Crea una variable nueva y le da valor. Go deduce el tipo. Solo dentro de funciones."
+    },
+    {
+      "term": "=",
+      "definition": "Cambia el valor de una variable que ya existe."
+    },
+    {
+      "term": "Valor cero",
+      "definition": "El valor que Go pone a una variable sin valor inicial: 0, \"\" o false según el tipo."
+    }
+  ],
+  "summary": [
+    "Una variable es un nombre que guarda un valor de un tipo concreto.",
+    "Con := creas y das valor a la vez; con = cambias el valor de una que ya existe.",
+    "El tipo de una variable no puede cambiar: un int nunca guardará texto.",
+    "Sin valor inicial, Go pone el valor cero: 0, texto vacío o false.",
+    "Una variable que no se usa es un error: Go no compila."
+  ],
+  "sources": [
+    {
+      "title": "A Tour of Go: Variables",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/8"
+    },
+    {
+      "title": "A Tour of Go: Zero values",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/12"
+    },
+    {
+      "title": "Go by Example: Variables",
+      "publisher": "Go by Example",
+      "url": "https://gobyexample.com/variables"
+    }
+  ],
+  "practice": {
+    "task": "1) Cambia «Pon tu nombre» por tu nombre. 2) Crea la variable edad con := y escríbela con Println. 3) Súmale 1 con = y escribe: El año que viene tendré, edad. 4) Prueba a escribir edad := 30 otra vez y lee el error.",
+    "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tnombre := \"Pon tu nombre\"\n\tfmt.Println(\"Me llamo\", nombre)\n\n\t// 1. Crea edad con :=\n\t// 2. Escríbela\n\t// 3. Súmale 1 y escríbela\n}"
+  },
+  "questions": [
+    {
+      "q": "¿Qué es una variable?",
+      "answer": 1,
+      "options": [
+        { "text": "Un texto que el compilador ignora", "why": "No. Eso es un comentario." },
+        { "text": "Un nombre que guarda un valor que puede cambiar", "why": "Correcto. Es como una caja con etiqueta: lees la etiqueta para usar lo que hay dentro." },
+        { "text": "Una instrucción que escribe en pantalla", "why": "No. Eso es fmt.Println." },
+        { "text": "Un número que nunca puede cambiar", "why": "No. Precisamente se llama variable porque puede cambiar." }
+      ]
+    },
+    {
+      "q": "¿Qué hace puerto := 8081?",
+      "answer": 3,
+      "options": [
+        { "text": "Compara si puerto vale 8081", "why": "No. Para comparar se usa ==, que verás más adelante." },
+        { "text": "Cambia una variable puerto que ya existía", "why": "No. Para cambiar una que ya existe se usa = a secas." },
+        { "text": "Da error porque falta escribir el tipo", "why": "No. Con := Go deduce el tipo mirando el valor." },
+        { "text": "Crea la variable puerto, de tipo int, con valor 8081", "why": "Correcto. := crea y da valor a la vez, y Go deduce que 8081 es un int." }
+      ]
+    },
+    {
+      "q": "Tienes puerto := 8080. Ahora quieres que valga 8081. ¿Qué escribes?",
+      "answer": 0,
+      "options": [
+        { "text": "puerto = 8081", "why": "Correcto. = cambia el valor de una variable que ya existe." },
+        { "text": "puerto := 8081", "why": "No. := intenta crear otra variable puerto, y Go da error: no new variables on left side of :=." },
+        { "text": "var puerto = 8081", "why": "No. Eso también intenta crear una variable nueva con el mismo nombre." },
+        { "text": "No se puede: una variable no cambia", "why": "No. Cambiar de valor es justo lo que hace una variable." }
+      ]
+    },
+    {
+      "q": "edad := 30 y luego edad = \"treinta\". ¿Qué pasa?",
+      "answer": 2,
+      "options": [
+        { "text": "edad pasa a valer el texto treinta", "why": "No. El tipo de una variable no puede cambiar." },
+        { "text": "Go convierte el texto a 30 automáticamente", "why": "No. Go nunca convierte texto a número por su cuenta." },
+        { "text": "No compila: no se puede guardar texto en un int", "why": "Correcto. edad es un int desde que se creó, y un int solo guarda números enteros." },
+        { "text": "Compila, pero al ejecutar se escribe 0", "why": "No. El fallo se detecta antes de ejecutar: no llega a compilar." }
+      ]
+    },
+    {
+      "q": "var visitas int, sin valor. ¿Cuánto vale visitas?",
+      "answer": 1,
+      "options": [
+        { "text": "Un número cualquiera que hubiera en la memoria", "why": "No. Go nunca deja basura: pone el valor cero." },
+        { "text": "0", "why": "Correcto. Es el valor cero de los números." },
+        { "text": "Nada: da error al usarla", "why": "No. Se puede usar sin problema: vale 0." },
+        { "text": "\"\" (texto vacío)", "why": "No. Ese es el valor cero de string, no de int." }
+      ]
+    },
+    {
+      "q": "¿Cuál es el valor cero de una variable bool?",
+      "answer": 2,
+      "options": [
+        { "text": "true", "why": "No. Go elige la opción más segura: false." },
+        { "text": "0", "why": "No. 0 es el valor cero de los números; bool solo puede ser true o false." },
+        { "text": "false", "why": "Correcto. Una bool sin valor empieza en false." },
+        { "text": "No tiene: hay que darle valor siempre", "why": "No. Todos los tipos tienen valor cero en Go." }
+      ]
+    },
+    {
+      "q": "Dentro de main escribes x := 5 y no vuelves a usar x. ¿Qué pasa?",
+      "answer": 0,
+      "options": [
+        { "text": "No compila: declared and not used: x", "why": "Correcto. Como con los imports, Go no permite variables que sobran." },
+        { "text": "Compila y x se borra sola", "why": "No. Go no corrige tu código: te avisa con un error." },
+        { "text": "Compila con un aviso", "why": "No. Go no da avisos, solo errores." },
+        { "text": "Se escribe 5 en pantalla", "why": "No. Crear una variable no escribe nada." }
+      ]
+    },
+    {
+      "q": "¿Dónde puedes usar :=?",
+      "answer": 3,
+      "options": [
+        { "text": "En cualquier sitio del archivo", "why": "No. Fuera de las funciones hay que usar var." },
+        { "text": "Solo antes de package main", "why": "No. Antes de package no puede ir código." },
+        { "text": "Solo junto a import", "why": "No. import solo trae paquetes." },
+        { "text": "Solo dentro de una función", "why": "Correcto. Fuera de las funciones se usa var." }
+      ]
+    },
+    {
+      "q": "Creas Edad := 30 y luego escribes fmt.Println(edad). ¿Qué pasa?",
+      "answer": 1,
+      "options": [
+        { "text": "Escribe 30", "why": "No. Para Go, Edad y edad son nombres distintos." },
+        { "text": "Error: edad no existe (undefined: edad)", "why": "Correcto. Go distingue mayúsculas: la variable que existe es Edad." },
+        { "text": "Escribe 0, el valor cero", "why": "No. edad no existe, así que no tiene ningún valor." },
+        { "text": "Escribe Edad", "why": "No. Sin comillas no es texto, es el nombre de una variable." }
+      ]
+    },
+    {
+      "q": "puerto := 8080 y luego puerto = puerto + 1. ¿Cuánto vale puerto?",
+      "answer": 2,
+      "options": [
+        { "text": "8080, porque no se puede usar puerto a los dos lados", "why": "No. Sí se puede: primero se calcula la derecha y luego se guarda." },
+        { "text": "1", "why": "No. Se suma 1 al valor que ya tenía, no se sustituye." },
+        { "text": "8081", "why": "Correcto. Go calcula 8080 + 1 y guarda el resultado en puerto." },
+        { "text": "Da error de compilación", "why": "No. Es una forma muy normal de aumentar una variable." }
+      ]
+    }
+  ]
+}

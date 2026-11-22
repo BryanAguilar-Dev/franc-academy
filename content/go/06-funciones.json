@@ -1,0 +1,220 @@
+{
+  "id": "go-06-funciones",
+  "category": "go",
+  "order": 6,
+  "title": "Funciones: dar nombre a una tarea",
+  "minutes": 10,
+  "intro": "Llevas varias lecciones usando funciones sin crearlas: main y fmt.Println. Ahora vas a escribir las tuyas. Las funciones son la herramienta más importante para que un programa grande siga siendo fácil de entender. Esta lección cierra el bloque 1 con un reto que junta todo lo aprendido.",
+  "sections": [
+    {
+      "heading": "Qué es una función y para qué sirve",
+      "body": [
+        "Una función es un bloque de código con nombre. La escribes una vez y la usas (la «llamas») todas las veces que quieras escribiendo su nombre seguido de paréntesis.",
+        "Sirven para tres cosas: no repetir código, partir un problema grande en trozos pequeños y dar nombre a lo que hace cada trozo. `calcularIVA()` se entiende mejor que diez líneas de cuentas.",
+        "Se crean con `func`, el nombre, unos paréntesis y las llaves. El orden en el archivo da igual: puedes escribir `saludar` antes o después de `main`."
+      ],
+      "example": "Una función es como una receta con nombre en un recetario. En vez de explicar cada vez cómo se hace la bechamel, dices «haz bechamel» y quien cocina va a esa página.",
+      "code": "package main\n\nimport \"fmt\"\n\nfunc saludar() {\n\tfmt.Println(\"Hola desde Franc\")\n}\n\nfunc main() {\n\tsaludar()\n\tsaludar()\n\t// Sale dos veces el saludo\n}"
+    },
+    {
+      "heading": "Parámetros: darle datos a la función",
+      "body": [
+        "Los parámetros son variables que la función recibe desde fuera. Se escriben entre los paréntesis, con su nombre y su tipo detrás, como siempre en Go.",
+        "Al llamar a la función le pasas los valores, que se llaman argumentos. Tienen que ser los mismos que pide, en el mismo orden y del mismo tipo. Si faltan, Go no compila: not enough arguments in call.",
+        "Si varios parámetros seguidos son del mismo tipo, puedes escribir el tipo una sola vez: `(a, b int)` es lo mismo que `(a int, b int)`."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc saludar(nombre string) {\n\tfmt.Println(\"Hola,\", nombre)\n}\n\nfunc main() {\n\tsaludar(\"Bryan\") // Hola, Bryan\n\tsaludar(\"Franc\") // Hola, Franc\n}"
+    },
+    {
+      "heading": "return: devolver un resultado",
+      "body": [
+        "Muchas funciones calculan algo y te lo devuelven. El tipo de lo que devuelven se escribe después de los paréntesis, y el valor se entrega con `return`.",
+        "`return` termina la función en ese momento: lo que haya debajo ya no se ejecuta.",
+        "Si la función dice que devuelve algo, todos sus caminos tienen que acabar en un `return`. Si no, Go se queja: missing return.",
+        "Lo que devuelve la función lo puedes guardar en una variable, usar en una cuenta o pasarlo directamente a otra función, como `fmt.Println(sumar(3, 4))`."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc sumar(a, b int) int {\n\treturn a + b\n}\n\nfunc esPositivo(n int) bool {\n\treturn n > 0\n}\n\nfunc main() {\n\ttotal := sumar(3, 4)\n\tfmt.Println(total) // 7\n\n\tfmt.Println(esPositivo(-2))\n\t// Sale: false\n}"
+    },
+    {
+      "heading": "Varios resultados a la vez",
+      "body": [
+        "Una función de Go puede devolver más de un valor. Se escriben los tipos entre paréntesis, `(int, int)`, y en el `return` se separan con comas.",
+        "Para recibirlos, pones tantas variables como resultados: `c, r := dividir(17, 5)`.",
+        "Si uno no te interesa, usa `_`, el guion bajo. Es una «papelera»: recibe el valor y lo tira, y así Go no se queja de una variable sin usar.",
+        "Esto es muy importante en Go: las funciones que pueden fallar devuelven el resultado y, además, un error. Lo verás a fondo en el bloque 3."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc dividir(a, b int) (int, int) {\n\treturn a / b, a % b\n}\n\nfunc main() {\n\tc, r := dividir(17, 5)\n\tfmt.Println(c, r) // 3 2\n\n\t_, resto := dividir(9, 2)\n\tfmt.Println(resto) // 1\n}"
+    },
+    {
+      "heading": "Ámbito: cada función tiene su espacio",
+      "body": [
+        "Una variable creada dentro de una función solo existe dentro de ella. Desde `main` no puedes ver las variables de `doble`, y al revés tampoco. Si lo intentas, Go dice undefined.",
+        "Esto es bueno: puedes usar el nombre `resultado` en diez funciones distintas sin que se pisen entre ellas. Cada función es una caja cerrada que solo se comunica por sus parámetros y su `return`.",
+        "Cuando le pasas una variable a una función, la función recibe una copia del valor. Si la cambia dentro, la variable original no cambia. Más adelante verás cómo hacer que sí cambie, con punteros."
+      ],
+      "code": "package main\n\nimport \"fmt\"\n\nfunc doble(n int) int {\n\tresultado := n * 2\n\treturn resultado\n}\n\nfunc main() {\n\tfmt.Println(doble(4)) // 8\n\n\t// resultado no existe aquí:\n\t// fmt.Println(resultado)\n\t// daría: undefined\n}"
+    }
+  ],
+  "curiosities": [
+    "Que una función devuelva varios valores es poco habitual en otros lenguajes, y en Go es la base de cómo se manejan los errores: valor, err := algo(). Lo escribirás miles de veces.",
+    "Go obliga a escribir return de forma explícita: no devuelve solo el valor de la última línea, como hacen otros lenguajes. Así siempre se ve claramente qué sale de la función.",
+    "Las funciones de Go también son valores: se pueden guardar en una variable y pasar a otra función. Lo verás más adelante con las funciones anónimas."
+  ],
+  "keyConcepts": [
+    {
+      "term": "Función",
+      "definition": "Bloque de código con nombre que se puede llamar muchas veces. Se crea con func."
+    },
+    {
+      "term": "Parámetro y argumento",
+      "definition": "El parámetro es la variable que la función pide; el argumento es el valor concreto que le das al llamarla."
+    },
+    {
+      "term": "return",
+      "definition": "Termina la función y entrega su resultado a quien la llamó."
+    },
+    {
+      "term": "Identificador en blanco (_)",
+      "definition": "Recibe un valor que no te interesa y lo descarta."
+    },
+    {
+      "term": "Ámbito",
+      "definition": "La zona del código donde existe una variable. Las variables de una función solo existen dentro de ella."
+    }
+  ],
+  "summary": [
+    "Una función agrupa código con un nombre para reutilizarlo y para que se entienda mejor.",
+    "Los parámetros van entre paréntesis con su tipo detrás; el tipo del resultado va después de los paréntesis.",
+    "return entrega el resultado y termina la función.",
+    "Una función puede devolver varios valores, y _ descarta los que no necesites.",
+    "Las variables de una función solo existen dentro de ella, y la función trabaja con copias de lo que le pasas."
+  ],
+  "sources": [
+    {
+      "title": "A Tour of Go: Functions",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/4"
+    },
+    {
+      "title": "A Tour of Go: Multiple results",
+      "publisher": "go.dev (tutorial oficial)",
+      "url": "https://go.dev/tour/basics/6"
+    },
+    {
+      "title": "Go by Example: Functions",
+      "publisher": "Go by Example",
+      "url": "https://gobyexample.com/functions"
+    },
+    {
+      "title": "Go by Example: Multiple Return Values",
+      "publisher": "Go by Example",
+      "url": "https://gobyexample.com/multiple-return-values"
+    }
+  ],
+  "practice": {
+    "task": "Reto del bloque 1. 1) Completa esPar para que devuelva true si n es par (pista: %). 2) En main, con un for del 1 al 10 y un if, escribe «1 es impar», «2 es par»... usando esPar. 3) Extra: crea la función mayor(a, b int) int que devuelva el mayor de los dos y pruébala. Cuando lo tengas, pégame tu código y te lo reviso.",
+    "code": "package main\n\nimport \"fmt\"\n\n// Devuelve true si n es par.\nfunc esPar(n int) bool {\n\treturn false // arréglame\n}\n\nfunc main() {\n\tfmt.Println(esPar(4))\n\t// Bucle del 1 al 10\n}"
+  },
+  "questions": [
+    {
+      "q": "¿Cuál es la principal ventaja de crear funciones?",
+      "answer": 2,
+      "options": [
+        { "text": "Que el programa se ejecuta mucho más rápido", "why": "No. La ventaja principal es la organización, no la velocidad." },
+        { "text": "Que no hace falta func main", "why": "No. main sigue siendo obligatoria: es donde empieza el programa." },
+        { "text": "No repetir código y partir el problema en trozos con nombre", "why": "Correcto. Un programa con buenas funciones se lee casi como un texto." },
+        { "text": "Que no hace falta poner tipos", "why": "No. Los parámetros y los resultados llevan tipo." }
+      ]
+    },
+    {
+      "q": "En func saludar(nombre string), ¿qué es nombre?",
+      "answer": 0,
+      "options": [
+        { "text": "Un parámetro: un dato que la función recibe", "why": "Correcto. Es una variable que se rellena con lo que le pases al llamarla." },
+        { "text": "El resultado de la función", "why": "No. El tipo del resultado iría después de los paréntesis." },
+        { "text": "El nombre de la función", "why": "No. La función se llama saludar." },
+        { "text": "Un comentario", "why": "No. Está dentro de los paréntesis: es un parámetro." }
+      ]
+    },
+    {
+      "q": "¿Qué escribe fmt.Println(sumar(3, 4)) si sumar devuelve a + b?",
+      "answer": 3,
+      "options": [
+        { "text": "sumar(3, 4)", "why": "No. Sin comillas, Go llama a la función y escribe el resultado." },
+        { "text": "34", "why": "No. Son números: se suman, no se juntan." },
+        { "text": "Nada, porque falta guardar el resultado en una variable", "why": "No. El resultado se puede pasar directamente a Println." },
+        { "text": "7", "why": "Correcto. sumar devuelve 7 y Println lo escribe." }
+      ]
+    },
+    {
+      "q": "¿Qué pasa con el código que está debajo de un return?",
+      "answer": 1,
+      "options": [
+        { "text": "Se ejecuta después del return", "why": "No. return termina la función en ese momento." },
+        { "text": "No se ejecuta: return termina la función", "why": "Correcto. Por eso return suele ir al final, o dentro de un if." },
+        { "text": "Se ejecuta antes del return", "why": "No. El código se ejecuta de arriba abajo." },
+        { "text": "Da error siempre", "why": "No siempre es un error, pero ese código no se ejecutará." }
+      ]
+    },
+    {
+      "q": "Una función dice que devuelve int, pero no tiene return. ¿Qué pasa?",
+      "answer": 2,
+      "options": [
+        { "text": "Devuelve 0 automáticamente", "why": "No. Go no lo hace por ti: exige el return." },
+        { "text": "Devuelve el valor de la última línea", "why": "No. Otros lenguajes lo hacen; Go exige un return explícito." },
+        { "text": "No compila: missing return", "why": "Correcto. Si prometes devolver algo, tienes que hacerlo." },
+        { "text": "Funciona, pero sale un aviso", "why": "No. Go no da avisos: da error." }
+      ]
+    },
+    {
+      "q": "dividir(17, 5) devuelve a / b y a % b. ¿Qué valen c y r en c, r := dividir(17, 5)?",
+      "answer": 0,
+      "options": [
+        { "text": "c = 3 y r = 2", "why": "Correcto. 17 entre 5 cabe 3 veces y sobran 2." },
+        { "text": "c = 3.4 y r = 0", "why": "No. Son enteros: no hay decimales." },
+        { "text": "c = 2 y r = 3", "why": "No. El orden importa: primero el cociente y después el resto." },
+        { "text": "Da error: una función solo devuelve un valor", "why": "No. En Go una función puede devolver varios." }
+      ]
+    },
+    {
+      "q": "¿Para qué sirve _ en _, resto := dividir(9, 2)?",
+      "answer": 3,
+      "options": [
+        { "text": "Es una variable que se llama así y vale 4", "why": "No. _ no guarda nada: descarta el valor." },
+        { "text": "Para que la función devuelva solo un valor", "why": "No. La función sigue devolviendo dos; tú tiras uno." },
+        { "text": "Para marcar un error", "why": "No. Es solo una forma de ignorar un valor." },
+        { "text": "Para descartar el primer resultado, que no necesitas", "why": "Correcto. Así Go no se queja de una variable sin usar." }
+      ]
+    },
+    {
+      "q": "Dentro de doble creas resultado := n * 2. En main escribes fmt.Println(resultado). ¿Qué pasa?",
+      "answer": 1,
+      "options": [
+        { "text": "Escribe el último valor calculado", "why": "No. Esa variable solo existe dentro de doble." },
+        { "text": "No compila: undefined: resultado", "why": "Correcto. Las variables de una función no se ven desde fuera." },
+        { "text": "Escribe 0", "why": "No. La variable ni siquiera existe en main." },
+        { "text": "Escribe resultado", "why": "No. Sin comillas es un nombre de variable, no texto." }
+      ]
+    },
+    {
+      "q": "¿Qué devuelve esta función: func esPar(n int) bool { return n%2 == 0 }?",
+      "answer": 2,
+      "options": [
+        { "text": "El resto de dividir n entre 2", "why": "No. La comparación == convierte el resto en true o false." },
+        { "text": "n dividido entre 2", "why": "No. % no divide: da el resto." },
+        { "text": "true si n es par y false si es impar", "why": "Correcto. Si el resto es 0, la comparación es verdadera." },
+        { "text": "Siempre true", "why": "No. Depende de n." }
+      ]
+    },
+    {
+      "q": "Llamas a sumar(a, b int) escribiendo sumar(5). ¿Qué pasa?",
+      "answer": 0,
+      "options": [
+        { "text": "No compila: not enough arguments in call", "why": "Correcto. La función pide dos enteros y le das uno." },
+        { "text": "Devuelve 5, porque b vale 0", "why": "No. Go no rellena argumentos que faltan." },
+        { "text": "Devuelve 10, porque repite el 5", "why": "No. Go no adivina." },
+        { "text": "Compila, pero al ejecutar falla", "why": "No. El fallo se detecta antes de ejecutar." }
+      ]
+    }
+  ]
+}
