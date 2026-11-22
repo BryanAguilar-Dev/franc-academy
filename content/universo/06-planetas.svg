@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 620" role="img" aria-labelledby="t">
+  <title id="t">Los ocho planetas con sus tamaños a escala entre sí</title>
+  <!-- Radios proporcionales al diámetro (NASA Planetary Fact Sheet), con la Tierra = 4 -->
+  <style>
+    .bg{fill:#f6f8fc}.ink{fill:#16202e}.mut{fill:#586374}.sep{stroke:#dbe1ea}
+    .rock{fill:#b07a55}.earth{fill:#4a74e0}.mars{fill:#d9573b}.ven{fill:#e3c27a}
+    .gas{fill:#d9a05b}.sat{fill:#e3c27a}.ice{fill:#6c9be8}.ring{fill:none;stroke:#b08a4a;stroke-width:3}
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    @media (prefers-color-scheme:dark){.bg{fill:#161d28}.ink{fill:#e5eaf1}.mut{fill:#98a3b4}.sep{stroke:#273244}.earth{fill:#6c9be8}.ring{stroke:#d9b878}}
+  </style>
+  <rect class="bg" width="360" height="620" rx="14"/>
+
+  <!-- Rocosos -->
+  <circle class="rock" cx="90" cy="40" r="1.5"/>
+  <text class="ink" x="170" y="36" font-size="15" font-weight="600">Mercurio</text>
+  <text class="mut" x="170" y="54" font-size="13">El más pequeño</text>
+
+  <circle class="ven" cx="90" cy="88" r="3.8"/>
+  <text class="ink" x="170" y="84" font-size="15" font-weight="600">Venus</text>
+  <text class="mut" x="170" y="102" font-size="13">El más caliente</text>
+
+  <circle class="earth" cx="90" cy="136" r="4"/>
+  <text class="ink" x="170" y="132" font-size="15" font-weight="600">Tierra</text>
+  <text class="mut" x="170" y="150" font-size="13">Agua líquida y vida</text>
+
+  <circle class="mars" cx="90" cy="184" r="2.1"/>
+  <text class="ink" x="170" y="180" font-size="15" font-weight="600">Marte</text>
+  <text class="mut" x="170" y="198" font-size="13">El planeta rojo</text>
+
+  <line class="sep" x1="20" y1="216" x2="340" y2="216" stroke-dasharray="4 4"/>
+
+  <!-- Gigantes -->
+  <circle class="gas" cx="90" cy="276" r="44.8"/>
+  <text class="ink" x="170" y="272" font-size="15" font-weight="600">Júpiter</text>
+  <text class="mut" x="170" y="290" font-size="13">11 Tierras de ancho</text>
+
+  <ellipse class="ring" cx="90" cy="386" rx="70" ry="12"/>
+  <circle class="sat" cx="90" cy="386" r="37.8"/>
+  <path class="ring" d="M20 386 A70 12 0 0 0 160 386"/>
+  <text class="ink" x="170" y="382" font-size="15" font-weight="600">Saturno</text>
+  <text class="mut" x="170" y="400" font-size="13">Anillos de hielo y roca</text>
+
+  <circle class="ice" cx="90" cy="472" r="16"/>
+  <text class="ink" x="170" y="468" font-size="15" font-weight="600">Urano</text>
+  <text class="mut" x="170" y="486" font-size="13">Gira tumbado</text>
+
+  <circle class="ice" cx="90" cy="534" r="15.5"/>
+  <text class="ink" x="170" y="530" font-size="15" font-weight="600">Neptuno</text>
+  <text class="mut" x="170" y="548" font-size="13">El más lejano</text>
+
+  <text class="mut" x="180" y="598" font-size="13" text-anchor="middle">Tamaños a escala · distancias no</text>
+</svg>

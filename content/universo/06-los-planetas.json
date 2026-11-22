@@ -1,0 +1,183 @@
+{
+  "id": "universo-06-planetas",
+  "category": "universo",
+  "order": 6,
+  "title": "Los planetas: ocho mundos muy distintos",
+  "minutes": 9,
+  "intro": "Los ocho planetas salieron del mismo disco de gas y polvo, pero no se parecen en nada: hay mundos de roca más pequeños que algunas lunas y gigantes sin suelo donde pisar. En esta lección los recorremos uno a uno, vemos qué hace falta para ser un planeta y por qué Plutón dejó de serlo.",
+  "illustration": {
+    "file": "06-planetas.svg",
+    "alt": "Los ocho planetas en columna, con sus tamaños a escala entre sí. Mercurio, Venus, la Tierra y Marte son puntos pequeños; Júpiter y Saturno, con sus anillos, son enormes; Urano y Neptuno son unas cuatro veces más anchos que la Tierra.",
+    "caption": "Tamaños a escala entre ellos. Las distancias no: en realidad Neptuno está unas 30 veces más lejos del Sol que la Tierra."
+  },
+  "sections": [
+    {
+      "heading": "Dos familias de planetas",
+      "body": [
+        "Los cuatro planetas más cercanos al Sol (Mercurio, Venus, la Tierra y Marte) son rocosos o terrestres: pequeños y con una superficie sólida. Los cuatro más lejanos son gigantes y no tienen una superficie dura: son capas de gas que se arremolinan sobre un núcleo.",
+        "Entre los gigantes hay dos tipos. Júpiter y Saturno son gigantes gaseosos, hechos sobre todo de hidrógeno y helio. Urano y Neptuno son gigantes de hielo: tienen mucha más agua, amoníaco y metano. Como viste en la lección anterior, esta división se debe a la línea de hielo."
+      ],
+      "example": "Si la Tierra fuera una uva, Júpiter sería del tamaño de un balón de baloncesto."
+    },
+    {
+      "heading": "Los rocosos",
+      "body": [
+        "Mercurio es el más pequeño y el más cercano al Sol. Apenas tiene atmósfera, así que no puede retener el calor. Venus es casi tan grande como la Tierra, pero su atmósfera es muy espesa y está hecha sobre todo de dióxido de carbono. Atrapa tanto calor (un efecto invernadero desbocado) que su superficie está a unos 470 °C: es el planeta más caliente, aunque Mercurio esté más cerca del Sol.",
+        "La Tierra es, por ahora, el único lugar conocido con agua líquida en la superficie y con vida. Marte, la mitad de ancho que la Tierra, es un desierto frío; su color rojizo se debe al óxido de hierro, es decir, al óxido de su suelo."
+      ],
+      "example": "Venus funciona como un coche aparcado al sol con las ventanillas cerradas: la luz entra, pero el calor no puede salir."
+    },
+    {
+      "heading": "Los gigantes",
+      "body": [
+        "Júpiter es el mayor: es 11 veces más ancho que la Tierra y dentro cabrían más de 1.000 Tierras. Su Gran Mancha Roja es una tormenta más grande que la Tierra que lleva cientos de años activa. Además, gira tan deprisa que su día dura menos de 10 horas. Saturno es famoso por sus anillos, formados por innumerables trozos de hielo y roca.",
+        "Urano gira tumbado: su eje está inclinado unos 98 grados, quizá por un choque con un objeto del tamaño de la Tierra hace mucho tiempo. Por eso cada polo pasa unos 21 años seguidos a oscuras. Neptuno, el más lejano, está más de 30 veces más lejos del Sol que nosotros: es oscuro, frío y con vientos violentísimos."
+      ]
+    },
+    {
+      "heading": "¿Qué hace falta para ser un planeta?",
+      "body": [
+        "Durante siglos, «planeta» no tuvo una definición precisa. El problema estalló en 2005, cuando se descubrió Eris, un mundo más allá de Neptuno con más masa que Plutón. ¿Había que llamarlo décimo planeta? ¿Y a todos los que vinieran después?",
+        "En 2006, la Unión Astronómica Internacional decidió que un planeta debe cumplir tres condiciones: girar alrededor del Sol, tener masa suficiente para que su propia gravedad lo haga redondo y haber «limpiado» su órbita, es decir, ser tan dominante que no comparte su zona con otros objetos de tamaño parecido. Plutón cumple las dos primeras, pero no la tercera: comparte el cinturón de Kuiper con miles de cuerpos helados."
+      ],
+      "example": "Es como la diferencia entre el dueño de una calle y un vecino más: los ocho planetas dominan su órbita; Plutón es uno más entre muchos en su barrio."
+    },
+    {
+      "heading": "Los planetas enanos",
+      "body": [
+        "Los cuerpos que cumplen las dos primeras condiciones, pero no la tercera, y que no son lunas, se llaman planetas enanos. Hoy hay cinco reconocidos oficialmente: Ceres, Plutón, Haumea, Makemake y Eris.",
+        "Ceres es el único del sistema solar interior: es el objeto más grande del cinturón de asteroides, entre Marte y Júpiter. Los otros cuatro están más allá de Neptuno. Probablemente haya muchos más esperando a ser descubiertos."
+      ]
+    }
+  ],
+  "curiosities": [
+    "En Venus, un día dura más que un año: tarda 243 días terrestres en girar sobre sí mismo y solo unos 225 en dar la vuelta al Sol.",
+    "Júpiter tiene más del doble de masa que todos los demás planetas juntos.",
+    "Ganímedes, una luna de Júpiter, es más grande que el planeta Mercurio.",
+    "Plutón fue considerado el noveno planeta durante 76 años, desde su descubrimiento en 1930 hasta 2006."
+  ],
+  "keyConcepts": [
+    {"term": "Planeta rocoso o terrestre", "definition": "Planeta pequeño con superficie sólida de roca y metal: Mercurio, Venus, la Tierra y Marte."},
+    {"term": "Gigante gaseoso", "definition": "Planeta enorme, sin superficie sólida, hecho sobre todo de hidrógeno y helio: Júpiter y Saturno."},
+    {"term": "Gigante de hielo", "definition": "Planeta grande con mucha agua, amoníaco y metano bajo una envoltura de gas: Urano y Neptuno."},
+    {"term": "Efecto invernadero", "definition": "Calentamiento que se produce cuando una atmósfera deja entrar la luz del Sol pero retiene el calor."},
+    {"term": "Planeta enano", "definition": "Cuerpo que gira alrededor del Sol y es redondo, pero no ha limpiado su órbita. Por ejemplo, Plutón o Ceres."}
+  ],
+  "summary": [
+    "Hay ocho planetas: cuatro rocosos cerca del Sol y cuatro gigantes más lejos.",
+    "Los gigantes no tienen superficie sólida; Júpiter y Saturno son gaseosos, y Urano y Neptuno, de hielo.",
+    "Venus es el planeta más caliente por su efecto invernadero, aunque Mercurio esté más cerca del Sol.",
+    "Un planeta debe girar alrededor del Sol, ser redondo y haber limpiado su órbita.",
+    "Plutón no cumple la tercera condición: desde 2006 es uno de los cinco planetas enanos reconocidos."
+  ],
+  "sources": [
+    {"title": "About the Planets", "publisher": "NASA Science", "url": "https://science.nasa.gov/planets/"},
+    {"title": "What is a Planet?", "publisher": "NASA JPL Solar System Dynamics", "url": "https://ssd.jpl.nasa.gov/planets/def.html"},
+    {"title": "Venus Facts", "publisher": "NASA Science", "url": "https://science.nasa.gov/venus/facts/"},
+    {"title": "Jupiter Facts", "publisher": "NASA Science", "url": "https://science.nasa.gov/jupiter/facts/"},
+    {"title": "Uranus Facts", "publisher": "NASA Science", "url": "https://science.nasa.gov/uranus/facts/"},
+    {"title": "Planetary Fact Sheet", "publisher": "NASA Goddard (NSSDCA)", "url": "https://nssdc.gsfc.nasa.gov/planetary/factsheet/index.html"}
+  ],
+  "questions": [
+    {
+      "q": "Mercurio está más cerca del Sol que Venus. ¿Por qué Venus es más caliente?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque Venus tiene un núcleo mucho más caliente", "why": "El calor de su superficie no viene de su interior, sino del Sol."},
+        {"text": "Porque Venus gira más deprisa y se calienta por rozamiento", "why": "Venus gira muy despacio: tarda 243 días en dar una vuelta."},
+        {"text": "Porque Mercurio está cubierto de hielo", "why": "Mercurio no está cubierto de hielo; simplemente no puede retener el calor."},
+        {"text": "Porque su atmósfera espesa de dióxido de carbono atrapa el calor", "why": "Correcto. Es un efecto invernadero desbocado: la superficie ronda los 470 °C."}
+      ]
+    },
+    {
+      "q": "¿Qué condición de planeta no cumple Plutón?",
+      "answer": 1,
+      "options": [
+        {"text": "Girar alrededor del Sol", "why": "Plutón sí gira alrededor del Sol."},
+        {"text": "Haber limpiado su órbita de otros objetos de tamaño parecido", "why": "Correcto. Comparte el cinturón de Kuiper con miles de cuerpos helados."},
+        {"text": "Ser redondo por su propia gravedad", "why": "Plutón es redondo: cumple esa condición."},
+        {"text": "Tener al menos una luna", "why": "Tener lunas no es una condición para ser planeta (y Plutón tiene cinco)."}
+      ]
+    },
+    {
+      "q": "¿Qué tienen en común Júpiter, Saturno, Urano y Neptuno?",
+      "answer": 0,
+      "options": [
+        {"text": "Que no tienen una superficie sólida donde pisar", "why": "Correcto. Son capas de gas que se arremolinan sobre un núcleo."},
+        {"text": "Que están hechos sobre todo de roca", "why": "Los planetas de roca son los cuatro interiores."},
+        {"text": "Que son los más cercanos al Sol", "why": "Es al revés: son los cuatro más lejanos."},
+        {"text": "Que son más pequeños que la Tierra", "why": "Los cuatro son mucho más grandes que la Tierra."}
+      ]
+    },
+    {
+      "q": "¿En qué se diferencian Urano y Neptuno de Júpiter y Saturno?",
+      "answer": 2,
+      "options": [
+        {"text": "En que tienen superficie sólida", "why": "Ninguno de los cuatro gigantes tiene superficie sólida."},
+        {"text": "En que están más cerca del Sol", "why": "Urano y Neptuno son los planetas más lejanos."},
+        {"text": "En que tienen mucha más agua, amoníaco y metano, por eso se llaman gigantes de hielo", "why": "Correcto. Júpiter y Saturno, en cambio, son sobre todo hidrógeno y helio."},
+        {"text": "En que no tienen atmósfera", "why": "Los cuatro gigantes tienen atmósferas enormes."}
+      ]
+    },
+    {
+      "q": "Si la Tierra fuera del tamaño de una uva, ¿cómo de grande sería Júpiter?",
+      "answer": 3,
+      "options": [
+        {"text": "Como otra uva", "why": "Júpiter es muchísimo más grande que la Tierra."},
+        {"text": "Como una naranja", "why": "Se queda corto: Júpiter es 11 veces más ancho que la Tierra."},
+        {"text": "Como un edificio", "why": "Eso sería exagerar: el Sol sí es enorme, pero Júpiter no tanto."},
+        {"text": "Como un balón de baloncesto", "why": "Correcto. Es 11 veces más ancho y cabrían más de 1.000 Tierras dentro."}
+      ]
+    },
+    {
+      "q": "¿Por qué Urano tiene las estaciones más extremas del sistema solar?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque su órbita es muy alargada", "why": "Lo que lo hace especial no es su órbita, sino la inclinación de su eje."},
+        {"text": "Porque gira tumbado, con el eje inclinado unos 98 grados", "why": "Correcto. Cada polo pasa unos 21 años seguidos iluminado y otros tantos a oscuras."},
+        {"text": "Porque está muy cerca del Sol", "why": "Urano es el séptimo planeta: está lejísimos del Sol."},
+        {"text": "Porque no tiene atmósfera", "why": "Urano tiene una atmósfera espesa de hidrógeno, helio y metano."}
+      ]
+    },
+    {
+      "q": "¿Cuál es el único planeta enano del sistema solar interior?",
+      "answer": 2,
+      "options": [
+        {"text": "Plutón", "why": "Plutón está en el cinturón de Kuiper, más allá de Neptuno."},
+        {"text": "La Luna", "why": "La Luna es un satélite de la Tierra, no un planeta enano."},
+        {"text": "Ceres, en el cinturón de asteroides", "why": "Correcto. Es el objeto más grande del cinturón, entre Marte y Júpiter."},
+        {"text": "Eris", "why": "Eris está más allá de Neptuno, muy lejos del sistema solar interior."}
+      ]
+    },
+    {
+      "q": "¿Qué descubrimiento obligó a definir qué es un planeta?",
+      "answer": 0,
+      "options": [
+        {"text": "El de Eris, un mundo más allá de Neptuno con más masa que Plutón", "why": "Correcto. O se aceptaban muchos planetas nuevos o se definía qué era un planeta."},
+        {"text": "El de los anillos de Saturno", "why": "Los anillos se conocen desde hace siglos y no cambiaron la definición."},
+        {"text": "El de agua en Marte", "why": "Tener agua no tiene que ver con la definición de planeta."},
+        {"text": "El de la Gran Mancha Roja de Júpiter", "why": "Es una tormenta; no tuvo nada que ver con la definición."}
+      ]
+    },
+    {
+      "q": "En Venus, un día dura más que un año. ¿Qué significa eso?",
+      "answer": 3,
+      "options": [
+        {"text": "Que Venus no gira sobre sí mismo", "why": "Sí gira, pero muy despacio."},
+        {"text": "Que el Sol nunca se pone en Venus", "why": "El Sol sale y se pone, aunque de forma muy lenta."},
+        {"text": "Que el calendario de Venus está mal calculado", "why": "No es un error: es una consecuencia de cómo se mueve."},
+        {"text": "Que tarda más en girar sobre sí mismo (243 días) que en dar la vuelta al Sol (unos 225)", "why": "Correcto. Gira sobre su eje lentísimamente."}
+      ]
+    },
+    {
+      "q": "¿Qué es la Gran Mancha Roja de Júpiter?",
+      "answer": 1,
+      "options": [
+        {"text": "Un volcán gigante", "why": "Júpiter no tiene superficie sólida donde pueda haber volcanes."},
+        {"text": "Una tormenta más grande que la Tierra que dura desde hace cientos de años", "why": "Correcto. Es la tormenta más famosa del sistema solar."},
+        {"text": "La sombra de una de sus lunas", "why": "Las sombras de las lunas se mueven rápido; la mancha lleva siglos ahí."},
+        {"text": "Un cráter causado por un meteorito", "why": "Un gigante gaseoso no conserva cráteres: no tiene superficie sólida."}
+      ]
+    }
+  ]
+}
