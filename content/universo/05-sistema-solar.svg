@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" role="img" aria-labelledby="t">
+  <title id="t">Mapa del sistema solar, del Sol a la nube de Oort (no a escala)</title>
+  <style>
+    .bg{fill:#f6f8fc}.ink{fill:#16202e}.mut{fill:#586374}.lin{stroke:#98a3b4;fill:none}
+    .sun{fill:#f2b84b}.rock{fill:#b07a55}.gas{fill:#d9a05b}.ice{fill:#6c9be8}.ast{fill:#8a8f99}
+    .ice-l{stroke:#4a74e0;stroke-width:2;stroke-dasharray:6 4}.blu{fill:#4a74e0}
+    .oort{fill:#6c9be8;fill-opacity:.15;stroke:#6c9be8;stroke-dasharray:3 4}
+    text{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    @media (prefers-color-scheme:dark){.bg{fill:#161d28}.ink{fill:#e5eaf1}.mut{fill:#98a3b4}.lin{stroke:#586374}.blu{fill:#8fb0f5}.ice-l{stroke:#8fb0f5}}
+  </style>
+  <rect class="bg" width="360" height="640" rx="14"/>
+
+  <!-- Eje vertical -->
+  <line class="lin" x1="48" y1="70" x2="48" y2="516" stroke-dasharray="2 4"/>
+
+  <!-- Sol -->
+  <circle class="sun" cx="48" cy="44" r="22"/>
+  <text class="ink" x="84" y="42" font-size="16" font-weight="600">Sol</text>
+  <text class="mut" x="84" y="60" font-size="13">Más del 99 % de la materia</text>
+
+  <!-- Rocosos -->
+  <circle class="rock" cx="48" cy="104" r="4"/>
+  <circle class="rock" cx="48" cy="118" r="5"/>
+  <circle class="rock" cx="48" cy="134" r="5"/>
+  <circle class="rock" cx="48" cy="148" r="4"/>
+  <text class="ink" x="84" y="122" font-size="15" font-weight="600">Planetas rocosos</text>
+  <text class="mut" x="84" y="140" font-size="13">Mercurio a Marte · la Tierra a 1 UA</text>
+
+  <!-- Asteroides -->
+  <g class="ast">
+    <circle cx="40" cy="186" r="2"/><circle cx="52" cy="182" r="2"/><circle cx="46" cy="192" r="1.5"/>
+    <circle cx="57" cy="194" r="1.5"/><circle cx="36" cy="196" r="1.5"/>
+  </g>
+  <text class="ink" x="84" y="186" font-size="15" font-weight="600">Cinturón de asteroides</text>
+  <text class="mut" x="84" y="204" font-size="13">Restos que no formaron un planeta</text>
+
+  <!-- Línea de hielo -->
+  <line class="ice-l" x1="20" y1="228" x2="340" y2="228"/>
+  <text class="blu" x="84" y="252" font-size="14" font-weight="600">Línea de hielo</text>
+  <text class="mut" x="84" y="270" font-size="13">Más allá, también se formaban hielos</text>
+
+  <!-- Gigantes -->
+  <circle class="gas" cx="48" cy="306" r="16"/>
+  <circle class="gas" cx="48" cy="342" r="13"/>
+  <circle class="ice" cx="48" cy="372" r="8"/>
+  <circle class="ice" cx="48" cy="394" r="8"/>
+  <text class="ink" x="84" y="340" font-size="15" font-weight="600">Planetas gigantes</text>
+  <text class="mut" x="84" y="358" font-size="13">Júpiter a Neptuno · hasta unas 30 UA</text>
+
+  <!-- Kuiper -->
+  <g class="ice">
+    <circle cx="38" cy="432" r="2"/><circle cx="50" cy="428" r="3"/><circle cx="60" cy="436" r="2"/>
+    <circle cx="44" cy="440" r="1.5"/>
+  </g>
+  <text class="ink" x="84" y="432" font-size="15" font-weight="600">Cinturón de Kuiper</text>
+  <text class="mut" x="84" y="450" font-size="13">Cuerpos helados, como Plutón</text>
+
+  <!-- Voyager 1 -->
+  <path class="blu" d="M48 476 l8 8 -8 8 -8 -8z"/>
+  <text class="ink" x="84" y="482" font-size="15" font-weight="600">Voyager 1</text>
+  <text class="mut" x="84" y="500" font-size="13">Fuera del viento solar desde 2012</text>
+
+  <!-- Nube de Oort -->
+  <rect class="oort" x="20" y="524" width="320" height="96" rx="12"/>
+  <text class="ink" x="40" y="556" font-size="15" font-weight="600">Nube de Oort</text>
+  <text class="mut" x="40" y="576" font-size="13">De 5.000 a 100.000 UA</text>
+  <text class="mut" x="40" y="596" font-size="13">Hasta unos 1,6 años luz</text>
+</svg>

@@ -12,7 +12,7 @@ y se sirve desde Franc, el servidor de casa, a través de Tailscale.
 
 | Categoría | Lecciones |
 |-----------|-----------|
-| Universo y astronomía | 4 de ~15 (categoría piloto) |
+| Universo y astronomía | 5 de ~15 (categoría piloto) |
 | Ciencia y naturaleza | en preparación |
 | Historia y civilizaciones | en preparación |
 | Cerebro y psicología | en preparación |

@@ -1,0 +1,180 @@
+{
+  "id": "universo-05-sistema-solar",
+  "category": "universo",
+  "order": 5,
+  "title": "El sistema solar: cómo se formó y qué hay en él",
+  "minutes": 8,
+  "intro": "El sistema solar es mucho más que el Sol y ocho planetas: también hay planetas enanos, cientos de lunas, miles de asteroides y cometas, y una nube helada que llega casi a medio camino de la estrella más cercana. Todo salió de la misma nube hace unos 4.600 millones de años, y la forma en que se repartió el material explica por qué el sistema es como es.",
+  "illustration": {
+    "file": "05-sistema-solar.svg",
+    "alt": "Mapa vertical del sistema solar, no a escala. Desde el Sol: planetas rocosos, cinturón de asteroides, línea de hielo, planetas gigantes hasta unas 30 unidades astronómicas, cinturón de Kuiper, posición de la Voyager 1 y nube de Oort, entre 5.000 y 100.000 unidades astronómicas.",
+    "caption": "Las distancias están muy comprimidas: si se dibujaran a escala, la nube de Oort quedaría a kilómetros de esta pantalla."
+  },
+  "sections": [
+    {
+      "heading": "De una nube a un disco",
+      "body": [
+        "Hace unos 4.600 millones de años, una nube densa de gas y polvo empezó a contraerse por su propia gravedad. Quizá la empujó la onda de choque de una supernova cercana, aunque no es seguro.",
+        "La nube giraba un poco. Al encogerse, empezó a girar cada vez más deprisa y se aplanó hasta formar un disco que daba vueltas. En el centro, el material se acumuló, se calentó y comenzó la fusión del hidrógeno: había nacido el Sol."
+      ],
+      "example": "Es lo que hace una patinadora que gira con los brazos abiertos: al recogerlos, gira más rápido. La nube, al encogerse, también aceleró su giro."
+    },
+    {
+      "heading": "El Sol se lo quedó casi todo",
+      "body": [
+        "Más del 99 % de la materia del sistema solar está en el Sol. Los planetas, las lunas y todo lo demás se formaron con las sobras del disco.",
+        "En ese disco, los granos de polvo chocaban y se pegaban. Formaron grumos cada vez más grandes, que a su vez chocaban entre sí. Algunos crecieron hasta convertirse en planetas, planetas enanos o grandes lunas. Los fragmentos que quedaron sueltos son hoy asteroides, cometas y pequeñas lunas irregulares."
+      ]
+    },
+    {
+      "heading": "La línea de hielo: por qué hay dos tipos de planetas",
+      "body": [
+        "Cerca del joven Sol hacía tanto calor que el agua y otros compuestos no podían congelarse. Solo aguantaban en estado sólido la roca y el metal. Por eso Mercurio, Venus, la Tierra y Marte son planetas pequeños y rocosos.",
+        "Más lejos, pasada la llamada línea de hielo, hacía bastante frío para que también se formaran hielos. Había mucho más material sólido, y los planetas crecieron hasta ser tan grandes que atraparon enormes cantidades de hidrógeno y helio. Así nacieron los gigantes: Júpiter y Saturno, gaseosos, y Urano y Neptuno, de hielo."
+      ],
+      "example": "Pasa lo mismo junto a una chimenea: cerca del fuego, un cubito de hielo se derrite enseguida; en el otro extremo de una casa fría aguanta mucho más."
+    },
+    {
+      "heading": "Los restos de la obra",
+      "body": [
+        "Entre Marte y Júpiter está el cinturón de asteroides: trozos rocosos de los primeros tiempos que nunca llegaron a juntarse en un planeta.",
+        "Más allá de Neptuno está el cinturón de Kuiper, un anillo de cuerpos helados; casi todos son más pequeños que Plutón, su miembro más conocido. Y mucho más lejos estaría la nube de Oort: una capa esférica de restos helados, entre 5.000 y 100.000 veces la distancia Tierra-Sol. Nadie la ha visto directamente; se deduce de los modelos y de los cometas que llegan de allí."
+      ]
+    },
+    {
+      "heading": "Medir lo inmenso",
+      "body": [
+        "Los kilómetros se quedan pequeños, así que se usa la unidad astronómica (UA): la distancia media entre la Tierra y el Sol, unos 150 millones de kilómetros. Neptuno, el planeta más lejano, está a unas 30 UA.",
+        "El viento solar llega más lejos que los planetas: hacia las 80-100 UA lo frena el gas que hay entre las estrellas. Pero la nube de Oort se extiende hasta unos 1,6 años luz, donde termina la influencia de la gravedad del Sol."
+      ],
+      "example": "La sonda Voyager 1, lanzada en 1977, salió de la burbuja del viento solar en 2012. Aun así, tardará muchos miles de años en atravesar la nube de Oort."
+    }
+  ],
+  "curiosities": [
+    "Las dos sondas Voyager se lanzaron en 1977 y ya viajan por el espacio entre las estrellas. Aun así, siguen dentro del sistema solar si se cuenta la nube de Oort.",
+    "Nadie ha observado nunca directamente la nube de Oort: sus objetos están demasiado lejos y son demasiado pequeños. Sabemos que existe por los cometas que llegan desde allí.",
+    "El sistema solar tiene una estrella, ocho planetas, cinco planetas enanos reconocidos oficialmente, cientos de lunas y miles de asteroides y cometas."
+  ],
+  "keyConcepts": [
+    {"term": "Nebulosa solar", "definition": "Disco giratorio de gas y polvo del que se formaron el Sol y todo el sistema solar."},
+    {"term": "Línea de hielo", "definition": "Distancia al Sol a partir de la cual hacía bastante frío para que se formaran hielos. Separa los planetas rocosos de los gigantes."},
+    {"term": "Cinturón de asteroides", "definition": "Zona entre Marte y Júpiter con fragmentos rocosos que nunca formaron un planeta."},
+    {"term": "Cinturón de Kuiper", "definition": "Anillo de cuerpos helados más allá de Neptuno. Plutón es su miembro más conocido."},
+    {"term": "Nube de Oort", "definition": "Capa esférica y lejanísima de restos helados que marca el límite de la influencia gravitatoria del Sol."},
+    {"term": "Unidad astronómica (UA)", "definition": "Distancia media entre la Tierra y el Sol: unos 150 millones de kilómetros."}
+  ],
+  "summary": [
+    "El sistema solar se formó hace unos 4.600 millones de años a partir de una nube de gas y polvo que, al contraerse, se convirtió en un disco giratorio.",
+    "El Sol se quedó con más del 99 % de la materia; los planetas se formaron con las sobras.",
+    "Cerca del Sol solo había roca y metal sólidos; más allá de la línea de hielo también había hielos, y allí crecieron los gigantes.",
+    "El cinturón de asteroides, el de Kuiper y la nube de Oort son restos de la formación.",
+    "Las distancias se miden en unidades astronómicas, y el sistema solar llega hasta más de un año luz."
+  ],
+  "sources": [
+    {"title": "Solar System Facts", "publisher": "NASA Science", "url": "https://science.nasa.gov/solar-system/solar-system-facts/"},
+    {"title": "How to Build a Solar System (Physical Geology, 2.ª ed.)", "publisher": "BCcampus Open Textbooks", "url": "https://opentextbc.ca/physicalgeology2ed/chapter/22-3-how-to-build-a-solar-system/"},
+    {"title": "The Origin of the Solar System (Astronomy 161, lección 32)", "publisher": "The Ohio State University", "url": "https://www.astronomy.ohio-state.edu/gaudi.1/AST161/Unit6/lecture32.html"}
+  ],
+  "questions": [
+    {
+      "q": "¿Por qué los cuatro planetas más cercanos al Sol son pequeños y rocosos?",
+      "answer": 2,
+      "options": [
+        {"text": "Porque el Sol se tragó el hielo que tenían", "why": "El Sol no se tragó nada: en esa zona el hielo nunca llegó a formarse."},
+        {"text": "Porque se formaron mucho después que los gigantes", "why": "Todos los planetas se formaron en la misma época, a partir del mismo disco."},
+        {"text": "Porque cerca del Sol hacía tanto calor que solo la roca y el metal podían estar en estado sólido", "why": "Correcto. Con menos material sólido disponible, los planetas no pudieron crecer mucho."},
+        {"text": "Porque la gravedad del Sol los aplastó", "why": "La gravedad del Sol mantiene sus órbitas, pero no los hizo pequeños."}
+      ]
+    },
+    {
+      "q": "¿Dónde está la mayor parte de la materia del sistema solar?",
+      "answer": 0,
+      "options": [
+        {"text": "En el Sol, que tiene más del 99 %", "why": "Correcto. Planetas, lunas, asteroides y cometas juntos son menos del 1 %."},
+        {"text": "En Júpiter, el planeta más grande", "why": "Júpiter es enorme comparado con la Tierra, pero diminuto al lado del Sol."},
+        {"text": "En la nube de Oort, porque es la zona más grande", "why": "Ocupa muchísimo espacio, pero tiene muy poca masa repartida en él."},
+        {"text": "Repartida a partes iguales entre el Sol y los planetas", "why": "Ni de lejos: el Sol tiene casi toda la materia."}
+      ]
+    },
+    {
+      "q": "¿Por qué la nube que formó el sistema solar acabó convertida en un disco plano?",
+      "answer": 3,
+      "options": [
+        {"text": "Porque la empujó el viento de otra estrella", "why": "Un empujón externo pudo iniciar el colapso, pero no explica la forma de disco."},
+        {"text": "Porque el polvo pesa más que el gas", "why": "La diferencia de peso no aplana una nube."},
+        {"text": "Porque el Sol ya estaba formado y la atrajo", "why": "El Sol se formó en el centro de ese mismo disco, no antes."},
+        {"text": "Porque giraba, y al contraerse giró más deprisa y se aplanó", "why": "Correcto. Es el efecto de la patinadora que recoge los brazos y gira más rápido."}
+      ]
+    },
+    {
+      "q": "¿Qué es el cinturón de asteroides?",
+      "answer": 1,
+      "options": [
+        {"text": "Los restos de un planeta que explotó", "why": "Es una idea antigua y muy extendida, pero son materiales que nunca llegaron a formar un planeta."},
+        {"text": "Fragmentos de los primeros tiempos del sistema solar que nunca llegaron a juntarse en un planeta", "why": "Correcto. Se encuentra entre las órbitas de Marte y Júpiter."},
+        {"text": "Un anillo de hielo alrededor de Neptuno", "why": "Eso se parece más al cinturón de Kuiper, que está más allá de Neptuno y es helado."},
+        {"text": "Una zona llena de rocas que expulsó la Tierra", "why": "La Tierra no expulsó esas rocas: estaban allí desde la formación del sistema."}
+      ]
+    },
+    {
+      "q": "¿Por qué Júpiter y Saturno pudieron crecer tanto?",
+      "answer": 2,
+      "options": [
+        {"text": "Porque estaban más cerca del Sol y recibían más energía", "why": "Están lejos del Sol; precisamente el frío fue lo que les ayudó."},
+        {"text": "Porque chocaron contra otros planetas gigantes y se fusionaron", "why": "No hay pruebas de que se formaran así."},
+        {"text": "Porque más allá de la línea de hielo había mucho más material sólido, y crecieron hasta atrapar grandes cantidades de gas", "why": "Correcto. Con más material crecieron rápido y su gravedad capturó hidrógeno y helio."},
+        {"text": "Porque se formaron a partir de otra nube distinta", "why": "Todo el sistema solar salió de la misma nube."}
+      ]
+    },
+    {
+      "q": "Si nadie ha visto nunca la nube de Oort, ¿por qué se cree que existe?",
+      "answer": 0,
+      "options": [
+        {"text": "Por los modelos de la formación y por los cometas que llegan desde muy lejos", "why": "Correcto. Muchos cometas llegan desde todas las direcciones y desde muy lejos, y la nube de Oort lo explica."},
+        {"text": "Porque la fotografió la Voyager 1", "why": "La Voyager 1 tardará miles de años en atravesarla y no ha fotografiado sus objetos."},
+        {"text": "Porque se ve a simple vista desde el hemisferio sur", "why": "Sus objetos son demasiado pequeños y lejanos para verlos, ni siquiera con telescopio."},
+        {"text": "Por tradición: es una idea antigua que nadie ha revisado", "why": "No es una tradición: la ciencia la mantiene porque encaja con lo que observamos."}
+      ]
+    },
+    {
+      "q": "¿Qué es una unidad astronómica?",
+      "answer": 3,
+      "options": [
+        {"text": "La distancia que recorre la luz en un año", "why": "Eso es un año luz, una unidad muchísimo mayor."},
+        {"text": "El tamaño del Sol", "why": "Es una distancia entre dos cuerpos, no el tamaño del Sol."},
+        {"text": "La distancia entre el Sol y Neptuno", "why": "Neptuno está a unas 30 unidades astronómicas."},
+        {"text": "La distancia media entre la Tierra y el Sol, unos 150 millones de kilómetros", "why": "Correcto. Sirve para medir el sistema solar sin manejar cifras enormes."}
+      ]
+    },
+    {
+      "q": "La Voyager 1 llegó al espacio entre las estrellas en 2012. ¿Ha salido ya del sistema solar?",
+      "answer": 1,
+      "options": [
+        {"text": "Sí, por completo", "why": "Ha salido de la burbuja del viento solar, pero no de la zona donde manda la gravedad del Sol."},
+        {"text": "Depende de lo que se cuente: salió de la burbuja del viento solar, pero tardará miles de años en cruzar la nube de Oort", "why": "Correcto. El sistema solar es mucho más grande que la zona de los planetas."},
+        {"text": "No, porque todavía no ha pasado Neptuno", "why": "Pasó Neptuno hace mucho; está a más del triple de esa distancia."},
+        {"text": "No, porque se quedó en órbita alrededor de Júpiter", "why": "La Voyager 1 pasó junto a Júpiter y siguió su viaje."}
+      ]
+    },
+    {
+      "q": "¿Qué es el cinturón de Kuiper?",
+      "answer": 2,
+      "options": [
+        {"text": "Otro nombre del cinturón de asteroides", "why": "Son zonas distintas: los asteroides están entre Marte y Júpiter."},
+        {"text": "Los anillos de Saturno", "why": "Los anillos de Saturno giran alrededor del planeta, no del Sol a esa distancia."},
+        {"text": "Un anillo de cuerpos helados más allá de Neptuno, donde está Plutón", "why": "Correcto. Casi todos sus objetos son más pequeños que Plutón."},
+        {"text": "La capa más externa del Sol", "why": "La capa más externa del Sol es la corona."}
+      ]
+    },
+    {
+      "q": "Según una de las hipótesis, ¿qué pudo empujar a la nube original a contraerse?",
+      "answer": 0,
+      "options": [
+        {"text": "La onda de choque de una supernova cercana", "why": "Correcto. No es seguro, pero es una de las explicaciones que se barajan."},
+        {"text": "El choque con otro sistema solar ya formado", "why": "No hay indicios de algo así."},
+        {"text": "El calor del Sol", "why": "El Sol aún no existía: se formó precisamente a partir de esa nube."},
+        {"text": "La gravedad de Júpiter", "why": "Júpiter se formó después, a partir del disco."}
+      ]
+    }
+  ]
+}
