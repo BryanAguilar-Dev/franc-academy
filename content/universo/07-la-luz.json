@@ -1,0 +1,199 @@
+{
+  "id": "universo-07-luz",
+  "category": "universo",
+  "order": 7,
+  "title": "La luz, mensajera del cosmos",
+  "minutes": 9,
+  "intro": "No podemos viajar a una estrella ni coger un trozo de ella, y aun así sabemos de qué está hecha, a qué temperatura está y si se acerca o se aleja. Todo eso lo cuenta su luz. En esta lección verás cómo se «lee» la luz de las estrellas descomponiéndola en colores, y por qué cada átomo deja en ella su propia firma.",
+  "illustration": {
+    "file": "07-luz.svg",
+    "alt": "Arriba, la luz blanca del Sol entra en un prisma y sale abierta en los colores del arcoíris. Debajo, tres franjas de colores del violeta al rojo: un espectro continuo, sin cortes; un espectro de absorción, con cuatro rayas oscuras; y un espectro de emisión, negro salvo cuatro rayas de color. Las rayas oscuras y las de color están en las mismas posiciones: son la huella del hidrógeno.",
+    "caption": "Las rayas del hidrógeno aparecen siempre en los mismos colores, tanto si el gas absorbe luz como si la emite."
+  },
+  "sections": [
+    {
+      "heading": "La luz es una onda, y casi toda es invisible",
+      "body": [
+        "La luz viaja como una onda. La distancia entre una cresta y la siguiente se llama longitud de onda, y es lo que nuestros ojos perciben como color. El violeta tiene las ondas más cortas que vemos, unos 380 nanómetros (milmillonésimas de metro), y el rojo, las más largas, unos 700.",
+        "Pero lo que vemos es solo una franja estrecha de algo mucho mayor: el espectro electromagnético. Con ondas más largas que el rojo están el infrarrojo, las microondas y las ondas de radio. Con ondas más cortas que el violeta, el ultravioleta, los rayos X y los rayos gamma. Todo es la misma clase de energía; solo cambia el tamaño de la onda.",
+        "La atmósfera deja pasar bien la luz visible y buena parte de las ondas de radio, pero bloquea los rayos gamma, los rayos X, casi todo el ultravioleta y gran parte del infrarrojo y las microondas. Por eso, para ver el cielo en esos «colores» hay que subir los telescopios al espacio."
+      ],
+      "example": "La radio del coche, el horno de microondas y la radiografía del dentista usan «luz» de distintos tamaños de onda. Tu ojo solo detecta una pequeña parte."
+    },
+    {
+      "heading": "Abrir la luz en colores",
+      "body": [
+        "La luz blanca del Sol parece de un solo color, pero es una mezcla. Isaac Newton lo demostró en el siglo XVII haciéndola pasar por un prisma de vidrio: cada color se desvía un poco distinto (el violeta, más que el rojo) y la luz sale abierta en un arcoíris. Esa franja ordenada de colores se llama espectro.",
+        "Los astrónomos hacen lo mismo con instrumentos llamados espectrógrafos, colocados detrás de los telescopios. En vez de mirar una estrella como un punto, la estiran en una franja de colores para estudiar cuánta luz llega en cada uno. A esta técnica se le llama espectroscopia."
+      ],
+      "example": "Un arcoíris es un espectro natural: las gotas de lluvia hacen de prisma y separan los colores de la luz del Sol."
+    },
+    {
+      "heading": "Las huellas dactilares de los átomos",
+      "body": [
+        "A principios del siglo XIX, el óptico alemán Joseph von Fraunhofer observó el espectro del Sol con mucho detalle y vio algo extraño: el arcoíris estaba cruzado por cientos de rayas oscuras, unas 600. Faltaban colores muy concretos.",
+        "La explicación llegó décadas después. Cada elemento químico solo puede absorber o emitir luz de unos colores determinados, siempre los mismos. Un gas caliente y poco denso brilla solo en esos colores: es un espectro de emisión, con rayas brillantes sobre fondo oscuro. Si la luz de una fuente caliente atraviesa un gas más frío, ese gas se queda con sus colores y aparecen rayas oscuras: es un espectro de absorción.",
+        "Como el patrón de rayas de cada elemento es único, funciona como su firma. En 1860, Gustav Kirchhoff comparó las rayas del Sol con las de elementos calentados en el laboratorio y reconoció la del sodio. Era la primera vez que alguien identificaba un elemento en el Sol sin ir hasta allí."
+      ],
+      "example": "Es como el código de barras de los productos del supermercado: por la posición de las rayas, la caja sabe qué estás comprando sin abrir el paquete."
+    },
+    {
+      "heading": "Un elemento descubierto en el Sol",
+      "body": [
+        "En 1868, durante un eclipse total de Sol observado desde la India, el astrónomo francés Jules Janssen vio en el espectro solar una raya amarilla que no encajaba con ningún elemento conocido. El inglés Norman Lockyer la estudió también y propuso que era un elemento nuevo. Lo llamó helio, de «helios», la palabra griega para el Sol.",
+        "Durante casi treinta años, el helio solo se conocía en el Sol. Hasta 1895 el químico William Ramsay no logró detectarlo en la Tierra, en el gas que soltaba un mineral de uranio. Es un buen ejemplo de lo que puede hacer la espectroscopia: encontrar algo a 150 millones de kilómetros antes de tenerlo en la mano."
+      ]
+    },
+    {
+      "heading": "El color de una estrella es un termómetro",
+      "body": [
+        "Cuanto más caliente está algo, más se desplaza su luz hacia las ondas cortas. Por eso las estrellas frías se ven rojizas y las más calientes, azuladas. Betelgeuse, en Orión, tiene una superficie de unos 3.000 °C y se ve rojiza; el Sol, a unos 5.500 °C, da sobre todo luz amarillenta; y Rigel, también en Orión, ronda los 12.000 °C y se ve azulada.",
+        "A finales del siglo XIX, un equipo de mujeres del observatorio de Harvard clasificó cientos de miles de espectros. Annie Jump Cannon ordenó las estrellas en siete clases de más calientes a más frías: O, B, A, F, G, K y M. Las O, azules, rondan o superan los 30.000 grados; las M, rojas, no llegan a 4.000. El Sol es de tipo G.",
+        "Hoy sabemos que la mayoría de las estrellas tienen una composición parecida a la del Sol, con el hidrógeno como elemento más abundante. Si sus espectros son tan distintos es, sobre todo, porque tienen temperaturas distintas."
+      ],
+      "example": "Un hierro en la fragua pasa del rojo oscuro al naranja y luego al amarillo blanquecino a medida que se calienta. Las estrellas siguen la misma regla."
+    },
+    {
+      "heading": "La luz también delata el movimiento",
+      "body": [
+        "Las rayas de un elemento tienen posiciones fijas, así que si aparecen desplazadas es porque algo se mueve. Como viste en la lección del Big Bang, si la fuente se aleja, las ondas se estiran y las rayas se corren hacia el rojo. Si se acerca, se comprimen y se corren hacia el azul. Es el efecto Doppler.",
+        "Este efecto solo mide el movimiento en la línea de mirada, hacia nosotros o alejándose; un movimiento de lado no lo produce. Aun así da muchísimo juego: las rayas que van y vienen de forma periódica revelan que una estrella tiene un compañero invisible que tira de ella, y el ensanchamiento de las rayas indica a qué velocidad gira o cómo sopla su viento."
+      ],
+      "example": "Cuando una moto pasa a tu lado, su ruido suena más agudo al acercarse y más grave al alejarse. Con la luz ocurre lo mismo, pero en colores."
+    }
+  ],
+  "curiosities": [
+    "El helio se descubrió en el Sol casi tres décadas antes que en la Tierra. Hoy lo usamos en globos y en los imanes de las máquinas de resonancia magnética.",
+    "Los astrónomos de habla inglesa recuerdan el orden O, B, A, F, G, K, M con la frase «Oh Be A Fine Girl, Kiss Me». También circulan versiones más modernas, como «Oh Boy, An F Grade Kills Me!».",
+    "Annie Jump Cannon llegó a clasificar unas 500.000 estrellas a lo largo de su vida, y podía hacerlo a un ritmo de hasta tres por minuto.",
+    "En los grifos, el rojo es el agua caliente y el azul, la fría. En las estrellas es justo al revés: las azules son las más calientes."
+  ],
+  "keyConcepts": [
+    {"term": "Longitud de onda", "definition": "Distancia entre dos crestas de una onda. En la luz visible, determina el color: corta para el violeta, larga para el rojo."},
+    {"term": "Espectro electromagnético", "definition": "Toda la gama de la luz, de las ondas de radio a los rayos gamma. La luz visible es solo una pequeña franja."},
+    {"term": "Espectro", "definition": "La luz de un objeto separada y ordenada por colores (por longitudes de onda)."},
+    {"term": "Espectroscopia", "definition": "Técnica que estudia el espectro de la luz para saber de qué está hecho un objeto, su temperatura y cómo se mueve."},
+    {"term": "Rayas de absorción y de emisión", "definition": "Colores concretos que un elemento absorbe (rayas oscuras) o emite (rayas brillantes). Su patrón es único de cada elemento."},
+    {"term": "Efecto Doppler", "definition": "Cambio en la longitud de onda de la luz cuando la fuente se acerca (hacia el azul) o se aleja (hacia el rojo)."}
+  ],
+  "summary": [
+    "La luz es una onda; su longitud de onda determina el color, y lo que vemos es solo una pequeña parte del espectro electromagnético.",
+    "La atmósfera bloquea muchas clases de luz, como los rayos X o casi todo el ultravioleta: por eso hay telescopios en el espacio.",
+    "Un prisma o un espectrógrafo abre la luz en un espectro, y en él aparecen rayas que son la firma de cada elemento.",
+    "Gracias a esas rayas sabemos de qué están hechas las estrellas; el helio se descubrió así en el Sol antes que en la Tierra.",
+    "El color de una estrella indica su temperatura: las rojas son frías y las azules, calientes.",
+    "Si las rayas se desplazan hacia el rojo o el azul, el objeto se aleja o se acerca: es el efecto Doppler."
+  ],
+  "sources": [
+    {"title": "Astronomy 2e, 5.2 The Electromagnetic Spectrum", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/5-2-the-electromagnetic-spectrum"},
+    {"title": "Astronomy 2e, 5.3 Spectroscopy in Astronomy", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/5-3-spectroscopy-in-astronomy"},
+    {"title": "Astronomy 2e, 5.6 The Doppler Effect", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/5-6-the-doppler-effect"},
+    {"title": "Astronomy 2e, 17.3 The Spectra of Stars (and Brown Dwarfs)", "publisher": "OpenStax (CC BY 4.0)", "url": "https://openstax.org/books/astronomy-2e/pages/17-3-the-spectra-of-stars-and-brown-dwarfs"},
+    {"title": "Visible Light", "publisher": "NASA Science", "url": "https://science.nasa.gov/ems/09_visiblelight/"},
+    {"title": "Spectra and What They Can Tell Us", "publisher": "NASA Imagine the Universe", "url": "https://imagine.gsfc.nasa.gov/science/toolbox/spectra1.html"},
+    {"title": "Observatories Across the Electromagnetic Spectrum", "publisher": "NASA Imagine the Universe", "url": "https://imagine.gsfc.nasa.gov/science/toolbox/emspectrum_observatories1.html"},
+    {"title": "Helium", "publisher": "Royal Society of Chemistry", "url": "https://www.rsc.org/periodic-table/element/2/helium"}
+  ],
+  "questions": [
+    {
+      "q": "¿Qué es lo que nuestros ojos perciben como el color de la luz?",
+      "answer": 2,
+      "options": [
+        {"text": "La velocidad a la que viaja", "why": "En el vacío, toda la luz viaja a la misma velocidad, sea del color que sea."},
+        {"text": "La distancia a la que está la fuente", "why": "Una bombilla roja sigue siendo roja de cerca y de lejos."},
+        {"text": "Su longitud de onda", "why": "Correcto. Ondas más cortas se ven violetas o azules; más largas, rojas."},
+        {"text": "La temperatura del aire que atraviesa", "why": "El aire no cambia el color de la luz de esa forma; el color depende del tamaño de la onda."}
+      ]
+    },
+    {
+      "q": "¿Por qué los telescopios de rayos X tienen que estar en el espacio?",
+      "answer": 0,
+      "options": [
+        {"text": "Porque la atmósfera bloquea los rayos X antes de que lleguen al suelo", "why": "Correcto. Lo mismo pasa con los rayos gamma y casi todo el ultravioleta."},
+        {"text": "Porque en el espacio las estrellas están más cerca", "why": "Unos cientos de kilómetros no son nada comparados con la distancia a las estrellas."},
+        {"text": "Porque los rayos X solo existen fuera de la Tierra", "why": "En la Tierra también hay rayos X: los usan los médicos y los dentistas."},
+        {"text": "Porque así se evita la contaminación lumínica de las ciudades", "why": "Eso ayuda con la luz visible, pero no explica lo de los rayos X: es la atmósfera la que los frena."}
+      ]
+    },
+    {
+      "q": "Fraunhofer vio rayas oscuras en el espectro del Sol. ¿Qué significan?",
+      "answer": 3,
+      "options": [
+        {"text": "Que el prisma estaba sucio o rayado", "why": "Las rayas aparecen siempre en los mismos colores con cualquier instrumento: no son un defecto."},
+        {"text": "Que hay manchas solares tapando la luz", "why": "Las manchas no quitan colores concretos del espectro de todo el Sol."},
+        {"text": "Que el Sol se está apagando poco a poco", "why": "Las rayas no indican nada de eso; están ahí porque hay gas que absorbe ciertos colores."},
+        {"text": "Que hay elementos que absorben colores concretos de la luz", "why": "Correcto. Cada raya oscura es un color que algún elemento de la atmósfera del Sol se ha quedado."}
+      ]
+    },
+    {
+      "q": "¿Por qué el patrón de rayas de un espectro funciona como una huella dactilar?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque cambia cada vez que se mide", "why": "Es justo al revés: sirve porque siempre es el mismo."},
+        {"text": "Porque cada elemento absorbe y emite siempre los mismos colores, y su patrón es único", "why": "Correcto. Por eso, viendo las rayas, se sabe qué elementos hay."},
+        {"text": "Porque solo las estrellas tienen rayas", "why": "Cualquier gas tiene sus rayas; se estudian también en el laboratorio."},
+        {"text": "Porque las rayas muestran la forma de los átomos", "why": "Las rayas son colores, no fotos de los átomos."}
+      ]
+    },
+    {
+      "q": "Un gas caliente y poco denso, sin nada detrás que brille, ¿qué espectro produce?",
+      "answer": 2,
+      "options": [
+        {"text": "Un arcoíris completo, sin cortes", "why": "Eso es un espectro continuo, propio de cuerpos sólidos o gases muy densos y calientes."},
+        {"text": "Un arcoíris con rayas oscuras", "why": "Las rayas oscuras aparecen cuando la luz de una fuente caliente atraviesa un gas más frío."},
+        {"text": "Rayas brillantes de unos pocos colores sobre fondo oscuro", "why": "Correcto. Es un espectro de emisión: el gas solo brilla en sus colores propios."},
+        {"text": "Ningún espectro, porque un gas no emite luz", "why": "Un gas caliente sí emite luz, como los rótulos de neón."}
+      ]
+    },
+    {
+      "q": "¿Qué tiene de especial la historia del helio?",
+      "answer": 0,
+      "options": [
+        {"text": "Que se descubrió en la luz del Sol antes de encontrarlo en la Tierra", "why": "Correcto. Se vio en 1868 en el espectro solar y en la Tierra no se detectó hasta 1895."},
+        {"text": "Que lo trajo a la Tierra una sonda espacial", "why": "En el siglo XIX no había sondas: bastó con analizar la luz."},
+        {"text": "Que es el elemento más pesado del Sol", "why": "Es al revés: es el segundo elemento más ligero."},
+        {"text": "Que se descubrió por casualidad en un globo", "why": "Se descubrió estudiando el espectro del Sol durante un eclipse."}
+      ]
+    },
+    {
+      "q": "Una estrella se ve azulada y otra, rojiza. ¿Qué puedes deducir?",
+      "answer": 3,
+      "options": [
+        {"text": "Que la azulada está más cerca", "why": "La distancia cambia el brillo, no el color propio de la estrella."},
+        {"text": "Que la rojiza es más joven", "why": "El color no indica directamente la edad, sino la temperatura de la superficie."},
+        {"text": "Que la rojiza está hecha de hierro oxidado", "why": "Eso explica el color de Marte, no el de las estrellas."},
+        {"text": "Que la azulada tiene la superficie más caliente", "why": "Correcto. Cuanto más caliente, más se desplaza la luz hacia las ondas cortas, las azules."}
+      ]
+    },
+    {
+      "q": "Si la mayoría de las estrellas tienen una composición parecida, ¿por qué sus espectros son tan diferentes?",
+      "answer": 1,
+      "options": [
+        {"text": "Porque cada telescopio los mide de una forma", "why": "Los espectros de una misma estrella coinciden aunque se tomen con instrumentos distintos."},
+        {"text": "Sobre todo porque tienen temperaturas distintas", "why": "Correcto. La temperatura cambia qué rayas aparecen y con qué intensidad."},
+        {"text": "Porque unas están hechas de hidrógeno y otras no", "why": "En la mayoría de las estrellas el hidrógeno es el elemento más abundante."},
+        {"text": "Porque las más lejanas pierden colores por el camino", "why": "La diferencia principal no se debe a la distancia, sino a la temperatura."}
+      ]
+    },
+    {
+      "q": "Las rayas del hidrógeno de una galaxia aparecen desplazadas hacia el rojo. ¿Qué significa?",
+      "answer": 2,
+      "options": [
+        {"text": "Que la galaxia está muy caliente", "why": "La temperatura cambia el color general, pero no desplaza las rayas de su sitio."},
+        {"text": "Que la galaxia no tiene hidrógeno", "why": "Si se ven las rayas del hidrógeno, es que lo tiene; lo raro es que estén movidas."},
+        {"text": "Que la galaxia se aleja de nosotros", "why": "Correcto. Al alejarse, las ondas se estiran y las rayas se corren hacia el rojo."},
+        {"text": "Que la galaxia se acerca a nosotros", "why": "Si se acercara, las rayas se correrían hacia el azul."}
+      ]
+    },
+    {
+      "q": "Las rayas de una estrella se mueven hacia el rojo y hacia el azul una y otra vez, con un ritmo regular. ¿Qué puede estar pasando?",
+      "answer": 0,
+      "options": [
+        {"text": "Que un compañero invisible tira de ella y la hace ir y venir", "why": "Correcto. Al acercarse y alejarse sin parar, sus rayas oscilan por el efecto Doppler."},
+        {"text": "Que la estrella cambia de composición cada pocos días", "why": "La composición no cambia tan deprisa; las rayas son las mismas, solo se desplazan."},
+        {"text": "Que la estrella se mueve de lado respecto a nosotros", "why": "El movimiento de lado no produce efecto Doppler; solo el de acercarse o alejarse."},
+        {"text": "Que la atmósfera de la Tierra la hace titilar", "why": "El titileo cambia el brillo un instante, pero no desplaza las rayas con un ritmo regular."}
+      ]
+    }
+  ]
+}
