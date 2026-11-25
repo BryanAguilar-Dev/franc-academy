@@ -12,12 +12,13 @@ y se sirve desde Franc, el servidor de casa, a través de Tailscale.
 
 | Categoría | Lecciones |
 |-----------|-----------|
-| Universo y astronomía | 6 de ~15 (categoría piloto) |
+| Universo y astronomía | 7 de 15 (categoría piloto) |
 | Ciencia y naturaleza | en preparación |
 | Historia y civilizaciones | en preparación |
 | Cerebro y psicología | en preparación |
 | Tecnología e IA | en preparación |
 | Cultura general | en preparación |
+| Programación en Go | 6 (bloque 1 en curso) |
 
 Las lecciones se publican por tandas, revisadas y con sus fuentes. Preferimos
 pocas y buenas antes que muchas y superficiales.
@@ -38,7 +39,10 @@ iPhone / PC ──Tailscale──► Franc 127.0.0.1:8081
 - **El contenido se valida con tests.** `go test ./...` comprueba que cada
   lección tiene todos sus apartados, exactamente 10 preguntas con una única
   respuesta correcta, explicación en cada opción y al menos 2 fuentes https.
-  Si algo falla, la imagen Docker no se construye.
+  Se ejecutan en cada pull request y en cada push a main
+  (`.github/workflows/tests.yml`), y si algo falla, la imagen Docker no se
+  construye. Ojo: los tests comprueban la estructura, no que la explicación
+  sea correcta. Eso se revisa a mano en cada PR, con las fuentes delante.
 - **El progreso vive en Franc**, en un volumen Docker. Es el mismo desde
   cualquier dispositivo. El navegador solo envía eventos ("test hecho: 8/10")
   y el servidor decide cómo cambia el progreso.
